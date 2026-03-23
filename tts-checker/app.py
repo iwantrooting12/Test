@@ -143,6 +143,7 @@ def stream(job_id):
             transcripts = result_holder["transcripts"]
 
             # 4. diff比較
+            yield _sse_event({"stage": "comparing", "message": "差分を比較中..."})
             results = []
             for pair, transcript in zip(pairs, transcripts):
                 m_text = normalize(pair["entry"]["text"])
@@ -157,6 +158,7 @@ def stream(job_id):
                 })
 
             # 5. レポート生成
+            yield ": heartbeat\n\n"
             report_html = generate_report_html(results, str(job["ms_path"]))
 
             yield _sse_event({"stage": "done", "report_html": report_html})
@@ -176,4 +178,4 @@ def stream(job_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, use_reloader=False, host="0.0.0.0", port=5000)

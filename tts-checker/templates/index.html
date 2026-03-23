@@ -175,6 +175,8 @@ document.getElementById('upload-form').addEventListener('submit', async (e) => {
         progressBar.textContent = pct + '%';
         progressText.textContent = data.done + ' / ' + data.total + ' 件完了';
         progressFilename.textContent = data.filename;
+      } else if (data.stage === 'comparing') {
+        progressText.textContent = '差分を比較中...';
       } else if (data.stage === 'done') {
         progressBar.style.width = '100%';
         progressBar.textContent = '100%';
