@@ -182,11 +182,21 @@ document.getElementById('upload-form').addEventListener('submit', async (e) => {
         progressBar.textContent = '100%';
         progressText.textContent = '完了!';
         progressFilename.textContent = '';
-        reportSection.innerHTML = data.report_html;
         evtSource.close();
-        submitBtn.disabled = false;
-        form.style.display = 'none';
-        progressSection.style.display = 'none';
+        // レポートを別リクエストで取得（SSEで巨大HTMLを送ると切断されるため）
+        fetch(data.report_url)
+          .then(r => r.text())
+          .then(html => {
+            reportSection.innerHTML = html;
+            submitBtn.disabled = false;
+            form.style.display = 'none';
+            progressSection.style.display = 'none';
+          })
+          .catch(() => {
+            errorMessage.textContent = 'レポートの取得に失敗しました。';
+            errorMessage.style.display = 'block';
+            submitBtn.disabled = false;
+          });
       } else if (data.stage === 'error') {
         errorMessage.textContent = data.message;
         errorMessage.style.display = 'block';

@@ -46,6 +46,8 @@ app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 500 * 1024 * 1024  # 500MB
 
 JOBS: dict[str, dict] = {}
+REPORTS_DIR = Path(tempfile.gettempdir()) / "tts-checker-reports"
+REPORTS_DIR.mkdir(exist_ok=True)
 
 
 def _sse_event(data: dict) -> str:
@@ -184,7 +186,11 @@ def stream(job_id):
             yield ": heartbeat\n\n"
             report_html = generate_report_html(results, str(job["ms_path"]))
 
-            yield _sse_event({"stage": "done", "report_html": report_html})
+            # レポートをファイルに保存（SSEで巨大HTMLを送ると接続が切れるため）
+            report_path = REPORTS_DIR / f"{job_id}.html"
+            report_path.write_text(report_html, encoding="utf-8")
+
+            yield _sse_event({"stage": "done", "report_url": f"/report/{job_id}"})
 
         except Exception as e:
             yield _sse_event({"stage": "error", "message": str(e)})
@@ -198,6 +204,17 @@ def stream(job_id):
         "Cache-Control": "no-cache",
         "X-Accel-Buffering": "no",
     })
+
+
+@app.route("/report/<job_id>")
+def report(job_id):
+    """生成済みレポートHTMLを返す。"""
+    report_path = REPORTS_DIR / f"{job_id}.html"
+    if not report_path.exists():
+        return jsonify({"error": "レポートが見つかりません。"}), 404
+    html = report_path.read_text(encoding="utf-8")
+    report_path.unlink(missing_ok=True)  # 取得後に削除
+    return Response(html, mimetype="text/html; charset=utf-8")
 
 
 if __name__ == "__main__":
