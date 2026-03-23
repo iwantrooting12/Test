@@ -7,8 +7,17 @@ from pathlib import Path
 
 # Windows: CUDA DLLのパスを通す（site-packages内のnvidiaライブラリ）
 if platform.system() == "Windows":
-    for site_dir in site.getsitepackages():
-        nvidia_dir = os.path.join(site_dir, "nvidia")
+    import importlib.util
+    _nvidia_spec = importlib.util.find_spec("nvidia")
+    _search_paths = []
+    if _nvidia_spec and _nvidia_spec.submodule_search_locations:
+        _search_paths = list(_nvidia_spec.submodule_search_locations)
+    else:
+        for site_dir in site.getsitepackages():
+            _candidate = os.path.join(site_dir, "nvidia")
+            if os.path.isdir(_candidate):
+                _search_paths.append(_candidate)
+    for nvidia_dir in _search_paths:
         if os.path.isdir(nvidia_dir):
             for lib_name in os.listdir(nvidia_dir):
                 dll_dir = os.path.join(nvidia_dir, lib_name, "bin")
