@@ -13,6 +13,7 @@ from config import (
     GLADIA_MAX_RETRIES,
     GLADIA_POLL_INTERVAL,
     GLADIA_POLL_TIMEOUT,
+    GLADIA_REQUEST_DELAY,
 )
 
 
@@ -85,7 +86,16 @@ async def _transcribe_one(
                 audio_url = await _upload_audio(session, filepath, api_key)
                 result_url = await _request_transcription(session, audio_url, api_key, lang)
                 transcript = await _poll_result(session, result_url, api_key)
+                await asyncio.sleep(GLADIA_REQUEST_DELAY)
                 return {"filename": filepath.name, "transcript": transcript}
+            except aiohttp.ClientResponseError as e:
+                last_error = e
+                if e.status == 429:
+                    wait = (2 ** attempt) * 5
+                    print(f"  [429] {filepath.name}: レート制限。{wait}秒待機中... (リトライ {attempt + 1}/{GLADIA_MAX_RETRIES})")
+                    await asyncio.sleep(wait)
+                elif attempt < GLADIA_MAX_RETRIES - 1:
+                    await asyncio.sleep(2 ** attempt)
             except Exception as e:
                 last_error = e
                 if attempt < GLADIA_MAX_RETRIES - 1:
