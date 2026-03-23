@@ -28,7 +28,11 @@ def collect_audio_files(audio_dir: str | Path) -> list[Path]:
     audio_dir = Path(audio_dir)
     if not audio_dir.is_dir():
         raise FileNotFoundError(f"音声ディレクトリが見つかりません: {audio_dir}")
-    files = [f for f in sorted(audio_dir.iterdir()) if f.suffix.lower() in AUDIO_EXTENSIONS]
+    files = [f for f in audio_dir.iterdir() if f.suffix.lower() in AUDIO_EXTENSIONS]
+    def _sort_key(f):
+        num = _extract_number(f.stem)
+        return (num if num is not None else float("inf"), f.name)
+    files.sort(key=_sort_key)
     if not files:
         raise FileNotFoundError(f"音声ファイルが見つかりません: {audio_dir}")
     return files
@@ -72,8 +76,11 @@ def match_audio_to_entries(audio_files: list[Path], entries: list[dict]) -> list
             for audio in unmatched_audio[len(remaining_entries):]:
                 print(f"警告: {audio.name} に対応する原稿エントリがありません", file=sys.stderr)
 
-    # audioのソート順を維持
-    pairs.sort(key=lambda p: p["audio"].name)
+    # audioを数値順でソート
+    def _pair_sort_key(p):
+        num = _extract_number(p["audio"].stem)
+        return (num if num is not None else float("inf"), p["audio"].name)
+    pairs.sort(key=_pair_sort_key)
     return pairs
 
 
