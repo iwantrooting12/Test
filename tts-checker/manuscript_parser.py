@@ -112,8 +112,8 @@ def _parse_without_numbers(lines: list[str]) -> list[dict]:
             current_block.append(line.strip())
         else:
             if current_block:
-                entries.append({"id": str(len(entries) + 1), "text": "\n".join(current_block)})
+                entries.append({"id": str(len(entries) + 1), "text": "\n".join(current_block), "auto_numbered": True})
                 current_block = []
     if current_block:
-        entries.append({"id": str(len(entries) + 1), "text": "\n".join(current_block)})
+        entries.append({"id": str(len(entries) + 1), "text": "\n".join(current_block), "auto_numbered": True})
     return entries

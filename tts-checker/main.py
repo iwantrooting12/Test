@@ -46,12 +46,97 @@ def _extract_number(filename: str) -> int | None:
     return None
 
 
+def _extract_artist_name(text: str) -> str:
+    """エントリテキストから作家名を抽出する（最初の「。」の前）。"""
+    # "桂ゆき。，東京市..." → "桂ゆき"
+    # "桂ゆき，作、《...》。，..." → "桂ゆき"
+    name = text.split("。")[0].split("，")[0].strip()
+    # 全角・半角スペースを除去して正規化
+    return name
+
+
+def _normalize_for_match(s: str) -> str:
+    """マッチング用にテキストを正規化する。"""
+    return s.replace(" ", "").replace("\u3000", "").replace("・", "").replace("=", "＝").lower()
+
+
 def match_audio_to_entries(audio_files: list[Path], entries: list[dict]) -> list[dict]:
     """音声ファイルと原稿エントリを対応付ける。
 
-    ファイル名から番号を抽出し、原稿エントリのidと一致させる。
-    数字が抽出できない場合、ソート順で連番対応。
+    原稿が自動採番（番号行なし）の場合: 作家名マッチ → 順序マッチ
+    原稿が明示的番号の場合: 番号マッチ → 順序マッチ
     """
+    is_auto_numbered = any(e.get("auto_numbered") for e in entries)
+
+    if is_auto_numbered:
+        return _match_by_name_and_sequence(audio_files, entries)
+    else:
+        return _match_by_number(audio_files, entries)
+
+
+def _match_by_name_and_sequence(audio_files: list[Path], entries: list[dict]) -> list[dict]:
+    """作家名でマッチし、残りを順序で対応付ける。"""
+    pairs = []
+    matched_audio = set()
+    matched_entry_ids = set()
+
+    # 1. 作家名マッチ: ファイル名に作家名が含まれるケース
+    #    例: JP-パウル・クレー_略歴.mp3 → エントリ「パウル・クレー。，ベルン近郊...」
+    for entry in entries:
+        artist_name = _extract_artist_name(entry["text"])
+        if not artist_name or len(artist_name) < 2:
+            continue
+        name_norm = _normalize_for_match(artist_name)
+        for audio in audio_files:
+            if id(audio) in matched_audio:
+                continue
+            stem_norm = _normalize_for_match(audio.stem)
+            if name_norm in stem_norm:
+                pairs.append({"audio": audio, "entry": entry})
+                matched_audio.add(id(audio))
+                matched_entry_ids.add(entry["id"])
+                print(f"名前マッチ: {audio.name} → {artist_name}", file=sys.stderr)
+                break
+
+    # 2. 残りを順序で対応付け（数値順の音声 ↔ 残りのエントリ）
+    #    同一番号のファイル（JP-15_①, JP-15_②等）は同じエントリにマッチさせる
+    remaining_audio = [a for a in audio_files if id(a) not in matched_audio]
+    remaining_entries = [e for e in entries if e["id"] not in matched_entry_ids]
+
+    def _audio_sort_key(f):
+        num = _extract_number(f.stem)
+        return (num if num is not None else float("inf"), f.name)
+    remaining_audio.sort(key=_audio_sort_key)
+
+    # 同一番号のファイルをグループ化
+    audio_groups: list[list[Path]] = []
+    for audio in remaining_audio:
+        num = _extract_number(audio.stem)
+        if audio_groups and num is not None and _extract_number(audio_groups[-1][0].stem) == num:
+            audio_groups[-1].append(audio)
+        else:
+            audio_groups.append([audio])
+
+    for group, entry in zip(audio_groups, remaining_entries):
+        for audio in group:
+            pairs.append({"audio": audio, "entry": entry})
+
+    # 対応付けできなかった音声ファイル
+    if len(audio_groups) > len(remaining_entries):
+        for group in audio_groups[len(remaining_entries):]:
+            for audio in group:
+                print(f"警告: {audio.name} に対応する原稿エントリがありません", file=sys.stderr)
+
+    # audioを数値順でソート
+    def _pair_sort_key(p):
+        num = _extract_number(p["audio"].stem)
+        return (num if num is not None else float("inf"), p["audio"].name)
+    pairs.sort(key=_pair_sort_key)
+    return pairs
+
+
+def _match_by_number(audio_files: list[Path], entries: list[dict]) -> list[dict]:
+    """番号でマッチし、残りを順序で対応付ける（明示的番号ありの原稿用）。"""
     entry_map = {e["id"]: e for e in entries}
     pairs = []
     unmatched_audio = []
