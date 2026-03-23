@@ -1,14 +1,37 @@
 """TTS音声チェックツール — Flask Webアプリ。"""
 
+import importlib.util
 import json
 import os
+import platform
 import queue
 import shutil
+import site
 import tempfile
 import threading
 import time
 import uuid
 from pathlib import Path
+
+# Windows: CUDA DLLのパスを通す（Faster Whisperが読み込まれる前に実行）
+if platform.system() == "Windows":
+    _nvidia_spec = importlib.util.find_spec("nvidia")
+    _search_paths = []
+    if _nvidia_spec and _nvidia_spec.submodule_search_locations:
+        _search_paths = list(_nvidia_spec.submodule_search_locations)
+    else:
+        for _site_dir in site.getsitepackages():
+            _candidate = os.path.join(_site_dir, "nvidia")
+            if os.path.isdir(_candidate):
+                _search_paths.append(_candidate)
+    for _nvidia_dir in _search_paths:
+        if os.path.isdir(_nvidia_dir):
+            for _lib_name in os.listdir(_nvidia_dir):
+                _dll_dir = os.path.join(_nvidia_dir, _lib_name, "bin")
+                if os.path.isdir(_dll_dir):
+                    os.add_dll_directory(_dll_dir)
+                    if _dll_dir not in os.environ.get("PATH", ""):
+                        os.environ["PATH"] = _dll_dir + os.pathsep + os.environ.get("PATH", "")
 
 from flask import Flask, Response, jsonify, render_template, request
 
