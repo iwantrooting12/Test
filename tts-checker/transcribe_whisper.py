@@ -24,7 +24,7 @@ def transcribe_files(
         [{"filename": "01.wav", "transcript": "..."}, ...]
     """
     print(f"Faster Whisper モデル読み込み中: {WHISPER_MODEL}")
-    model = WhisperModel(WHISPER_MODEL, device="auto", compute_type="auto")
+    model = WhisperModel(WHISPER_MODEL, device="cuda", compute_type="float16")
 
     total = len(audio_files)
     results = []
