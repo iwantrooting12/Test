@@ -105,7 +105,8 @@ async def _transcribe_one(
 
 
 async def transcribe_files_async(
-    audio_files: list[Path], api_key: str, lang: str
+    audio_files: list[Path], api_key: str, lang: str,
+    progress_callback=None,
 ) -> list[dict]:
     """複数の音声ファイルを並列で文字起こしする。
 
@@ -113,23 +114,40 @@ async def transcribe_files_async(
         audio_files: 音声ファイルパスのリスト
         api_key: Gladia APIキー
         lang: 言語コード (ja, en, ko, etc.)
+        progress_callback: 進捗コールバック callback(done, total, filename)
 
     Returns:
         [{"filename": "01.wav", "transcript": "..."}, ...]
     """
     semaphore = asyncio.Semaphore(GLADIA_MAX_CONCURRENT)
+    total = len(audio_files)
+    results = {}
+
     async with aiohttp.ClientSession() as session:
-        tasks = [
-            _transcribe_one(session, f, api_key, lang, semaphore)
+        tasks = {
+            asyncio.ensure_future(
+                _transcribe_one(session, f, api_key, lang, semaphore)
+            ): f
             for f in audio_files
-        ]
-        return await asyncio.gather(*tasks)
+        }
+        completed = 0
+        for coro in asyncio.as_completed(tasks.keys()):
+            result = await coro
+            results[result["filename"]] = result
+            completed += 1
+            if progress_callback:
+                progress_callback(completed, total, result["filename"])
+
+    return [results[f.name] for f in audio_files]
 
 
-def transcribe_files(audio_files: list[Path], api_key: str, lang: str) -> list[dict]:
+def transcribe_files(
+    audio_files: list[Path], api_key: str, lang: str,
+    progress_callback=None,
+) -> list[dict]:
     """同期インターフェース。"""
     if not api_key:
         api_key = os.environ.get("GLADIA_API_KEY", "")
     if not api_key:
         raise ValueError("Gladia APIキーが指定されていません。--gladia-key または環境変数 GLADIA_API_KEY を設定してください。")
-    return asyncio.run(transcribe_files_async(audio_files, api_key, lang))
+    return asyncio.run(transcribe_files_async(audio_files, api_key, lang, progress_callback))

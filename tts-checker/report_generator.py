@@ -21,10 +21,6 @@ body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f5f5f5; 
 h1 { font-size: 1.5em; margin-bottom: 10px; }
 .meta { color: #666; margin-bottom: 20px; font-size: 0.9em; }
 .meta span { margin-right: 20px; }
-.summary-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-.summary-table th { background: #2c3e50; color: #fff; padding: 10px 15px; text-align: left; }
-.summary-table td { padding: 10px 15px; border-bottom: 1px solid #eee; }
-.summary-table tr:hover { background: #f9f9f9; }
 .status-ok { color: #27ae60; font-weight: bold; }
 .status-warning { color: #f39c12; font-weight: bold; }
 .status-error { color: #e74c3c; font-weight: bold; }
@@ -52,22 +48,6 @@ h1 { font-size: 1.5em; margin-bottom: 10px; }
   <span>音声ファイル数: {{ results | length }}</span>
   <span class="overall-ratio">全体一致率: {{ "%.1f" | format(overall_ratio * 100) }}%</span>
 </div>
-
-<table class="summary-table">
-<thead>
-<tr><th>ファイル名</th><th>エントリID</th><th>一致率</th><th>ステータス</th></tr>
-</thead>
-<tbody>
-{% for r in results %}
-<tr>
-  <td><a href="#detail-{{ loop.index }}">{{ r.filename }}</a></td>
-  <td>#{{ r.entry_id }}</td>
-  <td>{{ "%.1f" | format(r.ratio * 100) }}%</td>
-  <td class="{{ r.status_class }}">{{ r.status_label }}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
 
 {% for r in results %}
 <div class="detail" id="detail-{{ loop.index }}">
@@ -153,13 +133,15 @@ def _build_diff_items(diff: list[dict]) -> list[str]:
     return items
 
 
-def generate_report(results: list[dict], output_path: str | Path, manuscript_name: str) -> None:
-    """HTMLレポートを生成してファイルに書き出す。
+def generate_report_html(results: list[dict], manuscript_name: str) -> str:
+    """HTMLレポートを生成して文字列で返す。
 
     Args:
         results: main.pyから渡される結果リスト
-        output_path: 出力HTMLファイルパス
         manuscript_name: 原稿ファイル名
+
+    Returns:
+        HTMLレポート文字列
     """
     template_data = []
     total_ratio = 0.0
@@ -180,11 +162,15 @@ def generate_report(results: list[dict], output_path: str | Path, manuscript_nam
 
     overall_ratio = total_ratio / len(results) if results else 0.0
 
-    html = HTML_TEMPLATE.render(
+    return HTML_TEMPLATE.render(
         generated_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         manuscript_name=Path(manuscript_name).name,
         results=template_data,
         overall_ratio=overall_ratio,
     )
 
+
+def generate_report(results: list[dict], output_path: str | Path, manuscript_name: str) -> None:
+    """HTMLレポートを生成してファイルに書き出す。"""
+    html = generate_report_html(results, manuscript_name)
     Path(output_path).write_text(html, encoding="utf-8")

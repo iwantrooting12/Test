@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTS音声チェックツール</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f5f5f5; color: #333; }
+.container { max-width: 700px; margin: 0 auto; padding: 40px 20px; }
+h1 { font-size: 1.5em; margin-bottom: 8px; }
+.subtitle { color: #666; margin-bottom: 30px; font-size: 0.9em; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: bold; margin-bottom: 6px; font-size: 0.95em; }
+.form-group .hint { color: #888; font-size: 0.8em; margin-bottom: 6px; }
+input[type="file"], input[type="password"], select {
+  width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
+  font-size: 0.95em; background: #fff;
+}
+input[type="file"] { padding: 8px; }
+select { appearance: auto; }
+
+.file-count { margin-top: 6px; color: #2c3e50; font-size: 0.85em; font-weight: bold; }
+
+.btn {
+  display: inline-block; padding: 12px 32px; background: #2c3e50; color: #fff;
+  border: none; border-radius: 6px; font-size: 1em; cursor: pointer; font-weight: bold;
+}
+.btn:hover { background: #34495e; }
+.btn:disabled { background: #95a5a6; cursor: not-allowed; }
+
+.progress-section { display: none; margin-top: 30px; }
+.progress-bar-container {
+  width: 100%; height: 28px; background: #e0e0e0; border-radius: 14px; overflow: hidden;
+  margin-bottom: 10px;
+}
+.progress-bar {
+  height: 100%; background: #27ae60; transition: width 0.3s ease; width: 0%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 0.85em; font-weight: bold; min-width: 40px;
+}
+.progress-text { font-size: 0.9em; color: #555; }
+.progress-filename { font-size: 0.85em; color: #888; margin-top: 4px; }
+
+.error-message {
+  margin-top: 20px; padding: 15px; background: #fff5f5; border: 1px solid #e74c3c;
+  border-radius: 6px; color: #e74c3c; display: none;
+}
+
+.report-section { margin-top: 30px; }
+
+.row { display: flex; gap: 16px; }
+.row .form-group { flex: 1; }
+</style>
+</head>
+<body>
+<div class="container" id="app">
+  <h1>TTS音声チェックツール</h1>
+  <p class="subtitle">原稿と音声ファイルをアップロードして、文字起こしとの差分をチェックします。</p>
+
+  <form id="upload-form">
+    <div class="form-group">
+      <label>原稿ファイル</label>
+      <div class="hint">対応形式: .docx / .xlsx / .txt</div>
+      <input type="file" name="manuscript" accept=".docx,.xlsx,.txt" required>
+    </div>
+
+    <div class="form-group">
+      <label>音声ファイル</label>
+      <div class="hint">対応形式: .mp3 / .wav / .m4a / .flac / .ogg / .aac（複数選択可）</div>
+      <input type="file" name="audio_files" accept=".mp3,.wav,.m4a,.flac,.ogg,.aac" multiple required>
+      <div class="file-count" id="file-count"></div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+        <label>Gladia APIキー</label>
+        <div class="hint">サーバー側で設定済みなら空欄でOK</div>
+        <input type="password" name="api_key" placeholder="gla_...">
+      </div>
+      <div class="form-group">
+        <label>言語</label>
+        <div class="hint">音声の言語を選択</div>
+        <select name="lang">
+          <option value="ja" selected>日本語</option>
+          <option value="en">English</option>
+          <option value="ko">한국어</option>
+          <option value="zh">中文</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn" id="submit-btn">チェック開始</button>
+  </form>
+
+  <div class="progress-section" id="progress-section">
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+    <div class="progress-text" id="progress-text">準備中...</div>
+    <div class="progress-filename" id="progress-filename"></div>
+  </div>
+
+  <div class="error-message" id="error-message"></div>
+
+  <div class="report-section" id="report-section"></div>
+</div>
+
+<script>
+const audioInput = document.querySelector('input[name="audio_files"]');
+const fileCount = document.getElementById('file-count');
+audioInput.addEventListener('change', () => {
+  const n = audioInput.files.length;
+  fileCount.textContent = n > 0 ? n + ' 件の音声ファイルが選択されました' : '';
+});
+
+document.getElementById('upload-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const submitBtn = document.getElementById('submit-btn');
+  const progressSection = document.getElementById('progress-section');
+  const progressBar = document.getElementById('progress-bar');
+  const progressText = document.getElementById('progress-text');
+  const progressFilename = document.getElementById('progress-filename');
+  const errorMessage = document.getElementById('error-message');
+  const reportSection = document.getElementById('report-section');
+
+  submitBtn.disabled = true;
+  errorMessage.style.display = 'none';
+  reportSection.innerHTML = '';
+  progressSection.style.display = 'block';
+  progressBar.style.width = '0%';
+  progressBar.textContent = '0%';
+  progressText.textContent = '準備中...';
+  progressFilename.textContent = '';
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch('/upload', { method: 'POST', body: formData });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.error || 'アップロードに失敗しました');
+    }
+    const { job_id } = await res.json();
+
+    const evtSource = new EventSource('/stream/' + job_id);
+
+    evtSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+
+      if (data.stage === 'parsing') {
+        progressText.textContent = '原稿を解析中...';
+      } else if (data.stage === 'matched') {
+        progressText.textContent = data.total + ' 件の音声ファイルを処理します';
+      } else if (data.stage === 'transcribing') {
+        const pct = Math.round((data.done / data.total) * 100);
+        progressBar.style.width = pct + '%';
+        progressBar.textContent = pct + '%';
+        progressText.textContent = data.done + ' / ' + data.total + ' 件完了';
+        progressFilename.textContent = data.filename;
+      } else if (data.stage === 'done') {
+        progressBar.style.width = '100%';
+        progressBar.textContent = '100%';
+        progressText.textContent = '完了!';
+        progressFilename.textContent = '';
+        reportSection.innerHTML = data.report_html;
+        evtSource.close();
+        submitBtn.disabled = false;
+        form.style.display = 'none';
+        progressSection.style.display = 'none';
+      } else if (data.stage === 'error') {
+        errorMessage.textContent = data.message;
+        errorMessage.style.display = 'block';
+        evtSource.close();
+        submitBtn.disabled = false;
+      }
+    };
+
+    evtSource.onerror = () => {
+      errorMessage.textContent = 'サーバーとの接続が切れました。再度お試しください。';
+      errorMessage.style.display = 'block';
+      evtSource.close();
+      submitBtn.disabled = false;
+    };
+  } catch (err) {
+    errorMessage.textContent = err.message;
+    errorMessage.style.display = 'block';
+    submitBtn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
