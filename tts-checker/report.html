@@ -1,0 +1,4383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TTS音声チェックレポート</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Hiragino Sans', 'Meiryo', sans-serif; background: #f5f5f5; color: #333; padding: 20px; }
+.container { max-width: 1200px; margin: 0 auto; }
+h1 { font-size: 1.5em; margin-bottom: 10px; }
+.meta { color: #666; margin-bottom: 20px; font-size: 0.9em; }
+.meta span { margin-right: 20px; }
+.summary-table { width: 100%; border-collapse: collapse; margin-bottom: 30px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.summary-table th { background: #2c3e50; color: #fff; padding: 10px 15px; text-align: left; }
+.summary-table td { padding: 10px 15px; border-bottom: 1px solid #eee; }
+.summary-table tr:hover { background: #f9f9f9; }
+.status-ok { color: #27ae60; font-weight: bold; }
+.status-warning { color: #f39c12; font-weight: bold; }
+.status-error { color: #e74c3c; font-weight: bold; }
+.detail { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+.detail h2 { font-size: 1.1em; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid #eee; }
+.detail-section { margin-bottom: 15px; }
+.detail-section h3 { font-size: 0.9em; color: #666; margin-bottom: 5px; }
+.text-display { background: #fafafa; padding: 12px; border-radius: 4px; line-height: 1.8; font-size: 0.95em; word-break: break-all; }
+.diff-replace { background-color: #ffcccc; font-weight: bold; }
+.diff-delete { background-color: #fff3cd; text-decoration: line-through; }
+.diff-insert { background-color: #cce5ff; font-weight: bold; }
+.diff-list { margin-top: 10px; }
+.diff-list details { margin-bottom: 5px; }
+.diff-list summary { cursor: pointer; color: #2c3e50; font-weight: bold; }
+.diff-item { padding: 5px 10px; font-size: 0.9em; border-left: 3px solid #e74c3c; margin: 5px 0; background: #fff5f5; }
+.overall-ratio { font-size: 1.2em; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>TTS音声チェックレポート</h1>
+<div class="meta">
+  <span>生成日時: 2026-03-23 13:51:40</span>
+  <span>原稿: MiyagiMuseumofArt_jp _fb.docx</span>
+  <span>音声ファイル数: 117</span>
+  <span class="overall-ratio">全体一致率: 16.2%</span>
+</div>
+
+<table class="summary-table">
+<thead>
+<tr><th>ファイル名</th><th>エントリID</th><th>一致率</th><th>ステータス</th></tr>
+</thead>
+<tbody>
+
+<tr>
+  <td><a href="#detail-1">JP-1.mp3</a></td>
+  <td>#1</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-2">JP-10.mp3</a></td>
+  <td>#10</td>
+  <td>87.4%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-3">JP-100.mp3</a></td>
+  <td>#100</td>
+  <td>88.2%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-4">JP-101.mp3</a></td>
+  <td>#101</td>
+  <td>93.9%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-5">JP-102.mp3</a></td>
+  <td>#102</td>
+  <td>94.9%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-6">JP-103.mp3</a></td>
+  <td>#103</td>
+  <td>82.2%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-7">JP-104.mp3</a></td>
+  <td>#104</td>
+  <td>90.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-8">JP-105.mp3</a></td>
+  <td>#105</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-9">JP-106.mp3</a></td>
+  <td>#106</td>
+  <td>93.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-10">JP-107.mp3</a></td>
+  <td>#107</td>
+  <td>93.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-11">JP-108.mp3</a></td>
+  <td>#108</td>
+  <td>96.6%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-12">JP-109.mp3</a></td>
+  <td>#109</td>
+  <td>97.8%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-13">JP-11.mp3</a></td>
+  <td>#11</td>
+  <td>95.8%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-14">JP-110.mp3</a></td>
+  <td>#110</td>
+  <td>95.2%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-15">JP-111.mp3</a></td>
+  <td>#111</td>
+  <td>96.1%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-16">JP-112.mp3</a></td>
+  <td>#112</td>
+  <td>94.2%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-17">JP-113.mp3</a></td>
+  <td>#113</td>
+  <td>94.3%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-18">JP-114.mp3</a></td>
+  <td>#114</td>
+  <td>91.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-19">JP-115.mp3</a></td>
+  <td>#115</td>
+  <td>95.3%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-20">JP-116.mp3</a></td>
+  <td>#116</td>
+  <td>94.4%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-21">JP-12.mp3</a></td>
+  <td>#12</td>
+  <td>95.7%</td>
+  <td class="status-warning">⚠ 要確認</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-22">JP-13.mp3</a></td>
+  <td>#13</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-23">JP-14.mp3</a></td>
+  <td>#14</td>
+  <td>93.8%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-24">JP-15_①.mp3</a></td>
+  <td>#15</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-25">JP-15_②.mp3</a></td>
+  <td>#15</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-26">JP-16.mp3</a></td>
+  <td>#16</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-27">JP-17.mp3</a></td>
+  <td>#17</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-28">JP-18.mp3</a></td>
+  <td>#18</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-29">JP-19.mp3</a></td>
+  <td>#19</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-30">JP-2.mp3</a></td>
+  <td>#2</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-31">JP-20.mp3</a></td>
+  <td>#20</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-32">JP-21.mp3</a></td>
+  <td>#21</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-33">JP-22.mp3</a></td>
+  <td>#22</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-34">JP-23.mp3</a></td>
+  <td>#23</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-35">JP-24.mp3</a></td>
+  <td>#24</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-36">JP-25.mp3</a></td>
+  <td>#25</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-37">JP-26.mp3</a></td>
+  <td>#26</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-38">JP-27.mp3</a></td>
+  <td>#27</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-39">JP-28.mp3</a></td>
+  <td>#28</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-40">JP-29.mp3</a></td>
+  <td>#29</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-41">JP-3.mp3</a></td>
+  <td>#3</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-42">JP-30.mp3</a></td>
+  <td>#30</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-43">JP-31.mp3</a></td>
+  <td>#31</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-44">JP-32.mp3</a></td>
+  <td>#32</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-45">JP-33.mp3</a></td>
+  <td>#33</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-46">JP-34.mp3</a></td>
+  <td>#34</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-47">JP-35.mp3</a></td>
+  <td>#35</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-48">JP-36.mp3</a></td>
+  <td>#36</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-49">JP-37.mp3</a></td>
+  <td>#37</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-50">JP-38.mp3</a></td>
+  <td>#38</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-51">JP-39.mp3</a></td>
+  <td>#39</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-52">JP-4.mp3</a></td>
+  <td>#4</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-53">JP-40.mp3</a></td>
+  <td>#40</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-54">JP-41.mp3</a></td>
+  <td>#41</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-55">JP-42.mp3</a></td>
+  <td>#42</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-56">JP-43.mp3</a></td>
+  <td>#43</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-57">JP-44.mp3</a></td>
+  <td>#44</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-58">JP-45.mp3</a></td>
+  <td>#45</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-59">JP-46.mp3</a></td>
+  <td>#46</td>
+  <td>1.2%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-60">JP-47.mp3</a></td>
+  <td>#47</td>
+  <td>1.2%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-61">JP-48.mp3</a></td>
+  <td>#48</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-62">JP-49.mp3</a></td>
+  <td>#49</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-63">JP-5.mp3</a></td>
+  <td>#5</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-64">JP-50.mp3</a></td>
+  <td>#50</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-65">JP-51.mp3</a></td>
+  <td>#51</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-66">JP-52.mp3</a></td>
+  <td>#52</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-67">JP-53.mp3</a></td>
+  <td>#53</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-68">JP-54.mp3</a></td>
+  <td>#54</td>
+  <td>2.8%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-69">JP-55.mp3</a></td>
+  <td>#55</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-70">JP-56.mp3</a></td>
+  <td>#56</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-71">JP-57.mp3</a></td>
+  <td>#57</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-72">JP-58.mp3</a></td>
+  <td>#58</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-73">JP-59.mp3</a></td>
+  <td>#59</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-74">JP-6.mp3</a></td>
+  <td>#6</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-75">JP-60.mp3</a></td>
+  <td>#60</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-76">JP-61.mp3</a></td>
+  <td>#61</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-77">JP-62.mp3</a></td>
+  <td>#62</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-78">JP-63.mp3</a></td>
+  <td>#63</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-79">JP-64.mp3</a></td>
+  <td>#64</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-80">JP-65.mp3</a></td>
+  <td>#65</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-81">JP-66.mp3</a></td>
+  <td>#66</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-82">JP-67.mp3</a></td>
+  <td>#67</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-83">JP-68.mp3</a></td>
+  <td>#68</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-84">JP-69.mp3</a></td>
+  <td>#69</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-85">JP-7.mp3</a></td>
+  <td>#7</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-86">JP-70.mp3</a></td>
+  <td>#70</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-87">JP-71.mp3</a></td>
+  <td>#71</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-88">JP-72.mp3</a></td>
+  <td>#72</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-89">JP-73.mp3</a></td>
+  <td>#73</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-90">JP-74.mp3</a></td>
+  <td>#74</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-91">JP-75.mp3</a></td>
+  <td>#75</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-92">JP-76.mp3</a></td>
+  <td>#76</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-93">JP-77.mp3</a></td>
+  <td>#77</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-94">JP-78.mp3</a></td>
+  <td>#78</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-95">JP-79.mp3</a></td>
+  <td>#79</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-96">JP-8.mp3</a></td>
+  <td>#8</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-97">JP-80.mp3</a></td>
+  <td>#80</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-98">JP-81.mp3</a></td>
+  <td>#81</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-99">JP-82.mp3</a></td>
+  <td>#82</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-100">JP-83.mp3</a></td>
+  <td>#83</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-101">JP-84.mp3</a></td>
+  <td>#84</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-102">JP-85.mp3</a></td>
+  <td>#85</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-103">JP-86.mp3</a></td>
+  <td>#86</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-104">JP-87.mp3</a></td>
+  <td>#87</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-105">JP-88.mp3</a></td>
+  <td>#88</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-106">JP-89.mp3</a></td>
+  <td>#89</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-107">JP-9.mp3</a></td>
+  <td>#9</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-108">JP-90.mp3</a></td>
+  <td>#90</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-109">JP-91.mp3</a></td>
+  <td>#91</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-110">JP-92.mp3</a></td>
+  <td>#92</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-111">JP-93.mp3</a></td>
+  <td>#93</td>
+  <td>0.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-112">JP-94.mp3</a></td>
+  <td>#94</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-113">JP-95.mp3</a></td>
+  <td>#95</td>
+  <td>0.6%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-114">JP-96.mp3</a></td>
+  <td>#96</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-115">JP-97.mp3</a></td>
+  <td>#97</td>
+  <td>1.0%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-116">JP-98.mp3</a></td>
+  <td>#98</td>
+  <td>1.1%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+<tr>
+  <td><a href="#detail-117">JP-99.mp3</a></td>
+  <td>#99</td>
+  <td>0.5%</td>
+  <td class="status-error">✗ 要修正</td>
+</tr>
+
+</tbody>
+</table>
+
+
+<div class="detail" id="detail-1">
+  <h2>#1 — JP-1.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">桂ゆき作、婦人の日。女性の溌溂としたポーズと表情には、家庭を支える自負と、さらなる活躍への意志を併せ持つ、戦後の新しい女性像が託されているのでしょうか。あるいは、エプロンごと縄で縛られた彼女が輝くのは、所詮は「婦人の日」に限られるという、現実への皮肉が本質なのでしょうか。人物の形態が単純化されている一方で、縄や箒は克明に描かれています。枯れた植物や乾いた植物製の物体は、桂ゆきの絵によく細密な描写で登場するモチーフです。習作と比較すると、縄が蝶結びからぐるぐる巻きの形に変更され、存在感を増したことがわかります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「桂ゆき作、婦人の日。女性の溌溂としたポーズと表情には、家庭を支える自負と、さらなる活躍への意志を併せ持つ、戦後の新しい女性像が託されているのでしょうか。あるいは、エプロンごと縄で縛られた彼女が輝くのは、所詮は「婦人の日」に限られるという、現実への皮肉が本質なのでしょうか。人物の形態が単純化されている一方で、縄や箒は克明に描かれています。枯れた植物や乾いた植物製の物体は、桂ゆきの絵によく細密な描写で登場するモチーフです。習作と比較すると、縄が蝶結びからぐるぐる巻きの形に変更され、存在感を増したことがわかります。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-2">
+  <h2>#10 — JP-10.mp3 （一致率: 87.4%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">パウルクレー作、力学値の<span class="diff-replace">釣り合い、</span>まさしく数値の<span class="diff-replace">釣り合い</span>を示す記号、イコールがまず目に入ります。クレーはこの記号をきっかけに、視覚を通じて<span class="diff-replace">釣り合</span>いの感覚を呼び起こそうとしたのではないでしょうか。画面の中心で2本の線が交わり、この<span class="diff-replace">光</span>点を囲むように線や記号が浮遊しています。<span class="diff-replace">既定</span>色の赤と青の領域は、やはりこの点を中心に<span class="diff-replace">、天体照常</span>に配置されています。画面を埋め尽くす白い<span class="diff-replace">天井</span>のタッチは、この<span class="diff-replace">金光が緩</span>やかな動きの中で保たれている印象をもたらしています。その証拠に、ドイツ語の<span class="diff-replace">現代には、</span>動力学的を意味する形容詞が使われています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">パウル<span class="diff-delete">・</span>クレー作、力学値の<span class="diff-replace">つりあい。</span>まさしく<span class="diff-delete">「</span>数値の<span class="diff-replace">つりあい」</span>を示す記号、イコールがまず目に入ります。クレーはこの記号をきっかけに、視覚を通じて<span class="diff-replace">つりあ</span>いの感覚を呼び起こそうとしたのではないでしょうか。画面の中心で2本の線が交わり、この<span class="diff-replace">交</span>点を囲むように線や記号が浮遊しています。<span class="diff-replace">基底</span>色の赤と青の領域は、やはりこの点を中心に<span class="diff-replace">点対称状</span>に配置されています。画面を埋め尽くす白い<span class="diff-replace">点状</span>のタッチは、この<span class="diff-replace">均衡がゆる</span>やかな動きの中で保たれている印象をもたらしています。その証拠に、ドイツ語の<span class="diff-replace">原題には「</span>動力学的<span class="diff-delete">」</span>を意味する形容詞が使われています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (12件)</summary>
+      
+      <div class="diff-item">位置 3: 欠落「・」</div>
+      
+      <div class="diff-item">位置 13: 原稿「つりあい。」→ 文字起こし「釣り合い、」</div>
+      
+      <div class="diff-item">位置 22: 欠落「「」</div>
+      
+      <div class="diff-item">位置 26: 原稿「つりあい」」→ 文字起こし「釣り合い」</div>
+      
+      <div class="diff-item">位置 72: 原稿「つりあ」→ 文字起こし「釣り合」</div>
+      
+      <div class="diff-item">位置 117: 原稿「交」→ 文字起こし「光」</div>
+      
+      <div class="diff-item">位置 138: 原稿「基底」→ 文字起こし「既定」</div>
+      
+      <div class="diff-item">位置 160: 原稿「点対称状」→ 文字起こし「、天体照常」</div>
+      
+      <div class="diff-item">位置 184: 原稿「点状」→ 文字起こし「天井」</div>
+      
+      <div class="diff-item">位置 194: 原稿「均衡がゆる」→ 文字起こし「金光が緩」</div>
+      
+      <div class="diff-item">位置 236: 原稿「原題には「」→ 文字起こし「現代には、」</div>
+      
+      <div class="diff-item">位置 245: 欠落「」」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-3">
+  <h2>#100 — JP-100.mp3 （一致率: 88.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">南端辰夫、柵</span>、黒と赤<span class="diff-replace">、</span>幾重にも重なった淡い色彩に細く鋭い線が斜めに走っていきます。それは燃え上がる白い炎のようでもあり、飛び立つ鳥の群れにも見えてきます。<span class="diff-replace">確</span>かにその中で黒と赤の色彩がアクセントを放っています。<span class="diff-replace">辰夫</span>が8歳の<span class="diff-replace">時</span>に引っ越した家の隣には、詩人で彫刻家の高村<span class="diff-replace">幸</span>太郎が住んでいました。その影響で<span class="diff-replace">辰沖</span>は画家を<span class="diff-replace">目指</span>し、光太郎から内面の必然性を描く画家と<span class="diff-replace">呼</span>ばれるようになりました。1956年、その光太郎が亡くなった<span class="diff-replace">時、辰沖</span>は激しいショックを受けました。以来、<span class="diff-replace">辰沖</span>の作品は詩人の魂を<span class="diff-replace">引き継</span>いだように、深い内面の世界を描き<span class="diff-replace">続</span>け、魂の画業<span class="diff-replace">と呼</span>ばれる人生をたどりました。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">難波田龍起作</span>、黒と赤<span class="diff-replace">。</span>幾重にも重なった淡い色彩に<span class="diff-delete">、</span>細く鋭い線が斜めに走っていきます。それは燃え上がる白い炎のようでもあり、飛び立つ鳥の群れにも見えてきます。<span class="diff-replace">たし</span>かにその中で黒と赤の色彩がアクセントを放っています。<span class="diff-replace">龍起</span>が8歳の<span class="diff-replace">とき</span>に引っ越した家の隣には、詩人で彫刻家の高村<span class="diff-replace">光</span>太郎が住んでいました。その影響で<span class="diff-replace">龍起</span>は画家を<span class="diff-replace">めざ</span>し、光太郎から<span class="diff-delete">「</span>内面の必然性<span class="diff-delete">」</span>を描く画家と<span class="diff-replace">よ</span>ばれるようになりました。1956年、その光太郎が亡くなった<span class="diff-replace">とき、龍起</span>は激しいショックを受けました。以来、<span class="diff-replace">龍起</span>の作品は詩人の魂を<span class="diff-replace">ひきつ</span>いだように、深い内面の世界を描き<span class="diff-replace">つづ</span>け、<span class="diff-delete">「</span>魂の画業<span class="diff-replace">」とよ</span>ばれる人生をたどりました。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (18件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「難波田龍起作」→ 文字起こし「南端辰夫、柵」</div>
+      
+      <div class="diff-item">位置 10: 原稿「。」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 24: 欠落「、」</div>
+      
+      <div class="diff-item">位置 78: 原稿「たし」→ 文字起こし「確」</div>
+      
+      <div class="diff-item">位置 106: 原稿「龍起」→ 文字起こし「辰夫」</div>
+      
+      <div class="diff-item">位置 112: 原稿「とき」→ 文字起こし「時」</div>
+      
+      <div class="diff-item">位置 135: 原稿「光」→ 文字起こし「幸」</div>
+      
+      <div class="diff-item">位置 152: 原稿「龍起」→ 文字起こし「辰沖」</div>
+      
+      <div class="diff-item">位置 158: 原稿「めざ」→ 文字起こし「目指」</div>
+      
+      <div class="diff-item">位置 167: 欠落「「」</div>
+      
+      <div class="diff-item">位置 174: 欠落「」」</div>
+      
+      <div class="diff-item">位置 181: 原稿「よ」→ 文字起こし「呼」</div>
+      
+      <div class="diff-item">位置 211: 原稿「とき、龍起」→ 文字起こし「時、辰沖」</div>
+      
+      <div class="diff-item">位置 234: 原稿「龍起」→ 文字起こし「辰沖」</div>
+      
+      <div class="diff-item">位置 245: 原稿「ひきつ」→ 文字起こし「引き継」</div>
+      
+      <div class="diff-item">位置 264: 原稿「つづ」→ 文字起こし「続」</div>
+      
+      <div class="diff-item">位置 268: 欠落「「」</div>
+      
+      <div class="diff-item">位置 273: 原稿「」とよ」→ 文字起こし「と呼」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-4">
+  <h2>#101 — JP-101.mp3 （一致率: 93.9%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">鶴岡<span class="diff-replace">正を削く</span>人間気化。人間気化とはどういうことでしょうか。下段の<span class="diff-replace">1</span>枚が爆発のエネルギーを、中段の<span class="diff-replace">3</span>枚が爆発で気体になっていく人間を、上段の<span class="diff-replace">1</span>枚が気化した人間がゆらゆらと空に<span class="diff-replace">昇</span>っていく<span class="diff-replace">様子</span>だと作者は語りました。作者は、<span class="diff-replace">決</span>して広島、長崎への原爆投下のことだとは語りませんでしたが、十字架の形に構成されたこの絵を見ると、原爆投下と人間の背負うべき罪とを意識しないわけにはいきません。1937年から日中戦争の最前線に送られて、生死の極限状態を体験してきた鶴岡は、人間の業の深さを身に<span class="diff-replace">染</span>みて実感しました。しかし、鶴岡は<span class="diff-replace">修正</span>人間を描き<span class="diff-replace">続</span>け、人間への希望を捨てることはありませんでした。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">鶴岡<span class="diff-replace">政男作、</span>人間気化。<span class="diff-delete">「</span>人間気化<span class="diff-delete">」</span>とはどういうことでしょうか。下段の<span class="diff-replace">一</span>枚が爆発のエネルギーを、中段の<span class="diff-replace">三</span>枚が爆発で気体になっていく人間を、上段の<span class="diff-replace">一</span>枚が気化した人間がゆらゆらと空に<span class="diff-replace">のぼ</span>っていく<span class="diff-replace">ようす</span>だと作者は語りました。作者は、<span class="diff-replace">け</span>して広島、長崎への原爆投下のことだとは語りませんでしたが、十字架の形に構成されたこの絵を見ると、原爆投下と人間の背負うべき罪とを意識しないわけにはいきません。1937年から日中戦争の最前線に送られて、生死の極限状態を体験してきた鶴岡は、人間の業の深さを身に<span class="diff-replace">し</span>みて実感しました。しかし、鶴岡は<span class="diff-replace">終生</span>人間を描き<span class="diff-replace">つづ</span>け、人間への希望を捨てることはありませんでした。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (12件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「政男作、」→ 文字起こし「正を削く」</div>
+      
+      <div class="diff-item">位置 11: 欠落「「」</div>
+      
+      <div class="diff-item">位置 16: 欠落「」」</div>
+      
+      <div class="diff-item">位置 34: 原稿「一」→ 文字起こし「1」</div>
+      
+      <div class="diff-item">位置 50: 原稿「三」→ 文字起こし「3」</div>
+      
+      <div class="diff-item">位置 71: 原稿「一」→ 文字起こし「1」</div>
+      
+      <div class="diff-item">位置 88: 原稿「のぼ」→ 文字起こし「昇」</div>
+      
+      <div class="diff-item">位置 94: 原稿「ようす」→ 文字起こし「様子」</div>
+      
+      <div class="diff-item">位置 112: 原稿「け」→ 文字起こし「決」</div>
+      
+      <div class="diff-item">位置 241: 原稿「し」→ 文字起こし「染」</div>
+      
+      <div class="diff-item">位置 258: 原稿「終生」→ 文字起こし「修正」</div>
+      
+      <div class="diff-item">位置 265: 原稿「つづ」→ 文字起こし「続」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-5">
+  <h2>#102 — JP-102.mp3 （一致率: 94.9%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">柳原義達<span class="diff-insert">、</span>作、風の中の<span class="diff-replace">カラス</span>。この彫刻からあなたには何が見えますか<span class="diff-replace">?</span>大きな足の爪を立てて、しっかりと石をつかむ<span class="diff-replace">カラス</span>。全身を緊張させ、風に飛ばされないように尾羽<span class="diff-replace">根を下</span>ろし身構えています。この時、私たちにはカラスだけでなく、吹きすさぶ風も見えてきます。絵であれば空模様や背景を描くことができますが、彫刻にはその<span class="diff-replace">術</span>がありません。作者はカラスの姿だけで、吹く風や天気や季節さえも私たちの想像を刺激してきます。柳原は<span class="diff-replace">カラス</span>や鳩の一連の作品を自画像になぞらえました。風雪に<span class="diff-replace">耐</span>え、暑さ寒さに<span class="diff-replace">耐</span>え、取り巻く環境に左右されることなく立ち続ける姿に、自分の人生を重ねて制作したのでしょう。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">柳原義達作、風の中の<span class="diff-replace">鴉</span>。この彫刻から<span class="diff-delete">、</span>あなたには何が見えますか<span class="diff-replace">。</span>大きな足の爪を立てて、しっかりと石をつかむ<span class="diff-replace">鴉</span>。全身を緊張させ、風に飛ばされないように尾羽<span class="diff-replace">を降</span>ろし身構えています。この時、私たちにはカラスだけでなく、吹きすさぶ風も見えてきます。絵であれば空模様や背景を描くことができますが、彫刻にはその<span class="diff-replace">すべ</span>がありません。作者はカラスの姿だけで、吹く風や天気や季節さえも私たちの想像を刺激してきます。柳原は<span class="diff-replace">鴉</span>や鳩の一連の作品を<span class="diff-delete">、</span>自画像になぞらえました。風雪に<span class="diff-replace">た</span>え、暑さ寒さに<span class="diff-replace">た</span>え、取り巻く環境に左右されることなく立ち続ける姿に、自分の人生を重ねて制作したのでしょう。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (11件)</summary>
+      
+      <div class="diff-item">位置 4: 追加「、」</div>
+      
+      <div class="diff-item">位置 10: 原稿「鴉」→ 文字起こし「カラス」</div>
+      
+      <div class="diff-item">位置 18: 欠落「、」</div>
+      
+      <div class="diff-item">位置 31: 原稿「。」→ 文字起こし「?」</div>
+      
+      <div class="diff-item">位置 53: 原稿「鴉」→ 文字起こし「カラス」</div>
+      
+      <div class="diff-item">位置 76: 原稿「を降」→ 文字起こし「根を下」</div>
+      
+      <div class="diff-item">位置 149: 原稿「すべ」→ 文字起こし「術」</div>
+      
+      <div class="diff-item">位置 200: 原稿「鴉」→ 文字起こし「カラス」</div>
+      
+      <div class="diff-item">位置 210: 欠落「、」</div>
+      
+      <div class="diff-item">位置 226: 原稿「た」→ 文字起こし「耐」</div>
+      
+      <div class="diff-item">位置 234: 原稿「た」→ 文字起こし「耐」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-6">
+  <h2>#103 — JP-103.mp3 （一致率: 82.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">船</span>越<span class="diff-replace">康</span>武<span class="diff-insert">、</span>作、原<span class="diff-replace">之丞</span>。亡霊のように<span class="diff-replace">佇</span>む落武者。<span class="diff-replace">半</span>ば<span class="diff-replace">明</span>けた口<span class="diff-replace">元</span>から、彼は何か言おうとしています。その言葉は彫刻の後ろに回ってみるとわかります。<span class="diff-replace">イエズス・サンタマリア、官営</span>十五年<span class="diff-replace">、木更木</span>二十八日<span class="diff-replace">、原之丞、</span>本丸に<span class="diff-replace">手</span>没<span class="diff-insert">、</span>という文字が鎧の背面に刻まれています。<span class="diff-replace">官営十四</span>年<span class="diff-insert">。</span>1637年秋、幕府による激しいキリシタン弾圧に耐えかねた信徒たちは、まだ十代半ばの天草<span class="diff-replace">城</span>を中心に、島原の原城に立てこもりました。この島原<span class="diff-replace">、</span>天草の乱で総大将の<span class="diff-replace">城</span>が討ち死にした日が<span class="diff-replace">、関栄十五</span>年<span class="diff-replace">二</span>月<span class="diff-replace">二十八</span>日なのです。<span class="diff-replace">三</span>を超える信徒たちは老人から子供まで、幕府軍によって<span class="diff-replace">皆</span>殺されたといいます。<span class="diff-replace">経験</span>なカトリック信者であった<span class="diff-replace">船</span>越はこの痛ましい殉教の歴史を幻となった老兵に語らせているのです</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">舟</span>越<span class="diff-replace">保</span>武作、原<span class="diff-replace">の城</span>。亡霊のように<span class="diff-replace">たたず</span>む落<span class="diff-delete">ち</span>武者。<span class="diff-replace">なか</span>ば<span class="diff-replace">開</span>けた口<span class="diff-replace">もと</span>から、彼は何か言おうとしています。その言葉は<span class="diff-delete">、</span>彫刻の後ろに回ってみるとわかります。<span class="diff-replace">いえずすさんたまりあ寛永</span>十五年<span class="diff-replace">如月</span>二十八日<span class="diff-replace">原の城</span>本丸に<span class="diff-replace">て</span>没という文字が鎧の背面に刻まれています。<span class="diff-replace">寛永14</span>年1637年秋、幕府による激しいキリシタン弾圧に耐えかねた信徒たちは、まだ十代半ばの天草<span class="diff-replace">四郎</span>を中心に、島原の原城に立てこもりました。この島原<span class="diff-replace">・</span>天草の乱で<span class="diff-delete">、</span>総大将の<span class="diff-replace">四郎</span>が討ち死にした日が<span class="diff-replace">寛永15</span>年<span class="diff-replace">2</span>月<span class="diff-replace">28</span>日なのです。<span class="diff-replace">3万</span>を超える信徒たちは老人から子供まで、幕府軍によって<span class="diff-replace">みな</span>殺されたといいます。<span class="diff-replace">敬虔</span>なカトリック信者であった<span class="diff-replace">舟</span>越は<span class="diff-delete">、</span>この痛ましい殉教の歴史を幻となった老兵に語らせているのです<span class="diff-delete">。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (30件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「舟」→ 文字起こし「船」</div>
+      
+      <div class="diff-item">位置 2: 原稿「保」→ 文字起こし「康」</div>
+      
+      <div class="diff-item">位置 4: 追加「、」</div>
+      
+      <div class="diff-item">位置 7: 原稿「の城」→ 文字起こし「之丞」</div>
+      
+      <div class="diff-item">位置 16: 原稿「たたず」→ 文字起こし「佇」</div>
+      
+      <div class="diff-item">位置 21: 欠落「ち」</div>
+      
+      <div class="diff-item">位置 25: 原稿「なか」→ 文字起こし「半」</div>
+      
+      <div class="diff-item">位置 28: 原稿「開」→ 文字起こし「明」</div>
+      
+      <div class="diff-item">位置 32: 原稿「もと」→ 文字起こし「元」</div>
+      
+      <div class="diff-item">位置 56: 欠落「、」</div>
+      
+      <div class="diff-item">位置 75: 原稿「いえずすさんたまりあ寛永」→ 文字起こし「イエズス・サンタマリア、官営」</div>
+      
+      <div class="diff-item">位置 90: 原稿「如月」→ 文字起こし「、木更木」</div>
+      
+      <div class="diff-item">位置 96: 原稿「原の城」→ 文字起こし「、原之丞、」</div>
+      
+      <div class="diff-item">位置 102: 原稿「て」→ 文字起こし「手」</div>
+      
+      <div class="diff-item">位置 104: 追加「、」</div>
+      
+      <div class="diff-item">位置 123: 原稿「寛永14」→ 文字起こし「官営十四」</div>
+      
+      <div class="diff-item">位置 128: 追加「。」</div>
+      
+      <div class="diff-item">位置 171: 原稿「四郎」→ 文字起こし「城」</div>
+      
+      <div class="diff-item">位置 197: 原稿「・」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 203: 欠落「、」</div>
+      
+      <div class="diff-item">位置 208: 原稿「四郎」→ 文字起こし「城」</div>
+      
+      <div class="diff-item">位置 219: 原稿「寛永15」→ 文字起こし「、関栄十五」</div>
+      
+      <div class="diff-item">位置 224: 原稿「2」→ 文字起こし「二」</div>
+      
+      <div class="diff-item">位置 226: 原稿「28」→ 文字起こし「二十八」</div>
+      
+      <div class="diff-item">位置 234: 原稿「3万」→ 文字起こし「三」</div>
+      
+      <div class="diff-item">位置 261: 原稿「みな」→ 文字起こし「皆」</div>
+      
+      <div class="diff-item">位置 273: 原稿「敬虔」→ 文字起こし「経験」</div>
+      
+      <div class="diff-item">位置 287: 原稿「舟」→ 文字起こし「船」</div>
+      
+      <div class="diff-item">位置 290: 欠落「、」</div>
+      
+      <div class="diff-item">位置 320: 欠落「。」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-7">
+  <h2>#104 — JP-104.mp3 （一致率: 90.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">縦旗角像</span>作オルガン<span class="diff-replace">No.16縦旗角像</span>の彫刻はいつも不思議です。そしていつも<span class="diff-replace">戸惑</span>いを覚えます。それは題名にも<span class="diff-replace">表</span>れています。オルガンには楽器のオルガンや<span class="diff-insert">、</span>機関、そして臓器という意味があります。でも、このどれにもしっくり<span class="diff-replace">湧</span>きません。あえて言うなら<span class="diff-replace">蝶</span>のような臓器でしょうか。それにしては、硬くてピカピカしたアルミニウムの素材は似合いません。作者は私たちの先入観をあえて裏切っているのです。慣れてしまった感情からは、発見が生まれないことを私たちに示しているのです。この作品を見て、思わず首をかしげてしまったなら、あなたに<span class="diff-replace">縦旗画像</span>のメッセージが届いたということなのです。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">建畠覚造</span>作<span class="diff-delete">、</span>オルガン<span class="diff-replace">・ナンバーじゅうろく。建畠覚造</span>の彫刻は<span class="diff-delete">、</span>いつも不思議です。そしていつも<span class="diff-replace">とまど</span>いを覚えます。それは題名にも<span class="diff-replace">あらわ</span>れています。オルガンには楽器のオルガンや機関、そして臓器という意味があります。でも、このどれにもしっくり<span class="diff-replace">は</span>きません。あえて言うなら<span class="diff-replace">腸</span>のような臓器でしょうか。それにしては、硬くてピカピカしたアルミニウムの素材は似合いません。作者は私たちの先入観をあえて裏切っているのです。慣れてしまった感情からは、発見が生まれないことを私たちに示しているのです。この作品を見て、思わず首をかしげてしまったなら、あなたに<span class="diff-replace">建畠覚造</span>のメッセージが届いたということなのです。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (10件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「建畠覚造」→ 文字起こし「縦旗角像」</div>
+      
+      <div class="diff-item">位置 5: 欠落「、」</div>
+      
+      <div class="diff-item">位置 10: 原稿「・ナンバーじゅうろく。建畠覚造」→ 文字起こし「No.16縦旗角像」</div>
+      
+      <div class="diff-item">位置 29: 欠落「、」</div>
+      
+      <div class="diff-item">位置 45: 原稿「とまど」→ 文字起こし「戸惑」</div>
+      
+      <div class="diff-item">位置 62: 原稿「あらわ」→ 文字起こし「表」</div>
+      
+      <div class="diff-item">位置 85: 追加「、」</div>
+      
+      <div class="diff-item">位置 117: 原稿「は」→ 文字起こし「湧」</div>
+      
+      <div class="diff-item">位置 130: 原稿「腸」→ 文字起こし「蝶」</div>
+      
+      <div class="diff-item">位置 265: 原稿「建畠覚造」→ 文字起こし「縦旗画像」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-8">
+  <h2>#105 — JP-105.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ダニ・カラヴァン作、マアヤン。ある環境にあわせて、あるいはそこにあることで成立する美術があります。南北に向ってまっすぐに伸びる8本の白い柱、その間を縫うように流れる水路、水は最後にケヤキの古木をまわり、また循環して流れます。そのなかで一本の柱だけが、斜めを向いています。これは正確に南北を指していて、毎日正午の影を真鍮の板に落とします。そこには影の長さで季節がわかるような目盛りがあります。自然や季節のたえまない循環、そこにカラヴァンは日本のありようを見たのでしょう。さらに目盛りには、8月6日の日に印がしてあります。広島への原爆投下の日を記したカラヴァンの思いがそこにあります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ダニ・カラヴァン作、マアヤン。ある環境にあわせて、あるいはそこにあることで成立する美術があります。南北に向ってまっすぐに伸びる8本の白い柱、その間を縫うように流れる水路、水は最後にケヤキの古木をまわり、また循環して流れます。そのなかで一本の柱だけが、斜めを向いています。これは正確に南北を指していて、毎日正午の影を真鍮の板に落とします。そこには影の長さで季節がわかるような目盛りがあります。自然や季節のたえまない循環、そこにカラヴァンは日本のありようを見たのでしょう。さらに目盛りには、8月6日の日に印がしてあります。広島への原爆投下の日を記したカラヴァンの思いがそこにあります。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-9">
+  <h2>#106 — JP-106.mp3 （一致率: 93.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">阿部<span class="diff-replace">信</span>也作人間早くから画家を志して独学した阿部<span class="diff-replace">信</span>也1940年代まではシュルレアリ<span class="diff-replace">ズ</span>ムに傾倒しましたが1950年代から画風が変化します本作は黒<span class="diff-replace">黒</span>とした太い線による四角形で構成され色使いもモノクロームでシンプルな印象の作品です人間<span class="diff-replace">は</span>阿部にとって制作の主要なテーマでした1950年代以降、阿部は自身にとって新しい技法や画材などを絵画に取り入れました。例えば、<span class="diff-replace">東漢書像</span>の本作とは別の1961年の作品<span class="diff-insert">、</span>失われた筆跡はエンコースティ<span class="diff-insert">ッ</span>ク技法による作品で、本作とは異なる風合いを持った作品です。また、1962年のローマ移住以降は、アクリル絵<span class="diff-insert">の</span>具で図形的な抽象画を描いています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">阿部<span class="diff-replace">展</span>也作<span class="diff-delete">、</span>人間<span class="diff-delete">。</span>早くから画家を志して独学した阿部<span class="diff-replace">展</span>也<span class="diff-delete">。</span>1940年代までは<span class="diff-delete">、</span>シュルレアリ<span class="diff-replace">ス</span>ムに傾倒しましたが<span class="diff-delete">、</span>1950年代から画風が変化します<span class="diff-delete">。</span>本作は<span class="diff-delete">、</span>黒<span class="diff-replace">々</span>とした太い線による四角形で構成され<span class="diff-delete">、</span>色使いもモノクロームで<span class="diff-delete">、</span>シンプルな印象の作品です<span class="diff-delete">。「</span>人間<span class="diff-replace">」は、</span>阿部にとって制作の主要なテーマでした<span class="diff-delete">。</span>1950年代以降、阿部は<span class="diff-delete">、</span>自身にとって新しい技法や画材などを絵画に取り入れました。例えば、<span class="diff-replace">当館所蔵</span>の本作とは別の1961年の作品失われた筆跡は<span class="diff-delete">、</span>エンコースティク技法による作品で、本作とは異なる風合いを持った作品です。また、1962年のローマ移住以降は、アクリル絵具で図形的な抽象画を描いています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (22件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「展」→ 文字起こし「信」</div>
+      
+      <div class="diff-item">位置 5: 欠落「、」</div>
+      
+      <div class="diff-item">位置 8: 欠落「。」</div>
+      
+      <div class="diff-item">位置 25: 原稿「展」→ 文字起こし「信」</div>
+      
+      <div class="diff-item">位置 27: 欠落「。」</div>
+      
+      <div class="diff-item">位置 37: 欠落「、」</div>
+      
+      <div class="diff-item">位置 44: 原稿「ス」→ 文字起こし「ズ」</div>
+      
+      <div class="diff-item">位置 54: 欠落「、」</div>
+      
+      <div class="diff-item">位置 71: 欠落「。」</div>
+      
+      <div class="diff-item">位置 75: 欠落「、」</div>
+      
+      <div class="diff-item">位置 77: 原稿「々」→ 文字起こし「黒」</div>
+      
+      <div class="diff-item">位置 95: 欠落「、」</div>
+      
+      <div class="diff-item">位置 107: 欠落「、」</div>
+      
+      <div class="diff-item">位置 120: 欠落「。「」</div>
+      
+      <div class="diff-item">位置 124: 原稿「」は、」→ 文字起こし「は」</div>
+      
+      <div class="diff-item">位置 145: 欠落「。」</div>
+      
+      <div class="diff-item">位置 158: 欠落「、」</div>
+      
+      <div class="diff-item">位置 191: 原稿「当館所蔵」→ 文字起こし「東漢書像」</div>
+      
+      <div class="diff-item">位置 210: 追加「、」</div>
+      
+      <div class="diff-item">位置 217: 欠落「、」</div>
+      
+      <div class="diff-item">位置 225: 追加「ッ」</div>
+      
+      <div class="diff-item">位置 277: 追加「の」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-10">
+  <h2>#107 — JP-107.mp3 （一致率: 93.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">今井<span class="diff-replace">としみつ</span>作プレインソレイユ。赤、白など鮮やかな色の絵<span class="diff-insert">の</span>具が分厚く盛り上がり、まるで絵の中央からこちらへと勢いよく吹き出してくるかのよう<span class="diff-replace">、</span>まさに太陽<span class="diff-insert">、</span>ソレイユのような爆発的なエネルギーを放つ作品です。今井<span class="diff-replace">としみつ</span>は、フランス滞在中の1955年、アンフォルメル<span class="diff-replace">・否</span>定<span class="diff-replace">系</span>運動を理論的に主導した評論家、ミシェル・タピエと知り合い、自身もこの運動に参加しました。1957年には、タピエや画家のサム・フランシス、ジョルジュ・マチ<span class="diff-replace">ューラと共</span>に一時帰国し、東京と大阪で公開制作や展覧会を開催<span class="diff-replace">、</span>日本国内にアンフォルメル旋風を巻き起こしました。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">今井<span class="diff-replace">俊満</span>作<span class="diff-delete">、</span>プレイン<span class="diff-delete">・</span>ソレイユ。赤、白など鮮やかな色の絵具が分厚く盛り上がり、まるで絵の中央からこちらへと勢いよく吹き出してくるかのよう<span class="diff-replace">。</span>まさに太陽ソレイユのような<span class="diff-delete">、</span>爆発的なエネルギーを放つ作品です。今井<span class="diff-replace">俊満</span>は、フランス滞在中の1955年、アンフォルメル<span class="diff-replace">非</span>定<span class="diff-replace">形</span>運動を理論的に主導した評論家、ミシェル・タピエと知り合い、自身もこの運動に参加しました。1957年には、タピエや画家のサム・フランシス、ジョルジュ・マチ<span class="diff-replace">ウらととも</span>に一時帰国し、東京と大阪で公開制作や展覧会を開催<span class="diff-replace">。</span>日本国内にアンフォルメル旋風を巻き起こしました。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (12件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「俊満」→ 文字起こし「としみつ」</div>
+      
+      <div class="diff-item">位置 5: 欠落「、」</div>
+      
+      <div class="diff-item">位置 10: 欠落「・」</div>
+      
+      <div class="diff-item">位置 28: 追加「の」</div>
+      
+      <div class="diff-item">位置 68: 原稿「。」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 74: 追加「、」</div>
+      
+      <div class="diff-item">位置 82: 欠落「、」</div>
+      
+      <div class="diff-item">位置 102: 原稿「俊満」→ 文字起こし「としみつ」</div>
+      
+      <div class="diff-item">位置 127: 原稿「非」→ 文字起こし「・否」</div>
+      
+      <div class="diff-item">位置 129: 原稿「形」→ 文字起こし「系」</div>
+      
+      <div class="diff-item">位置 206: 原稿「ウらととも」→ 文字起こし「ューラと共」</div>
+      
+      <div class="diff-item">位置 235: 原稿「。」→ 文字起こし「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-11">
+  <h2>#108 — JP-108.mp3 （一致率: 96.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">村井<span class="diff-replace">雅成、</span>作、考える世界。赤、青、<span class="diff-replace">木</span>などの色面が画面全体に散りばめられ、上部には太く黒い線で二つの顔が描かれています。<span class="diff-replace">の</span>びやかに画面全体を走る黒い線は、人体が二つ重なっているようにも見えます。画面の下部には横たわる幼い子の姿も見えます。戦後、一貫して人をテーマとし、抽象的な<span class="diff-replace">式</span>面と具象的な形とを自在に組み合わせ、<span class="diff-replace">活</span>達な表現を展開した村井。本作とほぼ同じ構図で上部の顔が<span class="diff-replace">一</span>つだけの母と子と題した作品があることから、描かれているのは母子に父を加えた家族の姿でしょうか。モダンで大らかな雰囲気を持つ作品です。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">村井<span class="diff-replace">正誠</span>作、考える世界。赤、青、<span class="diff-replace">黄</span>などの色面が画面全体に散りばめられ、上部には太く黒い線で二つの顔が描かれています。<span class="diff-replace">伸</span>びやかに画面全体を走る黒い線は、人体が二つ重なっているようにも見えます。画面の下部には<span class="diff-delete">、</span>横たわる幼い子の姿も見えます。戦後、一貫して人をテーマとし、抽象的な<span class="diff-replace">色</span>面と具象的な形とを自在に組み合わせ、<span class="diff-replace">闊</span>達な表現を展開した村井。本作とほぼ同じ構図で上部の顔が<span class="diff-replace">1</span>つだけの母と子と題した作品があることから、描かれているのは<span class="diff-delete">、</span>母子に父を加えた家族の姿でしょうか。モダンで大らかな雰囲気を持つ作品です。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (8件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「正誠」→ 文字起こし「雅成、」</div>
+      
+      <div class="diff-item">位置 16: 原稿「黄」→ 文字起こし「木」</div>
+      
+      <div class="diff-item">位置 58: 原稿「伸」→ 文字起こし「の」</div>
+      
+      <div class="diff-item">位置 102: 欠落「、」</div>
+      
+      <div class="diff-item">位置 137: 原稿「色」→ 文字起こし「式」</div>
+      
+      <div class="diff-item">位置 156: 原稿「闊」→ 文字起こし「活」</div>
+      
+      <div class="diff-item">位置 184: 原稿「1」→ 文字起こし「一」</div>
+      
+      <div class="diff-item">位置 214: 欠落「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-12">
+  <h2>#109 — JP-109.mp3 （一致率: 97.8%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">高松<span class="diff-replace">二</span>郎作ビーナスを見る女の影。白い壁に<span class="diff-replace">か</span>かるビーナスの石膏像と、その前に佇む二人の人影。しかし、影の主は見当たりません。これは画面に描かれた影だからです。通常の写実的な絵画では、絵の中に描かれた<span class="diff-replace">もの</span>に影をつけることで、立体感や存在感を演出します。しかしこの作品では、絵の前に立つ人の影が描かれているため、鑑賞者はその場に誰もいないのに、まるで誰かがいるかのような奇妙な違和感を覚えます。人間の認知に揺さぶりをかけると同時に、伝統的な本物のように描く写実絵画に対する作者の批判的な問いも込められた作品です。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">高松<span class="diff-replace">次</span>郎作<span class="diff-delete">、</span>ビーナスを見る女の影。白い壁に<span class="diff-replace">掛</span>かるビーナスの石膏像と、その前に佇む二人の人影。しかし、影の主は見当たりません。これは画面に描かれた影だからです。通常の写実的な絵画では、絵の中に描かれた<span class="diff-replace">物</span>に影をつけることで、立体感や存在感を演出します。しかしこの作品では、絵の前に立つ人の影が描かれているため、鑑賞者は<span class="diff-delete">、</span>その場に誰もいないのに、まるで誰かがいるかのような<span class="diff-delete">、</span>奇妙な違和感を覚えます。人間の認知に揺さぶりをかけると同時に、伝統的な本物のように描く写実絵画に対する<span class="diff-delete">、</span>作者の批判的な問いも込められた作品です。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (7件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「次」→ 文字起こし「二」</div>
+      
+      <div class="diff-item">位置 5: 欠落「、」</div>
+      
+      <div class="diff-item">位置 21: 原稿「掛」→ 文字起こし「か」</div>
+      
+      <div class="diff-item">位置 99: 原稿「物」→ 文字起こし「もの」</div>
+      
+      <div class="diff-item">位置 157: 欠落「、」</div>
+      
+      <div class="diff-item">位置 183: 欠落「、」</div>
+      
+      <div class="diff-item">位置 235: 欠落「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-13">
+  <h2>#11 — JP-11.mp3 （一致率: 95.8%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">パウルクレー作、緑の中庭。薄い灰色の層を<span class="diff-replace">描</span>き落として<span class="diff-insert">、</span>下地の一部を露出させた上に、緑の絵<span class="diff-insert">の</span>具で中庭の空間が、ペンでそれを取り囲む建造物が表現されています。格子状のパターンをなす<span class="diff-replace">描</span>き落としの線と、建築物から放射状に引かれた線が、引っ<span class="diff-replace">掻</span>きの<span class="diff-replace">間隔</span>を二重に<span class="diff-replace">換気</span>します。モチーフの輪郭を取り囲む平行線は、クレーの1920年代中盤の作品に<span class="diff-replace">品質</span>する表現です。陰影表現のためのハッチングを思わせるこの線は、長さ、角度、密度を少しずつ変えながら、セピアと黒の2色で引かれています。画面下部の長方形は、建造物にも出入口にも見え、画面の内と外の関係を複雑なものにしています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">パウル<span class="diff-delete">・</span>クレー作、緑の中庭。薄い灰色の層を<span class="diff-replace">掻</span>き落として下地の一部を露出させた上に、緑の絵具で<span class="diff-delete">「</span>中庭<span class="diff-delete">」</span>の空間が、ペンでそれを取り囲む建造物が表現されています。格子状のパターンをなす<span class="diff-replace">掻</span>き落としの線と、建築物から放射状に引かれた線が、引っ<span class="diff-replace">か</span>きの<span class="diff-replace">感覚</span>を二重に<span class="diff-replace">喚起</span>します。モチーフの輪郭を取り囲む平行線は、クレーの1920年代中盤の作品に<span class="diff-replace">頻出</span>する表現です。陰影表現のためのハッチングを思わせるこの線は、長さ、角度、密度を少しずつ変えながら、セピアと黒の2色で引かれています。画面下部の長方形は、建造物にも出入口にも見え、画面の内と外の関係を複雑なものにしています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (11件)</summary>
+      
+      <div class="diff-item">位置 3: 欠落「・」</div>
+      
+      <div class="diff-item">位置 21: 原稿「掻」→ 文字起こし「描」</div>
+      
+      <div class="diff-item">位置 27: 追加「、」</div>
+      
+      <div class="diff-item">位置 44: 追加「の」</div>
+      
+      <div class="diff-item">位置 46: 欠落「「」</div>
+      
+      <div class="diff-item">位置 49: 欠落「」」</div>
+      
+      <div class="diff-item">位置 89: 原稿「掻」→ 文字起こし「描」</div>
+      
+      <div class="diff-item">位置 116: 原稿「か」→ 文字起こし「掻」</div>
+      
+      <div class="diff-item">位置 119: 原稿「感覚」→ 文字起こし「間隔」</div>
+      
+      <div class="diff-item">位置 125: 原稿「喚起」→ 文字起こし「換気」</div>
+      
+      <div class="diff-item">位置 164: 原稿「頻出」→ 文字起こし「品質」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-14">
+  <h2>#110 — JP-110.mp3 （一致率: 95.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">リウーファン、</span>作、線より。本作の前に立つと、群青色の絵<span class="diff-insert">の</span>具がついた筆を同じ方向に動かして線を引く画家の動きが目に浮かびます。画面の最上部ではほぼ横一列の起点から引かれた線は、下部に向かうに従って大きくずれていき、リズミカルな印象へと変化します。李は、1950年代末から1960年代初頭に石、ガラスなどの物質を配置し、その関係性から思考を引き出そうとする<span class="diff-replace">モノ</span>派と呼ばれる芸術運動を理論と実践で牽引しました。絵画では、<span class="diff-replace">千</span>より<span class="diff-replace">、天</span>よりなどのシリーズにおいて、画家の身体の痕跡を残しつつ、鑑賞者を内<span class="diff-replace">政</span>へと誘う作品を制作しました。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">李禹煥</span>作、線より。本作の前に立つと、群青色の絵具がついた筆を同じ方向に動かして線を引く画家の動きが目に浮かびます。画面の最上部ではほぼ横一列の起点から引かれた線は、下部に向かうに従って大きくずれていき、リズミカルな印象へと変化します。李は、1950年代末から1960年代初頭に<span class="diff-delete">、</span>石、ガラスなどの物質を配置し、その関係性から思考を引き出そうとする<span class="diff-replace">「もの</span>派<span class="diff-delete">」</span>と呼ばれる芸術運動を理論と実践で牽引しました。絵画では、<span class="diff-replace">線</span>より<span class="diff-replace">点</span>よりなどのシリーズにおいて、画家の身体の痕跡を残しつつ、鑑賞者を内<span class="diff-replace">省</span>へと誘う作品を制作しました。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (8件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「李禹煥」→ 文字起こし「リウーファン、」</div>
+      
+      <div class="diff-item">位置 23: 追加「の」</div>
+      
+      <div class="diff-item">位置 138: 欠落「、」</div>
+      
+      <div class="diff-item">位置 172: 原稿「「もの」→ 文字起こし「モノ」</div>
+      
+      <div class="diff-item">位置 176: 欠落「」」</div>
+      
+      <div class="diff-item">位置 205: 原稿「線」→ 文字起こし「千」</div>
+      
+      <div class="diff-item">位置 208: 原稿「点」→ 文字起こし「、天」</div>
+      
+      <div class="diff-item">位置 242: 原稿「省」→ 文字起こし「政」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-15">
+  <h2>#111 — JP-111.mp3 （一致率: 96.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">佐々木正<span class="diff-replace">義</span>作<span class="diff-replace">脱</span>ぎたい<span class="diff-replace">2</span>全身に白い布のようなものがまとわりつき、顔まで覆われた3人の人物は、そこから抜け出そうと必死にもがいているようです。見ているこちらまで息苦しくなるような不安感が、画面全体に漂います。佐々木は、1960年代後半、それまでの油彩による<span class="diff-replace">重傷</span>を離れ、アクリルによる具象的形態を<span class="diff-insert">、</span>エアブラシを用いて描き<span class="diff-replace">始</span>めました。佐々木は、生涯に<span class="diff-replace">わた</span>って人間あるいは人間が作り出す社会をテーマとし、その不条理や閉塞感を絵画として表現しました。布のようなものに覆われた人物像は、佐々木の代表的なモチーフの一つです。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">佐々木正<span class="diff-replace">芳</span>作<span class="diff-replace">、ぬ</span>ぎたい<span class="diff-replace">II。</span>全身に白い布のようなものがまとわりつき、顔まで覆われた3人の人物は、そこから抜け出そうと必死にもがいているようです。見ているこちらまで息苦しくなるような不安感が、画面全体に漂います。佐々木は、1960年代後半、それまでの油彩による<span class="diff-replace">抽象</span>を離れ、アクリルによる具象的形態をエアブラシを用いて描き<span class="diff-replace">はじ</span>めました。佐々木は、生涯に<span class="diff-replace">渡</span>って人間あるいは人間が作り出す社会をテーマとし、その不条理や閉塞感を絵画として表現しました。布のようなものに覆われた人物像は、佐々木の代表的なモチーフの一つです。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (7件)</summary>
+      
+      <div class="diff-item">位置 4: 原稿「芳」→ 文字起こし「義」</div>
+      
+      <div class="diff-item">位置 6: 原稿「、ぬ」→ 文字起こし「脱」</div>
+      
+      <div class="diff-item">位置 11: 原稿「II。」→ 文字起こし「2」</div>
+      
+      <div class="diff-item">位置 129: 原稿「抽象」→ 文字起こし「重傷」</div>
+      
+      <div class="diff-item">位置 148: 追加「、」</div>
+      
+      <div class="diff-item">位置 159: 原稿「はじ」→ 文字起こし「始」</div>
+      
+      <div class="diff-item">位置 174: 原稿「渡」→ 文字起こし「わた」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-16">
+  <h2>#112 — JP-112.mp3 （一致率: 94.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">中村<span class="diff-replace">博史作</span>階段にて本作は日米安保反対運動の中で起きた1959年のデモ隊による国会議事堂構内への乱入事件を題材としています。作者は映画などで複数の場面を組み合わせて構成するモンタージュの技法を絵画に<span class="diff-replace">沿</span>用しました。本作では階段、議場、乱入する群衆などを描き込み、現場の臨場感を表現しています。それと同時に、唐突に現れる<span class="diff-replace">消弁機</span>の列、皆同じような風貌に<span class="diff-replace">儀がか</span>された男たち、隠し絵のように仕込まれた兜や眼鏡、ピストルなどのモチーフからは、社会に対する作者自身のシニカルな<span class="diff-replace">眼差</span>しを読み取ることも可能です。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">中村<span class="diff-replace">宏作、</span>階段にて<span class="diff-delete">。</span>本作は<span class="diff-delete">、</span>日米安保反対運動の中で起きた1959年のデモ隊による国会議事堂構内への乱入事件を題材としています。作者は<span class="diff-delete">、</span>映画などで複数の場面を組み合わせて構成するモンタージュの技法を絵画に<span class="diff-replace">援</span>用しました。本作では<span class="diff-delete">、</span>階段、議場、乱入する群衆などを描き込み、現場の臨場感を表現しています。それと同時に、唐突に現れる<span class="diff-replace">小便器</span>の列、皆同じような風貌に<span class="diff-replace">戯画化</span>された男たち、隠し絵のように仕込まれた兜や眼鏡、ピストルなどのモチーフからは、社会に対する作者自身のシニカルな<span class="diff-replace">まなざ</span>しを読み取ることも可能です。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (9件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「宏作、」→ 文字起こし「博史作」</div>
+      
+      <div class="diff-item">位置 9: 欠落「。」</div>
+      
+      <div class="diff-item">位置 13: 欠落「、」</div>
+      
+      <div class="diff-item">位置 66: 欠落「、」</div>
+      
+      <div class="diff-item">位置 101: 原稿「援」→ 文字起こし「沿」</div>
+      
+      <div class="diff-item">位置 112: 欠落「、」</div>
+      
+      <div class="diff-item">位置 161: 原稿「小便器」→ 文字起こし「消弁機」</div>
+      
+      <div class="diff-item">位置 176: 原稿「戯画化」→ 文字起こし「儀がか」</div>
+      
+      <div class="diff-item">位置 234: 原稿「まなざ」→ 文字起こし「眼差」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-17">
+  <h2>#113 — JP-113.mp3 （一致率: 94.3%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">山口<span class="diff-replace">武を削く</span>重なった<span class="diff-replace">区</span>形。その名の<span class="diff-replace">通り、区</span>形、すなわち長方形が重なっています。ベニヤの合<span class="diff-replace">版</span>を支持体として、油絵<span class="diff-insert">の</span>具をペインティングナイフで厚く塗り<span class="diff-replace">込</span>め、レリーフ状に仕上げられた作品です。山口は、1952年<span class="diff-replace">頃</span>から本作のような黒地に赤褐色、あるいは黄土色の幾何学的形態を配した絵画を描くようになりました。描かれた長方形の輪郭線は、定規で引いたような直線ではなく、歪んだり膨らんだりと画家の手の動きを感じさせます。ナイフの痕跡が残る表面も相まって、作品全体に温かみのある印象をもたらしています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">山口<span class="diff-replace">長男作、</span>重なった<span class="diff-replace">矩</span>形。その名の<span class="diff-replace">とおり、矩</span>形、すなわち長方形が重なっています。ベニヤの合<span class="diff-replace">板</span>を支持体として、油絵具をペインティングナイフで厚く塗り<span class="diff-replace">こ</span>め、レリーフ状に仕上げられた作品です。山口は、1952年<span class="diff-replace">ごろ</span>から<span class="diff-delete">、</span>本作のような黒地に赤褐色、あるいは黄土色の幾何学的形態を配した絵画を描くようになりました。描かれた長方形の輪郭線は、定規で引いたような直線ではなく、歪んだり膨らんだりと画家の手の動きを感じさせます。ナイフの痕跡が残る表面も相まって、作品全体に温かみのある印象をもたらしています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (8件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「長男作、」→ 文字起こし「武を削く」</div>
+      
+      <div class="diff-item">位置 10: 原稿「矩」→ 文字起こし「区」</div>
+      
+      <div class="diff-item">位置 17: 原稿「とおり、矩」→ 文字起こし「通り、区」</div>
+      
+      <div class="diff-item">位置 45: 原稿「板」→ 文字起こし「版」</div>
+      
+      <div class="diff-item">位置 56: 追加「の」</div>
+      
+      <div class="diff-item">位置 73: 原稿「こ」→ 文字起こし「込」</div>
+      
+      <div class="diff-item">位置 102: 原稿「ごろ」→ 文字起こし「頃」</div>
+      
+      <div class="diff-item">位置 106: 欠落「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-18">
+  <h2>#114 — JP-114.mp3 （一致率: 91.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">杉村<span class="diff-replace">純、</span>作、古<span class="diff-replace">木ひな、</span>古風な<span class="diff-replace">代理美奈</span>とランプが<span class="diff-replace">ワタンス</span>の上に置かれています。男<span class="diff-replace">美奈</span>は、まるで話しかけるかのように、自然な雰囲気で女<span class="diff-replace">美奈</span>の方に体を向けています。また、女<span class="diff-replace">美奈のそば</span>には桃の花ではなく、パンジーの花が飾られています。描かれた<span class="diff-replace">者</span>たちは各々<span class="diff-insert">の</span>存在を主張しつつ、互いに関わりあって、一つの画面として見事にまとまっています。周囲から<span class="diff-replace">生</span>物学者と称された、という杉村の面目<span class="diff-replace">役女</span>たる作品です。杉村は、ランプや人形などの愛着あるモチーフを、重厚な筆触と温かみのある画風で繰り返し描きました。本作で、1983年の第15回日本美術展覧会<span class="diff-insert">、</span>通称日展文部大臣賞を受賞しています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">杉村<span class="diff-replace">惇</span>作、古<span class="diff-replace">き雛。</span>古風な<span class="diff-replace">内裏雛</span>とランプが<span class="diff-replace">和箪笥</span>の上に置かれています。男<span class="diff-replace">雛</span>は、まるで話しかけるかのように、自然な雰囲気で女<span class="diff-replace">雛</span>の方に体を向けています。また、女<span class="diff-replace">雛の傍</span>には桃の花ではなく、パンジーの花が飾られています。描かれた<span class="diff-replace">物</span>たちは各々存在を主張しつつ、互いに関わりあって、一つの画面として見事にまとまっています。周囲から<span class="diff-replace">「静</span>物学者<span class="diff-delete">」</span>と称された、という杉村の面目<span class="diff-replace">躍如</span>たる作品です。杉村は、ランプや人形などの愛着あるモチーフを、重厚な筆触と温かみのある画風で繰り返し描きました。本作で、1983年の第15回日本美術展覧会通称日展文部大臣賞を受賞しています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (13件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「惇」→ 文字起こし「純、」</div>
+      
+      <div class="diff-item">位置 6: 原稿「き雛。」→ 文字起こし「木ひな、」</div>
+      
+      <div class="diff-item">位置 12: 原稿「内裏雛」→ 文字起こし「代理美奈」</div>
+      
+      <div class="diff-item">位置 20: 原稿「和箪笥」→ 文字起こし「ワタンス」</div>
+      
+      <div class="diff-item">位置 35: 原稿「雛」→ 文字起こし「美奈」</div>
+      
+      <div class="diff-item">位置 60: 原稿「雛」→ 文字起こし「美奈」</div>
+      
+      <div class="diff-item">位置 77: 原稿「雛の傍」→ 文字起こし「美奈のそば」</div>
+      
+      <div class="diff-item">位置 109: 原稿「物」→ 文字起こし「者」</div>
+      
+      <div class="diff-item">位置 115: 追加「の」</div>
+      
+      <div class="diff-item">位置 158: 原稿「「静」→ 文字起こし「生」</div>
+      
+      <div class="diff-item">位置 163: 欠落「」」</div>
+      
+      <div class="diff-item">位置 178: 原稿「躍如」→ 文字起こし「役女」</div>
+      
+      <div class="diff-item">位置 256: 追加「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-19">
+  <h2>#115 — JP-115.mp3 （一致率: 95.3%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">石川<span class="diff-replace">旬、</span>作、再現<span class="diff-replace">、</span>一見、空想の世界のようですが、しばらく眺めていると<span class="diff-replace">歪</span>んだ金属面に映る鏡像のようにも見えてきます。現実世界と日常の中にふと現れる異世界との<span class="diff-replace">淡</span>い。石川の関心はその混沌とした場所にありました。石川は<span class="diff-replace">愚症</span>的な絵画から画業を始めました。しかし徐々に視覚的な認識への<span class="diff-replace">会議</span>を深め、1960年代半ば以降は、具体的なモチーフを描かず、色彩を抑えたり、キャンバスそのものを切り離し<span class="diff-insert">、</span>縫い戻したりする平面作品を発表し、絵画とは何かを問いました。また、パフォーマンス、インスタレーションなど多様な表現も展開しました。1990年代に入ると、本作のような暗闇に何らかの<span class="diff-replace">景</span>象が浮かび<span class="diff-replace">上</span>がる絵画を描きました。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">石川<span class="diff-replace">舜</span>作、再現<span class="diff-replace">。</span>一見、空想の世界のようですが、しばらく眺めていると<span class="diff-replace">、ゆが</span>んだ金属面に映る鏡像のようにも見えてきます。現実世界と<span class="diff-delete">、</span>日常の中にふと現れる異世界との<span class="diff-replace">あわ</span>い。石川の関心は<span class="diff-delete">、</span>その混沌とした場所にありました。石川は<span class="diff-replace">、具象</span>的な絵画から画業を始めました。しかし徐々に視覚的な認識への<span class="diff-replace">懐疑</span>を深め、1960年代半ば以降は、具体的なモチーフを描かず、色彩を抑えたり、キャンバスそのものを切り離し縫い戻したりする平面作品を発表し、絵画とは何かを問いました。また、パフォーマンス、インスタレーションなど多様な表現も展開しました。1990年代に入ると、本作のような暗闇に何らかの<span class="diff-replace">形</span>象が浮かび<span class="diff-replace">あ</span>がる絵画を描きました。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (11件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「舜」→ 文字起こし「旬、」</div>
+      
+      <div class="diff-item">位置 7: 原稿「。」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 33: 原稿「、ゆが」→ 文字起こし「歪」</div>
+      
+      <div class="diff-item">位置 63: 欠落「、」</div>
+      
+      <div class="diff-item">位置 79: 原稿「あわ」→ 文字起こし「淡」</div>
+      
+      <div class="diff-item">位置 89: 欠落「、」</div>
+      
+      <div class="diff-item">位置 109: 原稿「、具象」→ 文字起こし「愚症」</div>
+      
+      <div class="diff-item">位置 141: 原稿「懐疑」→ 文字起こし「会議」</div>
+      
+      <div class="diff-item">位置 194: 追加「、」</div>
+      
+      <div class="diff-item">位置 283: 原稿「形」→ 文字起こし「景」</div>
+      
+      <div class="diff-item">位置 289: 原稿「あ」→ 文字起こし「上」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-20">
+  <h2>#116 — JP-116.mp3 （一致率: 94.4%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">高山<span class="diff-replace">昇作</span>のっぺらぼう<span class="diff-replace">2</span>上半分には、鈍く鉛色に輝く画面に大きな<span class="diff-replace">X</span>の文字のような記号が見えます。<span class="diff-replace">Xは、</span>しばしば高山の作品に登場し、交差、十字架、死など多様な意味を想起させます。無機質な上半分に対し、下半分には、作者の手の動きを残した有機的で躍動感ある線が描かれ、一つの画面に二つの相反する印象が同居しています。枕木を用いたインスタレーションで知られる高山ですが、並行して様々な技法でドローイングや版画も制作しました。のっぺら<span class="diff-replace">棒</span>は、遊殺などと並び、高山がよく用いたタイトルで、現代の人間と自然との理不尽な関係性を示唆しています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">高山<span class="diff-replace">登作、</span>のっぺらぼう<span class="diff-replace">・とぅ。</span>上半分には、鈍く鉛色に輝く画面に大きな<span class="diff-replace">エックス</span>の文字のような記号が見えます。<span class="diff-replace">エックスは</span>しばしば高山の作品に登場し、交差<span class="diff-delete">、バツ</span>、十字架、死など<span class="diff-delete">、</span>多様な意味を想起させます。無機質な上半分に対し、下半分には、作者の手の動きを残した有機的で躍動感ある線が描かれ、一つの画面に二つの相反する印象が同居しています。枕木を用いたインスタレーションで知られる高山ですが、並行して様々な技法でドローイングや版画も制作しました。のっぺら<span class="diff-replace">ぼう</span>は、遊殺などと並び、高山がよく用いたタイトルで、現代の人間と自然との理不尽な関係性を示唆しています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (7件)</summary>
+      
+      <div class="diff-item">位置 2: 原稿「登作、」→ 文字起こし「昇作」</div>
+      
+      <div class="diff-item">位置 11: 原稿「・とぅ。」→ 文字起こし「2」</div>
+      
+      <div class="diff-item">位置 34: 原稿「エックス」→ 文字起こし「X」</div>
+      
+      <div class="diff-item">位置 53: 原稿「エックスは」→ 文字起こし「Xは、」</div>
+      
+      <div class="diff-item">位置 74: 欠落「、バツ」</div>
+      
+      <div class="diff-item">位置 85: 欠落「、」</div>
+      
+      <div class="diff-item">位置 223: 原稿「ぼう」→ 文字起こし「棒」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-21">
+  <h2>#12 — JP-12.mp3 （一致率: 95.7%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display">ハイン<span class="diff-insert">・</span>リヒ・カンペンドン<span class="diff-replace">区</span>作郊外の農民本作品は背景の建物や鉄塔の形状からバイエルン地方南部の炭鉱町ペンツベルクで描かれたものだと考えられます。1911年から1922年までこの地域に住んでいたカンペンドン<span class="diff-replace">区</span>は、家からほど近いこの町の光景をよく描きました。ヤギや馬たちの素朴な表情と包み込むような深い赤が、おとぎ話の世界に誘うかのようです。青騎士の仲間で親しい近所<span class="diff-replace">付き合</span>いをしていたフラン<span class="diff-replace">ス</span>マルクと同じく、カンペンドンクは動物を好んで描きました。左下の青、右端のエメラルドグリーンの小さな色面が、画中のデザイン的な要素として赤の心地よさを引き立てています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display">ハインリヒ・カンペンドン<span class="diff-replace">ク</span>作<span class="diff-delete">、</span>郊外の農民<span class="diff-delete">。</span>本作品は<span class="diff-delete">、</span>背景の建物や鉄塔の形状から<span class="diff-delete">、</span>バイエルン地方南部の炭鉱町<span class="diff-delete">、</span>ペンツベルクで描かれたものだと考えられます。1911年から1922年までこの地域に住んでいたカンペンドン<span class="diff-replace">ク</span>は、家からほど近いこの町の光景をよく描きました。ヤギや馬たちの素朴な表情と<span class="diff-delete">、</span>包み込むような深い赤が、おとぎ話の世界に誘うかのようです。<span class="diff-delete">「</span>青騎士<span class="diff-delete">」</span>の仲間で<span class="diff-delete">、</span>親しい近所<span class="diff-replace">づきあ</span>いをしていたフラン<span class="diff-replace">ツ・</span>マルクと同じく、カンペンドンクは動物を好んで描きました。左下の青、右端のエメラルドグリーンの小さな色面が、画中のデザイン的な要素として<span class="diff-delete">、</span>赤の心地よさを引き立てています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (15件)</summary>
+      
+      <div class="diff-item">位置 3: 追加「・」</div>
+      
+      <div class="diff-item">位置 12: 原稿「ク」→ 文字起こし「区」</div>
+      
+      <div class="diff-item">位置 14: 欠落「、」</div>
+      
+      <div class="diff-item">位置 20: 欠落「。」</div>
+      
+      <div class="diff-item">位置 25: 欠落「、」</div>
+      
+      <div class="diff-item">位置 39: 欠落「、」</div>
+      
+      <div class="diff-item">位置 53: 欠落「、」</div>
+      
+      <div class="diff-item">位置 106: 原稿「ク」→ 文字起こし「区」</div>
+      
+      <div class="diff-item">位置 144: 欠落「、」</div>
+      
+      <div class="diff-item">位置 174: 欠落「「」</div>
+      
+      <div class="diff-item">位置 178: 欠落「」」</div>
+      
+      <div class="diff-item">位置 183: 欠落「、」</div>
+      
+      <div class="diff-item">位置 189: 原稿「づきあ」→ 文字起こし「付き合」</div>
+      
+      <div class="diff-item">位置 201: 原稿「ツ・」→ 文字起こし「ス」</div>
+      
+      <div class="diff-item">位置 270: 欠落「、」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-22">
+  <h2>#13 — JP-13.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヴァシリー・カンディンスキー作、水門。川沿いの小道を一人の女性が歩く静かな光景。高い木々や、それらが映る水面などの深い色調が広がる中に、ただ一つの人工物である白い水門が映えています。初期のカンディンスキーは、ミュンヘンの郊外や旅行先にいつもカンヴァスボードを携えて、大胆なタッチで風景を写生しました。時にはそれらを下絵に、アトリエで大きなサイズの絵を制作することもありました。水門はその1点で、資料からロシアの風景だと推測されています。画家自身にとって手応えのある作品だったようで、1</span>9<span class="diff-replace">13年に刊行された自選作品集に、風景画の中では唯一掲載されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヴァシリー・カンディンスキー作、水門。川沿いの小道を一人の女性が歩く静かな光景。高い木々や、それらが映る水面などの深い色調が広がる中に、ただ一つの人工物である白い水門が映えています。初期のカンディンスキーは、ミュンヘンの郊外や旅行先にいつもカンヴァスボードを携えて、大胆なタッチで風景を写生しました。時にはそれらを下絵に、アトリエで大きなサイズの絵を制作することもありました。水門はその1点で、資料からロシアの風景だと推測されています。画家自身にとって手応えのある作品だったようで、1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 243: 原稿「13年に刊行された自選作品集に、風景画の中では唯一掲載されました。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-23">
+  <h2>#14 — JP-14.mp3 （一致率: 93.8%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">バ</span>シリー・カンディンスキー作、活気ある安定。パリを舞台としたカンディンスキー晩年の作品には、この地の芸術家との交流や自然科学への関心を通じて、微生物のような変則的な形<span class="diff-replace">態</span>がよく登場します。また<span class="diff-replace">、</span>複雑と単純<span class="diff-replace">、</span>分割と結合<span class="diff-replace">、</span>など相反する概念の共存がしばしば主題となりました。本作品もその一種。画家自身の解説によれば、左右の垂直軸が支える<span class="diff-replace">、肩</span>通りの動きのない構成<span class="diff-replace">の肩</span>苦しさを、<span class="diff-replace">スミレ</span>色の円と赤い四角形の間の対角線上の緊張関係が緩和します。さらに、動物や楽器を連想させる自由な形態や、画面下部のくさび<span class="diff-replace">型</span>が緊張を和らげるために、活気ある安定が成立しています。</div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヴァ</span>シリー・カンディンスキー作、活気ある安定。パリを舞台としたカンディンスキー晩年の作品には、この地の芸術家との交流や自然科学への関心を通じて、微生物のような変則的な形<span class="diff-replace">体</span>がよく登場します。また<span class="diff-replace">「</span>複雑と単純<span class="diff-replace">」「</span>分割と結合<span class="diff-replace">」</span>など<span class="diff-delete">、</span>相反する概念の共存がしばしば主題となりました。本作品もその一種。画家自身の解説によれば、左右の垂直軸が支える<span class="diff-replace">「型</span>通りの動きのない構成<span class="diff-replace">」の堅</span>苦しさを、<span class="diff-replace">すみれ</span>色の円と赤い四角形の間の対角線上の緊張関係が緩和します。さらに、動物や楽器を連想させる<span class="diff-delete">「</span>自由な形態<span class="diff-delete">」</span>や、画面下部のくさび<span class="diff-replace">形</span>が緊張を和らげるために、<span class="diff-delete">「</span>活気ある安定<span class="diff-delete">」</span>が成立しています。</div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (14件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヴァ」→ 文字起こし「バ」</div>
+      
+      <div class="diff-item">位置 84: 原稿「体」→ 文字起こし「態」</div>
+      
+      <div class="diff-item">位置 96: 原稿「「」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 102: 原稿「」「」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 109: 原稿「」」→ 文字起こし「、」</div>
+      
+      <div class="diff-item">位置 112: 欠落「、」</div>
+      
+      <div class="diff-item">位置 167: 原稿「「型」→ 文字起こし「、肩」</div>
+      
+      <div class="diff-item">位置 179: 原稿「」の堅」→ 文字起こし「の肩」</div>
+      
+      <div class="diff-item">位置 187: 原稿「すみれ」→ 文字起こし「スミレ」</div>
+      
+      <div class="diff-item">位置 233: 欠落「「」</div>
+      
+      <div class="diff-item">位置 239: 欠落「」」</div>
+      
+      <div class="diff-item">位置 250: 原稿「形」→ 文字起こし「型」</div>
+      
+      <div class="diff-item">位置 263: 欠落「「」</div>
+      
+      <div class="diff-item">位置 270: 欠落「」」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-24">
+  <h2>#15 — JP-15_①.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヘルマン・マックス・ペヒシュタイン作、パイプ煙草を吸う漁師。ブリュッケの画家たちは、夏の時季には慌ただしい都市部を離れ、自然豊かな土地に滞在して制作しました。本作品はバルト海沿岸の漁村ニデン現在のリトアニア領ニダで描かれたものです。ペヒシュタインは漁師小屋に寝泊まりし、時に地元の漁にも参加する生活の中で絵を描きました。老漁師のリラックスした姿勢や人間味ある表情からは、画家が束の間ながら、モデルと心を通わせたことが想像できます。背景とハイライトに黄色を効果的に使用し、短いタッチを繰り返す描法には、初期に大きな刺激を受けたファン・ゴッホの影響が見られます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヘルマン・マックス・ペヒシュタイン作、パイプ煙草を吸う漁師。ブリュッケの画家たちは、夏の時季には慌ただしい都市部を離れ、自然豊かな土地に滞在して制作しました。本作品はバルト海沿岸の漁村ニデン現在のリトアニア領ニダで描かれたものです。ペヒシュタインは漁師小屋に寝泊まりし、時に地元の漁にも参加する生活の中で絵を描きました。老漁師のリラックスした姿勢や人間味ある表情からは、画家が束の間ながら、モデルと心を通わせたことが想像できます。背景とハイライトに黄色を効果的に使用し、短いタッチを繰り返す描法には、初期に大きな刺激を受けたファン・ゴッホの影響が見られます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-25">
+  <h2>#15 — JP-15_②.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヘルマン・マックス・ペヒシュタイン作、パイプ煙草を吸う漁師。ブリュッケの画家たちは、夏の時季には慌ただしい都市部を離れ、自然豊かな土地に滞在して制作しました。本作品はバルト海沿岸の漁村ニデン現在のリトアニア領ニダで描かれたものです。ペヒシュタインは漁師小屋に寝泊まりし、時に地元の漁にも参加する生活の中で絵を描きました。老漁師のリラックスした姿勢や人間味ある表情からは、画家が束の間ながら、モデルと心を通わせたことが想像できます。背景とハイライトに黄色を効果的に使用し、短いタッチを繰り返す描法には、初期に大きな刺激を受けたファン・ゴッホの影響が見られます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヘルマン・マックス・ペヒシュタイン作、パイプ煙草を吸う漁師。ブリュッケの画家たちは、夏の時季には慌ただしい都市部を離れ、自然豊かな土地に滞在して制作しました。本作品はバルト海沿岸の漁村ニデン現在のリトアニア領ニダで描かれたものです。ペヒシュタインは漁師小屋に寝泊まりし、時に地元の漁にも参加する生活の中で絵を描きました。老漁師のリラックスした姿勢や人間味ある表情からは、画家が束の間ながら、モデルと心を通わせたことが想像できます。背景とハイライトに黄色を効果的に使用し、短いタッチを繰り返す描法には、初期に大きな刺激を受けたファン・ゴッホの影響が見られます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-26">
+  <h2>#16 — JP-16.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヴァシリー・カンディンスキー作、商人たちの到着。大河のほとりの城郭都市の門が開き、住民たちが続々と出てきました。目当ては今しがた到着した帆船から降り立った、商人たちの広げる品物の数々。カンディンスキーの故郷ロシアの中世を思わせる、童話の世界のような光景です。人々の姿や建造物は、暗い下地の上に不透明な画材による色斑を散りばめることで形作られています。それぞれの色が鮮やかさを保ちながら共存し、時間が止まったような独特の雰囲気が、見る者を豊かな空想に誘います。西ヨーロッパの画家とは一味異なる色彩感覚が存分に活かされた、カンディンスキー初期の代表作です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヴァシリー・カンディンスキー作、商人たちの到着。大河のほとりの城郭都市の門が開き、住民たちが続々と出てきました。目当ては今しがた到着した帆船から降り立った、商人たちの広げる品物の数々。カンディンスキーの故郷ロシアの中世を思わせる、童話の世界のような光景です。人々の姿や建造物は、暗い下地の上に不透明な画材による色斑を散りばめることで形作られています。それぞれの色が鮮やかさを保ちながら共存し、時間が止まったような独特の雰囲気が、見る者を豊かな空想に誘います。西ヨーロッパの画家とは一味異なる色彩感覚が存分に活かされた、カンディンスキー初期の代表作です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-27">
+  <h2>#17 — JP-17.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-insert">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヴァシリー・カンディンスキー作、小さな世界。この版画集は、カンディンスキーがヴァイマールのバウハウスの指導者に着任した1</span>92<span class="diff-replace">2年に刊行されました。一見雑然とした様々な形が、対角線を構図の軸としながら、それぞれに秩序ある「小さな世界」を形成しています。正方形に近いフォーマットに統一された画面は、木版画・石版画・銅版画各4点ずつという、技法も含めた豊かなバリエーションをもち、まるで万華鏡のように観る者を飽きさせません。地形を思わせる形や流れるような曲線に加えて、円や格子模様などが登場しており、幾何学的形態を中心に構成する、1920年代の作品の特徴が現れています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヴァシリー・カンディンスキー作、小さな世界。この版画集は、カンディンスキーがヴァイマールのバウハウスの指導者に着任した1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 61: 追加「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 62: 原稿「2年に刊行されました。一見雑然とした様々な形が、対角線を構図の軸としながら、それぞれに秩序ある「小さな世界」を形成しています。正方形に近いフォーマットに統一された画面は、木版画・石版画・銅版画各4点ずつという、技法も含めた豊かなバリエーションをもち、まるで万華鏡のように観る者を飽きさせません。地形を思わせる形や流れるような曲線に加えて、円や格子模様などが登場しており、幾何学的形態を中心に構成する、1920年代の作品の特徴が現れています。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-28">
+  <h2>#18 — JP-18.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、ホフマン風の情景。クレーの愛読書に、バレエ「くるみ割り人形」の原作で知られる作家、イー・ティー・エー・ホフマンの小説がありました。ある日の日記で彼に言及した直後に、「芸術では、見るということは、見えるようにすることほど大事ではない。」と述べています。ホフマンの物語は、現実と虚構の間を往復し、次第にその境界が曖昧になっていく語りに特徴があります。これがクレーの絵の世界にも通じる要素であることは、この作品を見ればよくわかります。線は生き物のように自在に動き出し、想像を刺激するモチーフを形作りながら、ひとりでに物語を紡ぐかのようです。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、ホフマン風の情景。クレーの愛読書に、バレエ「くるみ割り人形」の原作で知られる作家、イー・ティー・エー・ホフマンの小説がありました。ある日の日記で彼に言及した直後に、「芸術では、見るということは、見えるようにすることほど大事ではない。」と述べています。ホフマンの物語は、現実と虚構の間を往復し、次第にその境界が曖昧になっていく語りに特徴があります。これがクレーの絵の世界にも通じる要素であることは、この作品を見ればよくわかります。線は生き物のように自在に動き出し、想像を刺激するモチーフを形作りながら、ひとりでに物語を紡ぐかのようです。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-29">
+  <h2>#19 — JP-19.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 4</span>2<span class="diff-replace">9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、大衆喜劇。「俗っぽい喜劇」とも訳せるタイトルは、「聖なる喜劇」を意味するイタリア語ラ・ディビーナ・コメーディアを原題とするダンテの『神曲』を連想させます。男性</span>2<span class="diff-replace">人と女性1人の組み合わせが、物語の中心人物であるダンテ、ヴェルギリウス、ベアトリーチェに符合することも合わせると、この作品は『神曲』の一種のパロディーなのかもしれません。ダンテは地獄から煉獄を経て天国に至りましたが、どこかコミカルで品のない絵の中の3人組の先にもまた、上を向いた矢印が見えます。一行は「天」にたどりつくのでしょうか、それとも、鍵穴のような入口から、深い暗闇に迷い込むのでしょうか。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、大衆喜劇。「俗っぽい喜劇」とも訳せるタイトルは、「聖なる喜劇」を意味するイタリア語ラ・ディビーナ・コメーディアを原題とするダンテの『神曲』を連想させます。男性」→ 文字起こし「[ERROR: 4」</div>
+      
+      <div class="diff-item">位置 89: 原稿「人と女性1人の組み合わせが、物語の中心人物であるダンテ、ヴェルギリウス、ベアトリーチェに符合することも合わせると、この作品は『神曲』の一種のパロディーなのかもしれません。ダンテは地獄から煉獄を経て天国に至りましたが、どこかコミカルで品のない絵の中の3人組の先にもまた、上を向いた矢印が見えます。一行は「天」にたどりつくのでしょうか、それとも、鍵穴のような入口から、深い暗闇に迷い込むのでしょうか。」→ 文字起こし「9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-30">
+  <h2>#2 — JP-2.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">吉原治良作、丸。黒地に浮かぶ白い円は、幾何学的な円に比べるとやや歪み、動きを感じさせます。ただし、墨書のような勢いある一筆書きで、一気呵成に描いたものでもないようです。画面は物質感の薄いマットな仕上げで、黒と白の境界線はどこをとってもくっきりしています。また白の上から黒を塗ったことが確認できる箇所があり、白い円の形は、周縁を黒で塗りつぶすことで繊細に調整されたものであることがわかります。大らかさと緊張感を併せ持つこの円は、「他人の真似はするな」を命題に「具体美術協会」を牽引した吉原治良が、様々なスタイルを経て到達した代名詞的なモチーフでした。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「吉原治良作、丸。黒地に浮かぶ白い円は、幾何学的な円に比べるとやや歪み、動きを感じさせます。ただし、墨書のような勢いある一筆書きで、一気呵成に描いたものでもないようです。画面は物質感の薄いマットな仕上げで、黒と白の境界線はどこをとってもくっきりしています。また白の上から黒を塗ったことが確認できる箇所があり、白い円の形は、周縁を黒で塗りつぶすことで繊細に調整されたものであることがわかります。大らかさと緊張感を併せ持つこの円は、「他人の真似はするな」を命題に「具体美術協会」を牽引した吉原治良が、様々なスタイルを経て到達した代名詞的なモチーフでした。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-31">
+  <h2>#20 — JP-20.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、樹上の処女。女性の不自然にねじ曲がった姿勢と陰険な表情は、画家の辛辣な風刺のまなざしを感じさせます。主題について、クレーはこう述べています。「獣たちはごく自然で、つがいで一緒にいるのだが、淑女は処女のまま、市民社会に認められるような求婚者を待つ。だからと言って、年老いつつある彼女がより美しくなるわけではない。」社会や人間をドライな目で観察し、その不条理に向き合うことは、クレーの制作の重要な一側面でした。本作品は、大きな展覧会への初めての出品作となった、精緻な描写と風刺性を特徴とする銅版画シリーズの一点です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、樹上の処女。女性の不自然にねじ曲がった姿勢と陰険な表情は、画家の辛辣な風刺のまなざしを感じさせます。主題について、クレーはこう述べています。「獣たちはごく自然で、つがいで一緒にいるのだが、淑女は処女のまま、市民社会に認められるような求婚者を待つ。だからと言って、年老いつつある彼女がより美しくなるわけではない。」社会や人間をドライな目で観察し、その不条理に向き合うことは、クレーの制作の重要な一側面でした。本作品は、大きな展覧会への初めての出品作となった、精緻な描写と風刺性を特徴とする銅版画シリーズの一点です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-32">
+  <h2>#21 — JP-21.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ジャン・アルプ作、葉のトルソ。トルソは人体の手足と首を除く胴体部を意味します。アルプは1</span>9<span class="diff-replace">50年代後半から、元来は不動の存在感をもつこのモチーフを着想源に、かたちが別のかたちへと移り変わるさまを捉えたような、抽象性と生命感をあわせもつ彫刻を制作しました。本作品は当館の開館当初から、エントランスホールで展示されてきました。頭頂部が少し前に傾いだ造形は、一枚の葉がくびれのある人体へと変容して、徐々に頭をもたげながら立ち上がるようなイメージを想起させます。吹き抜けと大階段が形づくる伸びやかな空間と呼応しながら来館者を迎えてきた、美術館の顔とも言える一点です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ジャン・アルプ作、葉のトルソ。トルソは人体の手足と首を除く胴体部を意味します。アルプは1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 45: 原稿「50年代後半から、元来は不動の存在感をもつこのモチーフを着想源に、かたちが別のかたちへと移り変わるさまを捉えたような、抽象性と生命感をあわせもつ彫刻を制作しました。本作品は当館の開館当初から、エントランスホールで展示されてきました。頭頂部が少し前に傾いだ造形は、一枚の葉がくびれのある人体へと変容して、徐々に頭をもたげながら立ち上がるようなイメージを想起させます。吹き抜けと大階段が形づくる伸びやかな空間と呼応しながら来館者を迎えてきた、美術館の顔とも言える一点です。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-33">
+  <h2>#22 — JP-22.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">高橋由一作、宮城県庁門前図。高橋由一が宮城県を訪れた当時は、元仙台藩の学問所、養賢堂の講堂が、県庁舎として使われていました。国内まれに見る規模を誇った養賢堂の建物を県庁として活用するために、畳は板張りに、障子はガラス戸に改修され、和風の門に替えて白い洋風の立派な門も建てられました。文明開化の様子を伝えるこの新しい風景に、由一は、バルビゾン派の流れをくむイタリア人画家、フォンタネージの影響をうかがわせる逆光の木立や、馬車のシルエットをあわせて、情趣的な記録画を完成させました。洋画に写実と一つの趣味を認め、その普及に尽くした由一の晩年の代表作です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「高橋由一作、宮城県庁門前図。高橋由一が宮城県を訪れた当時は、元仙台藩の学問所、養賢堂の講堂が、県庁舎として使われていました。国内まれに見る規模を誇った養賢堂の建物を県庁として活用するために、畳は板張りに、障子はガラス戸に改修され、和風の門に替えて白い洋風の立派な門も建てられました。文明開化の様子を伝えるこの新しい風景に、由一は、バルビゾン派の流れをくむイタリア人画家、フォンタネージの影響をうかがわせる逆光の木立や、馬車のシルエットをあわせて、情趣的な記録画を完成させました。洋画に写実と一つの趣味を認め、その普及に尽くした由一の晩年の代表作です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-34">
+  <h2>#23 — JP-23.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">宮城輝夫作、月の番人。宮城県刈田郡白石町現在の白石市生まれの宮城輝夫は、戦前、東京で超現実主義系の美術グループに参加し、戦後は宮城県内で前衛美術運動を牽引しました。本作品には、コーヒー豆の袋等に使われる目の粗い麻布が使われており、その質感を活かしたニュアンスのある色彩を背景に、幾何学的な形体で構成された、機械のような異形の生き物が描かれています。エロスとユーモア、ペーソスの交り合う夢幻的な世界観が展開される一方、画面には金属部品も貼り付けられており、三次元のオブジェとしての実在感も併せ持つ作品です。こうした一連の作品が瀧口修造や針生一郎等の評論家から高く評価されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「宮城輝夫作、月の番人。宮城県刈田郡白石町現在の白石市生まれの宮城輝夫は、戦前、東京で超現実主義系の美術グループに参加し、戦後は宮城県内で前衛美術運動を牽引しました。本作品には、コーヒー豆の袋等に使われる目の粗い麻布が使われており、その質感を活かしたニュアンスのある色彩を背景に、幾何学的な形体で構成された、機械のような異形の生き物が描かれています。エロスとユーモア、ペーソスの交り合う夢幻的な世界観が展開される一方、画面には金属部品も貼り付けられており、三次元のオブジェとしての実在感も併せ持つ作品です。こうした一連の作品が瀧口修造や針生一郎等の評論家から高く評価されました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-35">
+  <h2>#24 — JP-24.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 4</span>2<span class="diff-replace">9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">清水登之作、地下鉄停車場。海外で絵を学ぶにはフランス留学が一般的だった時代、清水登之は</span>2<span class="diff-replace">0歳で単身渡米、数年間働いた後、シアトルやニューヨークで美術を学び、30歳頃から都市の生活者を主題とするようになりました。本作品は、アメリカで評価を得た後、フランスに渡り、描かれたもの。デパートの包みを抱えて立つ女性や切符を切る女性、ガイドブックを持ったシルクハットの男性等がいる地下鉄の情景が描かれています。幾何学的な建築やボリューム感のある人物からなる構成に、新しい展開も見られますが、テーマはあくまでも都市生活のひとこまを表すことにあります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「清水登之作、地下鉄停車場。海外で絵を学ぶにはフランス留学が一般的だった時代、清水登之は」→ 文字起こし「[ERROR: 4」</div>
+      
+      <div class="diff-item">位置 44: 原稿「0歳で単身渡米、数年間働いた後、シアトルやニューヨークで美術を学び、30歳頃から都市の生活者を主題とするようになりました。本作品は、アメリカで評価を得た後、フランスに渡り、描かれたもの。デパートの包みを抱えて立つ女性や切符を切る女性、ガイドブックを持ったシルクハットの男性等がいる地下鉄の情景が描かれています。幾何学的な建築やボリューム感のある人物からなる構成に、新しい展開も見られますが、テーマはあくまでも都市生活のひとこまを表すことにあります。」→ 文字起こし「9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-36">
+  <h2>#25 — JP-25.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">小山正太郎作、風景。低い水平線と大きな帆柱が構図の中心を成しています。逆光で浮かび上がる帆柱はやや左に傾き、船が揺れているようにも見えます。1876年、殖産興業政策を背景として設置された工部美術学校で、小山正太郎は、お雇い外国人として招聘されたイタリア人画家のフォンタネージから、本格的な西洋画教育を受けました。本作はその在学中の作品。繊細な階調による色彩表現等、油絵特有の表現効果を活かした、空気が感じられるような自然描写による詩情豊かな情景には、小山が西洋画の技術だけでなく、美的世界を創造する理念も自分のものとしていた様子がうかがえます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「小山正太郎作、風景。低い水平線と大きな帆柱が構図の中心を成しています。逆光で浮かび上がる帆柱はやや左に傾き、船が揺れているようにも見えます。1876年、殖産興業政策を背景として設置された工部美術学校で、小山正太郎は、お雇い外国人として招聘されたイタリア人画家のフォンタネージから、本格的な西洋画教育を受けました。本作はその在学中の作品。繊細な階調による色彩表現等、油絵特有の表現効果を活かした、空気が感じられるような自然描写による詩情豊かな情景には、小山が西洋画の技術だけでなく、美的世界を創造する理念も自分のものとしていた様子がうかがえます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-37">
+  <h2>#26 — JP-26.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">椿貞雄作、鵠沼の或る道。18歳で米沢から上京した椿貞雄は、岸田劉生の個展を見て感銘を受け入門を決意、彼のもとで熱心に絵を学び、切磋琢磨する同士となりました。本作品は、神奈川県鵠沼現在の藤沢市の劉生の自宅前の道を描いたものとされます。劉生が療養のため鵠沼に引っ越すと、椿も近所に転居して、二人は頻繁に往来しながら創作に励みました。椿は劉生の影響を強く受けましたが、その個性の違いは明らかでした。麦わら帽の子どもや犬のいる素朴な場面を選びとる視線は椿らしく、強い日差しに揺らぐ空気を感じさせる重い色彩も雪国で育まれた椿の感覚と言えるでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「椿貞雄作、鵠沼の或る道。18歳で米沢から上京した椿貞雄は、岸田劉生の個展を見て感銘を受け入門を決意、彼のもとで熱心に絵を学び、切磋琢磨する同士となりました。本作品は、神奈川県鵠沼現在の藤沢市の劉生の自宅前の道を描いたものとされます。劉生が療養のため鵠沼に引っ越すと、椿も近所に転居して、二人は頻繁に往来しながら創作に励みました。椿は劉生の影響を強く受けましたが、その個性の違いは明らかでした。麦わら帽の子どもや犬のいる素朴な場面を選びとる視線は椿らしく、強い日差しに揺らぐ空気を感じさせる重い色彩も雪国で育まれた椿の感覚と言えるでしょう。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-38">
+  <h2>#27 — JP-27.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">松本竣介作、画家の像。画面の中心を占めるのは、毅然と立つ画家とその家族です。木箱の上には画家の道具、背後に広がる街の風景には、無数の人々の暮らしが描かれています。本作品を二科展に発表する半年前、松本竣介は雑誌みづえに掲載された国防国家と美術という座談会記事に対し生きている画家を寄稿し、慎重に異を唱えました。芸術さえも翼賛体制に組み込もうとする戦時下において、松本が、何によって自分は自分であるのかを問うた自画像を、古典的な様式でモニュメンタルに描き出した背景には、切実な覚悟があったことは間違いありません。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「松本竣介作、画家の像。画面の中心を占めるのは、毅然と立つ画家とその家族です。木箱の上には画家の道具、背後に広がる街の風景には、無数の人々の暮らしが描かれています。本作品を二科展に発表する半年前、松本竣介は雑誌みづえに掲載された国防国家と美術という座談会記事に対し生きている画家を寄稿し、慎重に異を唱えました。芸術さえも翼賛体制に組み込もうとする戦時下において、松本が、何によって自分は自分であるのかを問うた自画像を、古典的な様式でモニュメンタルに描き出した背景には、切実な覚悟があったことは間違いありません。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-39">
+  <h2>#28 — JP-28.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">吉井忠作、落日。画面手前には、髪の毛で顔を隠す黒いドレスの女性、左側には建物の陰で不気味に女性を見つめる黒服の男性が描かれ、文明社会の不穏な情景が表されています。対照的に右手には、火山やマンモスが描かれ、太古の荒涼とした風景が広がります。人の顔とのダブルイメージとして表された岩、白い球体等のモチーフは、ダリの影響をうかがわせます。吉井忠は1</span>9<span class="diff-replace">36年に渡欧しており、西洋でのシュルレアリスム体験が、本作品には反映されていると思われます。同時に、戦時色が強まるこの頃の彼の絵画には、時代の不条理や生への不安が強く感じられます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「吉井忠作、落日。画面手前には、髪の毛で顔を隠す黒いドレスの女性、左側には建物の陰で不気味に女性を見つめる黒服の男性が描かれ、文明社会の不穏な情景が表されています。対照的に右手には、火山やマンモスが描かれ、太古の荒涼とした風景が広がります。人の顔とのダブルイメージとして表された岩、白い球体等のモチーフは、ダリの影響をうかがわせます。吉井忠は1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 172: 原稿「36年に渡欧しており、西洋でのシュルレアリスム体験が、本作品には反映されていると思われます。同時に、戦時色が強まるこの頃の彼の絵画には、時代の不条理や生への不安が強く感じられます。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-40">
+  <h2>#29 — JP-29.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">松本竣介作、郊外。本作品は身近な風景にヒントを得て描かれたのでしょう。松本竣介が住んだ下落合現在の新宿区中井周辺の高台には文化人が多く居住しており、目白寄りの一帯には、文化村と呼ばれた洋風の文化住宅が並ぶモダンな住宅地もありました。しかしその背景には、亡くしたばかりの長男への思いもあるのでしょうか。緑に囲まれた洋風の白い建物の前で、犬と子どもが遊ぶ光景は、夢の一場面のようにも見えます。この後松本は、繊細な線を駆使した幻想的な都会風景と、対象をかたまりで捉えた半抽象的な郊外風景の、テーマも作風も対照的な風景画のシリーズを二科展に発表していくこととなります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「松本竣介作、郊外。本作品は身近な風景にヒントを得て描かれたのでしょう。松本竣介が住んだ下落合現在の新宿区中井周辺の高台には文化人が多く居住しており、目白寄りの一帯には、文化村と呼ばれた洋風の文化住宅が並ぶモダンな住宅地もありました。しかしその背景には、亡くしたばかりの長男への思いもあるのでしょうか。緑に囲まれた洋風の白い建物の前で、犬と子どもが遊ぶ光景は、夢の一場面のようにも見えます。この後松本は、繊細な線を駆使した幻想的な都会風景と、対象をかたまりで捉えた半抽象的な郊外風景の、テーマも作風も対照的な風景画のシリーズを二科展に発表していくこととなります。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-41">
+  <h2>#3 — JP-3.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">山口勝弘作、ヴィトリーヌサルゴン王の像。画面を覆うのは、波状の縞模様をもつモールガラス。厚みの違いがレンズのように作用し、部位ごとに異なる拡大・縮小・屈折の効果をもたらすために、奥にある二枚のガラス板の各層に描かれた幾何学的なイメージの見え方は、観る角度によって変化します。鑑賞者が動くことで姿を変えるこの形式の作品に、ショーウインドウを意味する「ヴィトリーヌ」の名を与えたのは、グループ「実験工房」を批評を通じて支援した瀧口修造でした。古代メソポタミアの王の名を冠するタイトルは、前年に制作したヴィトリーヌ古代と共通する着想源を想像させます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「山口勝弘作、ヴィトリーヌサルゴン王の像。画面を覆うのは、波状の縞模様をもつモールガラス。厚みの違いがレンズのように作用し、部位ごとに異なる拡大・縮小・屈折の効果をもたらすために、奥にある二枚のガラス板の各層に描かれた幾何学的なイメージの見え方は、観る角度によって変化します。鑑賞者が動くことで姿を変えるこの形式の作品に、ショーウインドウを意味する「ヴィトリーヌ」の名を与えたのは、グループ「実験工房」を批評を通じて支援した瀧口修造でした。古代メソポタミアの王の名を冠するタイトルは、前年に制作したヴィトリーヌ古代と共通する着想源を想像させます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-42">
+  <h2>#30 — JP-30.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-insert">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">中野和高作、少憩。1</span>92<span class="diff-replace">7年にパリから帰国した中野和高が、帝国美術院美術展覧会、通称・帝展、にふさわしい絵画として取り組んだのが、家庭生活の一コマを描いた群像大作でした。新興市民の家族図は帝展でも人気となりますが、中でも帰国翌年の中野の出品作風景を配せる我家族は特選となり、話題を呼びました。本作品では、量塊として捉えた人物の組み立てによって大画面が構成され、抑制の利いた色調が人物群と広大な風景からなる全体を緊密にまとめています。親密な主題に対し、中野は新古典主義時代のピカソなどの研究成果を活かし、造形性に重きを置いた絵画を追求しました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「中野和高作、少憩。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 11: 追加「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 12: 原稿「7年にパリから帰国した中野和高が、帝国美術院美術展覧会、通称・帝展、にふさわしい絵画として取り組んだのが、家庭生活の一コマを描いた群像大作でした。新興市民の家族図は帝展でも人気となりますが、中でも帰国翌年の中野の出品作風景を配せる我家族は特選となり、話題を呼びました。本作品では、量塊として捉えた人物の組み立てによって大画面が構成され、抑制の利いた色調が人物群と広大な風景からなる全体を緊密にまとめています。親密な主題に対し、中野は新古典主義時代のピカソなどの研究成果を活かし、造形性に重きを置いた絵画を追求しました。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-43">
+  <h2>#31 — JP-31.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">村上善男作、ポリマリゼーションエヌブイダブリューの場合または腔内弾道学。村上善男が1</span>9<span class="diff-replace">60年代に取り組んだのは、注射針や既製品を用いたアサンブラージュでした。本作では注射針や写真フィルム保護用の黒いロール紙、ラジオのチューニングメーター等が画面に貼り付けられています。既製品の色や形、既製品に書かれた数字や文字は造形上のエレメントとして取り入れられ、絵画的に構成されますが、その理知的な造形性とは裏腹に、凸凹した樹脂や尖った注射針が実体として、生々しい感覚を呼び起こします。化学や物理学の専門用語を引用したタイトルもまた、造形イメージを構成する部分のひとつと言えるでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「村上善男作、ポリマリゼーションエヌブイダブリューの場合または腔内弾道学。村上善男が1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 43: 原稿「60年代に取り組んだのは、注射針や既製品を用いたアサンブラージュでした。本作では注射針や写真フィルム保護用の黒いロール紙、ラジオのチューニングメーター等が画面に貼り付けられています。既製品の色や形、既製品に書かれた数字や文字は造形上のエレメントとして取り入れられ、絵画的に構成されますが、その理知的な造形性とは裏腹に、凸凹した樹脂や尖った注射針が実体として、生々しい感覚を呼び起こします。化学や物理学の専門用語を引用したタイトルもまた、造形イメージを構成する部分のひとつと言えるでしょう。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-44">
+  <h2>#32 — JP-32.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">岸田劉生作、真田久吉氏像。粗く素早いタッチで相手の特徴を捉えています。モデルとなった真田久吉と岸田劉生はともに、ゴッホやセザンヌに影響を受けた若い画家たちが1</span>9<span class="diff-replace">1</span>2<span class="diff-replace">年に結成した、ヒュウザン会のメンバーでした。劉生はこの頃、家に訪ねて来た友人をつかまえては絵のモデルをさせたことから、岸田の首狩りと恐れられました。本作品は首狩りの最初期の一点で、ポスト印象派の影響を示しつつも、色彩を抑え、陰影と量感で対象を捉えることで、実在感を表現しています。この後まもなく劉生は、写実の追求へと進みますが、本作はその転換点に位置する貴重な作例です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「岸田劉生作、真田久吉氏像。粗く素早いタッチで相手の特徴を捉えています。モデルとなった真田久吉と岸田劉生はともに、ゴッホやセザンヌに影響を受けた若い画家たちが1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 80: 原稿「1」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 82: 原稿「年に結成した、ヒュウザン会のメンバーでした。劉生はこの頃、家に訪ねて来た友人をつかまえては絵のモデルをさせたことから、岸田の首狩りと恐れられました。本作品は首狩りの最初期の一点で、ポスト印象派の影響を示しつつも、色彩を抑え、陰影と量感で対象を捉えることで、実在感を表現しています。この後まもなく劉生は、写実の追求へと進みますが、本作はその転換点に位置する貴重な作例です。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-45">
+  <h2>#33 — JP-33.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤一郎作、山越のぬい。密度の高い色彩が印象的な本作品は、作者が西ドイツに留学し、西洋の古典技法である卵テンペラと油彩の混合技法を本格的に研究し始めた頃に制作されました。日本の古典的な仏画の山越阿弥陀図のかたちをかり、長女のぬいを阿弥陀に見立てて描いたものです。山越阿弥陀図は本来、臨終の儀式に用いられる阿弥陀来迎図のひとつですが、佐藤はこれを人が死ぬと同時に新たに生まれ変わるという絵画ではないかと解釈し、生まれたばかりの愛娘を主題にしました。西洋と日本の絵画の伝統を活かして描かれた、幻想的な誕生図です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤一郎作、山越のぬい。密度の高い色彩が印象的な本作品は、作者が西ドイツに留学し、西洋の古典技法である卵テンペラと油彩の混合技法を本格的に研究し始めた頃に制作されました。日本の古典的な仏画の山越阿弥陀図のかたちをかり、長女のぬいを阿弥陀に見立てて描いたものです。山越阿弥陀図は本来、臨終の儀式に用いられる阿弥陀来迎図のひとつですが、佐藤はこれを人が死ぬと同時に新たに生まれ変わるという絵画ではないかと解釈し、生まれたばかりの愛娘を主題にしました。西洋と日本の絵画の伝統を活かして描かれた、幻想的な誕生図です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-46">
+  <h2>#34 — JP-34.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">洲之内徹。松山市生まれ。東京美術学校現在の東京藝術大学建築科在学中、左翼運動に加わって検挙され、同校を退学となる。戦時中は軍嘱託として中国に渡り、対共産党工作の任務につく。帰国後小説を書き始め、芥川賞候補にも三度挙げられたが受賞することはなかった。1</span>9<span class="diff-replace">59年、戦時中に知り合った作家の田村泰次郎の現代画廊に入社し、1961年からはその経営を引き継いで、個性あふれる数多くの作家を紹介した。1974年からは芸術新潮誌上に気まぐれ美術館の連載を始め、その独特の語り口は多くの熱心な読者を獲得し好評を博したが、1987年急逝、第165回が連載最終回となった。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「洲之内徹。松山市生まれ。東京美術学校現在の東京藝術大学建築科在学中、左翼運動に加わって検挙され、同校を退学となる。戦時中は軍嘱託として中国に渡り、対共産党工作の任務につく。帰国後小説を書き始め、芥川賞候補にも三度挙げられたが受賞することはなかった。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 126: 原稿「59年、戦時中に知り合った作家の田村泰次郎の現代画廊に入社し、1961年からはその経営を引き継いで、個性あふれる数多くの作家を紹介した。1974年からは芸術新潮誌上に気まぐれ美術館の連載を始め、その独特の語り口は多くの熱心な読者を獲得し好評を博したが、1987年急逝、第165回が連載最終回となった。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-47">
+  <h2>#35 — JP-35.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">靉光作、鳥。洲之内徹に、一枚の絵を心から欲しいと思う以上に、その絵についての完全な批評があるだろうかと言わしめた作品。繁茂する植物の間から、白い鳥が、植物に取り巻かれるようにして頭をもたげ、不自然な光が、これらを薄暗い空間に浮かび上がらせています。植物と鳥は生と死を暗示しているとも言えますが、蔓のような血管のような赤い管がそれらを繋いでいるようにも見え、状況は混沌としています。シュルレアリスムや中国の古典の理解のもとに、戦時下の靉光が描き出したのは、生と死、光と闇が混然一体となった鬼気迫る幻想の世界です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「靉光作、鳥。洲之内徹に、一枚の絵を心から欲しいと思う以上に、その絵についての完全な批評があるだろうかと言わしめた作品。繁茂する植物の間から、白い鳥が、植物に取り巻かれるようにして頭をもたげ、不自然な光が、これらを薄暗い空間に浮かび上がらせています。植物と鳥は生と死を暗示しているとも言えますが、蔓のような血管のような赤い管がそれらを繋いでいるようにも見え、状況は混沌としています。シュルレアリスムや中国の古典の理解のもとに、戦時下の靉光が描き出したのは、生と死、光と闇が混然一体となった鬼気迫る幻想の世界です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-48">
+  <h2>#36 — JP-36.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-insert">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">海老原喜之助作、ポアソニエール。海老原喜之助は1</span>92<span class="diff-replace">3年に渡仏、エコール・ド・パリの新進気鋭の画家として注目を集めますが、1933年に帰国しました。帰国後に描かれた本作品には、パリでエビハラ・ブルーと評判になった青を基調とした爽やかな色彩と、くっきりとした陰影による綿密な構成を見ることができます。ポアソニエールとは魚売りのことで、フランス語の題名が異国情緒を感じさせる一方、庶民的なテーマが共感を呼びます。従軍中この作品の複製を眺めて心を救われた洲之内徹が、戦後、実物とめぐり逢った話などから、洲之内コレクションの中でも最も知られた一点となりました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「海老原喜之助作、ポアソニエール。海老原喜之助は1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 25: 追加「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 26: 原稿「3年に渡仏、エコール・ド・パリの新進気鋭の画家として注目を集めますが、1933年に帰国しました。帰国後に描かれた本作品には、パリでエビハラ・ブルーと評判になった青を基調とした爽やかな色彩と、くっきりとした陰影による綿密な構成を見ることができます。ポアソニエールとは魚売りのことで、フランス語の題名が異国情緒を感じさせる一方、庶民的なテーマが共感を呼びます。従軍中この作品の複製を眺めて心を救われた洲之内徹が、戦後、実物とめぐり逢った話などから、洲之内コレクションの中でも最も知られた一点となりました。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-49">
+  <h2>#37 — JP-37.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR:</span> <span class="diff-replace">429,</span> <span class="diff-replace">message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">曹</span> <span class="diff-replace">良奎作、マンホール</span> <span class="diff-replace">B。強靱なマチエールで描かれたのは、固い地面や円い土管、うねる蛇腹のホース、そして蓋を開けたマンホールです。曹良奎は、李承晩政権下の韓国で反体制者として追われ、日本に密航、東京深川の朝鮮人居住区に住み倉庫の番人等をしていたといいます。曹は自身が見た社会の不条理、なかでも朝鮮特需に沸く日本の繁栄の陰で搾取され、抑圧された労働者たちを、垂直に立ちはだかる倉庫の壁や、地面に穿たれたマンホールとともに描きました。本作品では、労働者の存在は暗示され、マンホールの黒々とした穴が資本主義社会の暗黒面を象徴しています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「曹」→ 文字起こし「[ERROR:」</div>
+      
+      <div class="diff-item">位置 2: 原稿「良奎作、マンホール」→ 文字起こし「429,」</div>
+      
+      <div class="diff-item">位置 12: 原稿「B。強靱なマチエールで描かれたのは、固い地面や円い土管、うねる蛇腹のホース、そして蓋を開けたマンホールです。曹良奎は、李承晩政権下の韓国で反体制者として追われ、日本に密航、東京深川の朝鮮人居住区に住み倉庫の番人等をしていたといいます。曹は自身が見た社会の不条理、なかでも朝鮮特需に沸く日本の繁栄の陰で搾取され、抑圧された労働者たちを、垂直に立ちはだかる倉庫の壁や、地面に穿たれたマンホールとともに描きました。本作品では、労働者の存在は暗示され、マンホールの黒々とした穴が資本主義社会の暗黒面を象徴しています。」→ 文字起こし「message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-50">
+  <h2>#38 — JP-38.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 4</span>2<span class="diff-insert">9, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">中村彜作、自画像帽子を被る自画像。強い光を受け暗闇から浮かび上がるのは、眉をひそめる男の顔。深い影のせいで、目元の表情は読み取れませんが、半開きの口元は何か言いたげにも見えます。レンブラントへの傾倒がうかがえる本作品は、37歳で生涯を終えた中村彜の</span>22<span class="diff-replace">歳頃の自画像です。1909年、ドイツで発行されたレンブラントの画集を丸善で購入した中村は、高価だったその本を、手垢で黒くなるほど熱心に見ていたといい、この頃、自画像が集中して制作されました。彼はレンブラント絵画の深い精神性にも共感しており、本作品でも鋭く内省的な世界が表されています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「中村彜作、自画像帽子を被る自画像。強い光を受け暗闇から浮かび上がるのは、眉をひそめる男の顔。深い影のせいで、目元の表情は読み取れませんが、半開きの口元は何か言いたげにも見えます。レンブラントへの傾倒がうかがえる本作品は、37歳で生涯を終えた中村彜の」→ 文字起こし「[ERROR: 4」</div>
+      
+      <div class="diff-item">位置 125: 追加「9, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 126: 原稿「歳頃の自画像です。1909年、ドイツで発行されたレンブラントの画集を丸善で購入した中村は、高価だったその本を、手垢で黒くなるほど熱心に見ていたといい、この頃、自画像が集中して制作されました。彼はレンブラント絵画の深い精神性にも共感しており、本作品でも鋭く内省的な世界が表されています。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-51">
+  <h2>#39 — JP-39.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">長谷川利行作、酒祭り・花島喜世子。本作品はエノケンこと榎本健一が率いた浅草の劇団カジノ・フォーリーの花形女優、花島喜世子を描いたもの。奔放な筆遣いと強烈な色彩によって、舞台の活気と熱気を伝えてきます。長谷川利行は短歌や小説を発表するかたわら絵の制作に没頭し、新宿、浅草などを放浪しながら、街の風景や人々の姿を描きました。その無頼的な生き方も奔放な作風も、画壇には馴染みませんでしたが、一部の若い画家たちを強烈に惹き付けました。洲之内徹もまた、その生きざまと、長谷川が猥雑な現実から出現させたきらきらするような美の世界に惹かれた一人です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「長谷川利行作、酒祭り・花島喜世子。本作品はエノケンこと榎本健一が率いた浅草の劇団カジノ・フォーリーの花形女優、花島喜世子を描いたもの。奔放な筆遣いと強烈な色彩によって、舞台の活気と熱気を伝えてきます。長谷川利行は短歌や小説を発表するかたわら絵の制作に没頭し、新宿、浅草などを放浪しながら、街の風景や人々の姿を描きました。その無頼的な生き方も奔放な作風も、画壇には馴染みませんでしたが、一部の若い画家たちを強烈に惹き付けました。洲之内徹もまた、その生きざまと、長谷川が猥雑な現実から出現させたきらきらするような美の世界に惹かれた一人です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-52">
+  <h2>#4 — JP-4.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">瑛九作、影。黄と緑、それらの中間色を基調に、青と茶系統の色も含んだ、無数の点が画面を覆っています。瑛九は晩年に、碁石のような丸や色斑をモチーフとする抽象画を描き始め、それらは次第に細かい点に解消されていき、亡くなる年にはほぼ点のみで描く絵画に到達しました。その前年に描かれた本作品は、点よりは少し大きな、ある方向性をもったタッチを主体に描かれています。その大きさや密度は一定ではなく、画面に動きをもたらしています。特に大きなタッチの集まる箇所は、空間の向こう側でうごめく、生きたエネルギーの存在を感じさせます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「瑛九作、影。黄と緑、それらの中間色を基調に、青と茶系統の色も含んだ、無数の点が画面を覆っています。瑛九は晩年に、碁石のような丸や色斑をモチーフとする抽象画を描き始め、それらは次第に細かい点に解消されていき、亡くなる年にはほぼ点のみで描く絵画に到達しました。その前年に描かれた本作品は、点よりは少し大きな、ある方向性をもったタッチを主体に描かれています。その大きさや密度は一定ではなく、画面に動きをもたらしています。特に大きなタッチの集まる箇所は、空間の向こう側でうごめく、生きたエネルギーの存在を感じさせます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-53">
+  <h2>#40 — JP-40.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">長谷川潾二郎作、猫。猫の髭が片方しかないのは、遅筆だった上に、実物を眼の前にしないと描けないという作者が、この絵を描くのに何年もかかってしまい、その間に猫が死んでしまったから。洲之内徹によって紹介されたこの逸話によって、人気となった作品です。薄いグレーと赤の鮮やかな対比、楕円形にまとめられた猫の形等、無駄のない簡潔な構成は、丁寧に描かれた愛猫の存在感を引き立て、画家とモデルの時間を結晶化したような、詩的な世界を創り上げています。作者が対象を見つめ、捉えようとしたのは、眼の前の現実が垣間見せる神秘的な美の世界でした。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「長谷川潾二郎作、猫。猫の髭が片方しかないのは、遅筆だった上に、実物を眼の前にしないと描けないという作者が、この絵を描くのに何年もかかってしまい、その間に猫が死んでしまったから。洲之内徹によって紹介されたこの逸話によって、人気となった作品です。薄いグレーと赤の鮮やかな対比、楕円形にまとめられた猫の形等、無駄のない簡潔な構成は、丁寧に描かれた愛猫の存在感を引き立て、画家とモデルの時間を結晶化したような、詩的な世界を創り上げています。作者が対象を見つめ、捉えようとしたのは、眼の前の現実が垣間見せる神秘的な美の世界でした。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-54">
+  <h2>#41 — JP-41.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">萬鉄五郎作、風景・春。萬鉄五郎は1</span>9<span class="diff-replace">1</span>2<span class="diff-replace">年、日本のフォーヴィスムの最も早い作例とされる裸体美人を東京美術学校現在の東京藝術大学の卒業制作として発表し、周囲に衝撃を与えました。本作は、同年開催されたヒュウザン会第1回展の出品作です。描かれているのは桜咲く坂道でしょうか。ここは作者の身近な場所だと思われますが、現実の風景は大胆にデフォルメされ、心理的な印象が表されています。本作品は、洲之内徹旧蔵の一点でもあります。洲之内はいち早く萬を再評価した一人で、彼の「選ばれた者の恍惚と不安」、そして非凡であるが故の「孤独の深さ」を読み取っていました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「萬鉄五郎作、風景・春。萬鉄五郎は1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 18: 原稿「1」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 20: 原稿「年、日本のフォーヴィスムの最も早い作例とされる裸体美人を東京美術学校現在の東京藝術大学の卒業制作として発表し、周囲に衝撃を与えました。本作は、同年開催されたヒュウザン会第1回展の出品作です。描かれているのは桜咲く坂道でしょうか。ここは作者の身近な場所だと思われますが、現実の風景は大胆にデフォルメされ、心理的な印象が表されています。本作品は、洲之内徹旧蔵の一点でもあります。洲之内はいち早く萬を再評価した一人で、彼の「選ばれた者の恍惚と不安」、そして非凡であるが故の「孤独の深さ」を読み取っていました。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-55">
+  <h2>#42 — JP-42.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">東郷青児作、コーヒーを飲む女。1</span>9<span class="diff-replace">07年頃創始され、</span>2<span class="diff-replace">0世紀最大の芸術革命となったキュビスムは、1910年代には日本にも伝わります。この動向にいち早く反応した東郷青児は、1915年の初個展で前衛的な作品を発表、美術雑誌に我が国最初のキュビストとして取り上げられ、翌年には二科賞も受賞しました。しかし東郷が本格的にキュビスムや未来派等の美術に触れることが出来たのは、1921年の渡仏後のことでした。ピカソとの交流を経て描かれた本作品には、キュビスムへの理解の深まりが見られるとともに、後々に至るまで彼の特徴となる、都会的で抒情的な感覚もうかがうことが出来ます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「東郷青児作、コーヒーを飲む女。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 17: 原稿「07年頃創始され、」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 27: 原稿「0世紀最大の芸術革命となったキュビスムは、1910年代には日本にも伝わります。この動向にいち早く反応した東郷青児は、1915年の初個展で前衛的な作品を発表、美術雑誌に我が国最初のキュビストとして取り上げられ、翌年には二科賞も受賞しました。しかし東郷が本格的にキュビスムや未来派等の美術に触れることが出来たのは、1921年の渡仏後のことでした。ピカソとの交流を経て描かれた本作品には、キュビスムへの理解の深まりが見られるとともに、後々に至るまで彼の特徴となる、都会的で抒情的な感覚もうかがうことが出来ます。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-56">
+  <h2>#43 — JP-43.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">梅原龍三郎作、坐裸婦。梅原龍三郎はフランスでルノワールの人と作品に触れ、彼から学んだ流麗なタッチと華麗な色彩で、生命感溢れる裸婦像を描きました。本作は帰国後に描かれた一枚。西洋とは異なる気候や風土、モデルの体形等が、帰国した多くの画家を悩ませましたが、梅原も例外ではありませんでした。しかし本作品には、作者が西洋の近代美術を幅広く学んだ成果が感じられ、単純な形体によるがっちりとした人体表現等、構築的な造形性に重きを置く、新たな取組みが見て取れます。本作品には、複数のヴァリエーションが存在することからも、この挑戦が重要な一歩であったことがうかがえます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「梅原龍三郎作、坐裸婦。梅原龍三郎はフランスでルノワールの人と作品に触れ、彼から学んだ流麗なタッチと華麗な色彩で、生命感溢れる裸婦像を描きました。本作は帰国後に描かれた一枚。西洋とは異なる気候や風土、モデルの体形等が、帰国した多くの画家を悩ませましたが、梅原も例外ではありませんでした。しかし本作品には、作者が西洋の近代美術を幅広く学んだ成果が感じられ、単純な形体によるがっちりとした人体表現等、構築的な造形性に重きを置く、新たな取組みが見て取れます。本作品には、複数のヴァリエーションが存在することからも、この挑戦が重要な一歩であったことがうかがえます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-57">
+  <h2>#44 — JP-44.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: </span>4<span class="diff-replace">29, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">安井曽太郎作、少女像。少女の可憐さを引き立てるような鮮やかな色彩が印象的な作品。よどみない的確な写実によって、空間や量感も表現されており、安井曽太郎の技術の高さを感じられる、充実した時期の一点です。安井は、モデルとなった1</span>4<span class="diff-replace">歳の少女が、制作の間にも成長を見せる様子に、驚きまごついたといいます。制作中の作品写真と比べると、本作品は、初期の構図よりも少女の視線を上げ、顔の向きも真横に近い形に変更して描かれており、表情が凛としたものになっています。この清新な肖像画誕生の背景には、少女の成長を優しく見守る作者の眼差しがありました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「安井曽太郎作、少女像。少女の可憐さを引き立てるような鮮やかな色彩が印象的な作品。よどみない的確な写実によって、空間や量感も表現されており、安井曽太郎の技術の高さを感じられる、充実した時期の一点です。安井は、モデルとなった1」→ 文字起こし「[ERROR: 」</div>
+      
+      <div class="diff-item">位置 112: 原稿「歳の少女が、制作の間にも成長を見せる様子に、驚きまごついたといいます。制作中の作品写真と比べると、本作品は、初期の構図よりも少女の視線を上げ、顔の向きも真横に近い形に変更して描かれており、表情が凛としたものになっています。この清新な肖像画誕生の背景には、少女の成長を優しく見守る作者の眼差しがありました。」→ 文字起こし「29, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-58">
+  <h2>#45 — JP-45.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">大沼かねよ作、三人。休憩中と思われる三人の労働者が、画面いっぱいに描かれています。大沼かねよは宮城県栗原郡岩ヶ崎町現在の栗原市生まれ。上京後浅草で小学校勤務のかたわら制作を行い、帝国美術院展覧会、通称、帝展等に出品しました。本作は、作者が日常目にしていた光景を題材にしたものですが、こうした社会的な主題を大画面に堂々と構成して描いた大沼は、男性社会であった当時の画壇で、女流とは思えないと高く評価されました。大沼は戦中に早逝したこともあって、一時忘れられた存在となりましたが、近代美術史を再評価するなかで、再び注目されています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「大沼かねよ作、三人。休憩中と思われる三人の労働者が、画面いっぱいに描かれています。大沼かねよは宮城県栗原郡岩ヶ崎町現在の栗原市生まれ。上京後浅草で小学校勤務のかたわら制作を行い、帝国美術院展覧会、通称、帝展等に出品しました。本作は、作者が日常目にしていた光景を題材にしたものですが、こうした社会的な主題を大画面に堂々と構成して描いた大沼は、男性社会であった当時の画壇で、女流とは思えないと高く評価されました。大沼は戦中に早逝したこともあって、一時忘れられた存在となりましたが、近代美術史を再評価するなかで、再び注目されています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-59">
+  <h2>#46 — JP-46.mp3 （一致率: 1.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">エゴン・シーレ作、妊婦。1</span>9<span class="diff-replace">10年、</span>2<span class="diff-replace">0歳になる年のシーレは、知人の産婦人科医の許可を得て、彼の勤める病院にいる妊婦たちをモデルに素描する機会を得ました。病院での観察の結果生まれたこれらの女性像からは、官能性よりも、母性や人体への関心が色濃く感じられます。正面を向いて座る本作のモデルは、黒の鋭い輪郭線で描かれ、オレンジ、黄、緑といった鮮烈な色で塗られています。上下の髪の先と足先はカットして縦方向を強調した構図や、左側に大きく取った余白に小さく入れたエスのサインが、シーレの優れた構成力を示しています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「エゴン・シーレ作、妊婦。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 14: 原稿「10年、」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 19: 原稿「0歳になる年のシーレは、知人の産婦人科医の許可を得て、彼の勤める病院にいる妊婦たちをモデルに素描する機会を得ました。病院での観察の結果生まれたこれらの女性像からは、官能性よりも、母性や人体への関心が色濃く感じられます。正面を向いて座る本作のモデルは、黒の鋭い輪郭線で描かれ、オレンジ、黄、緑といった鮮烈な色で塗られています。上下の髪の先と足先はカットして縦方向を強調した構図や、左側に大きく取った余白に小さく入れたエスのサインが、シーレの優れた構成力を示しています。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-60">
+  <h2>#47 — JP-47.mp3 （一致率: 1.2%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">エゴン・シーレ作、黄色の女。裾にフリルのある黄色い衣服が目を引く女性像。鮮やかな黄色は、青い輪郭線と好対照をなしています。本作は、実はシーレが椅子や梯子の上などの高い視点から、床に寝そべるモデルを見下ろして描き、描いた紙を</span>9<span class="diff-replace">0度回転させて完成作としています。人物に独特の浮遊感が生まれることから、シーレが好んだ手法です。</span>2<span class="diff-replace">0世紀初頭のウィーンを駆け抜けるように生き、28歳で夭折したエゴン・シーレですが、生涯に渡って人体表現に関心を寄せ、人体をテーマに多くのドローイングを残しました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「エゴン・シーレ作、黄色の女。裾にフリルのある黄色い衣服が目を引く女性像。鮮やかな黄色は、青い輪郭線と好対照をなしています。本作は、実はシーレが椅子や梯子の上などの高い視点から、床に寝そべるモデルを見下ろして描き、描いた紙を」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 112: 原稿「0度回転させて完成作としています。人物に独特の浮遊感が生まれることから、シーレが好んだ手法です。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 161: 原稿「0世紀初頭のウィーンを駆け抜けるように生き、28歳で夭折したエゴン・シーレですが、生涯に渡って人体表現に関心を寄せ、人体をテーマに多くのドローイングを残しました。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-61">
+  <h2>#48 — JP-48.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">オスカー・ココシュカ作、版画集『夢見る少年たち』。まだ学生であったココシュカが、思春期の苦悩をテーマに、詩と絵の両方を手がけた版画集。詩のなかで主人公の少年は何度も夢を見て、遠い島々へ旅をします。少年が少女「リー」と出会い、恋愛告白によって物語は幕を閉じます。最終場面は、他の頁と比べても人体描写が入念で、右の少年にココシュカ自身が、左の少女に当時の想い人「リー」が重ねられており、自伝的な内容となっています。内面を曝け出す制作姿勢や奇妙に歪んだ人体表現などから、当時の反応は賛否両論でしたが、現在ではココシュカの初期の代表作として知られています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「オスカー・ココシュカ作、版画集『夢見る少年たち』。まだ学生であったココシュカが、思春期の苦悩をテーマに、詩と絵の両方を手がけた版画集。詩のなかで主人公の少年は何度も夢を見て、遠い島々へ旅をします。少年が少女「リー」と出会い、恋愛告白によって物語は幕を閉じます。最終場面は、他の頁と比べても人体描写が入念で、右の少年にココシュカ自身が、左の少女に当時の想い人「リー」が重ねられており、自伝的な内容となっています。内面を曝け出す制作姿勢や奇妙に歪んだ人体表現などから、当時の反応は賛否両論でしたが、現在ではココシュカの初期の代表作として知られています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-62">
+  <h2>#49 — JP-49.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、アフロディテの解剖学。題名のアフロディテは、西洋美術において繰り返し描かれてきた、美の女神の名前です。女神の姿を画面のなかに探すと、縦方向の色の帯のなかに、青い眼や乳房といった女性の身体を示すモチーフが点在しています。さらに本作には、元々左右に</span>9<span class="diff-replace">センチほど続きの画面があり、横長の絵でした。そこには手のモチーフも描かれていたのですが、クレー自らハサミを入れて分離して別の作品としています。「切断」はクレーがしばしば用いた手法です。古典的な美の主題に対して、色面に分解し、紙も切断するという近代的な手法で挑戦した作品といえるでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、アフロディテの解剖学。題名のアフロディテは、西洋美術において繰り返し描かれてきた、美の女神の名前です。女神の姿を画面のなかに探すと、縦方向の色の帯のなかに、青い眼や乳房といった女性の身体を示すモチーフが点在しています。さらに本作には、元々左右に」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 132: 原稿「センチほど続きの画面があり、横長の絵でした。そこには手のモチーフも描かれていたのですが、クレー自らハサミを入れて分離して別の作品としています。「切断」はクレーがしばしば用いた手法です。古典的な美の主題に対して、色面に分解し、紙も切断するという近代的な手法で挑戦した作品といえるでしょう。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-63">
+  <h2>#5 — JP-5.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">三岸好太郎作、オーケストラ。楕円形に縁取られた舞台上で、黒い線で描かれた指揮者と弦楽奏者が曲を奏でています。絵具が乾かないうちに尖った器具で引っかいて描画した箇所もあり、赤い部分の上あたりには管楽奏者の姿が確認できます。三岸好太郎は、時間の経過の中で味わう音楽を、全体が瞬時に示される絵画に表すことの課題を意識しながら、この主題に挑みました。絵を見るとまず、油彩と線刻が織りなす絵肌、四角い画面と楕円形の縁の関係性、いくつかの色彩の塊が和音のように響きます。そして眺めるうちに、自在な線描がリズムの感覚を喚起し、音楽のもつ時間的な幅も感じさせます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「三岸好太郎作、オーケストラ。楕円形に縁取られた舞台上で、黒い線で描かれた指揮者と弦楽奏者が曲を奏でています。絵具が乾かないうちに尖った器具で引っかいて描画した箇所もあり、赤い部分の上あたりには管楽奏者の姿が確認できます。三岸好太郎は、時間の経過の中で味わう音楽を、全体が瞬時に示される絵画に表すことの課題を意識しながら、この主題に挑みました。絵を見るとまず、油彩と線刻が織りなす絵肌、四角い画面と楕円形の縁の関係性、いくつかの色彩の塊が和音のように響きます。そして眺めるうちに、自在な線描がリズムの感覚を喚起し、音楽のもつ時間的な幅も感じさせます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-64">
+  <h2>#50 — JP-50.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、ラトミー。表面の起伏は、糊を混ぜた下地を薄い紙に塗ることで生まれています。強く刻み付けられた線は、互いに交差することなく、直角に曲がったり大きく折り返したりしています。タイトルのラトミーとは、イタリアのシチリア島にある、古代の石切り場の遺跡のこと。クレーも妻と旅行で訪れたことがあります。石切り場では、人間が石を切り出すことで、岩肌の上に幾何学的な線が刻みつけられますが、そうした光景に本作を重ねているようです。1</span>9<span class="diff-replace">39年、亡くなる前年のクレーは、病による体の不調に悩まされながらも、人生で最も多くの作品を生み出しました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、ラトミー。表面の起伏は、糊を混ぜた下地を薄い紙に塗ることで生まれています。強く刻み付けられた線は、互いに交差することなく、直角に曲がったり大きく折り返したりしています。タイトルのラトミーとは、イタリアのシチリア島にある、古代の石切り場の遺跡のこと。クレーも妻と旅行で訪れたことがあります。石切り場では、人間が石を切り出すことで、岩肌の上に幾何学的な線が刻みつけられますが、そうした光景に本作を重ねているようです。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 217: 原稿「39年、亡くなる前年のクレーは、病による体の不調に悩まされながらも、人生で最も多くの作品を生み出しました。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-65">
+  <h2>#51 — JP-51.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-insert">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、橋の傍らの三軒の家。三角、四角、丸という基本的な図形がリズミカルに繰り返された画面。その形を目で追っていくと、手前の逆三角形は橋の脚、その向こうに三角屋根の家々が並び、空には星や天体のモチーフが浮かぶ、橋の傍らの三軒の家の場景が見えてきます。色彩に注目すると、実は黄・青・オレンジ・黒という限られた色を用い、透明な水彩絵具を重ねたりずらしたりすることで、色の階層を生み出しています。1</span>92<span class="diff-replace">1年から造形学校バウハウスで教鞭をとったクレーは、講義のために形態や色彩の理論化に取り組みました。その成果は同時期の作品にもよく表れています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、橋の傍らの三軒の家。三角、四角、丸という基本的な図形がリズミカルに繰り返された画面。その形を目で追っていくと、手前の逆三角形は橋の脚、その向こうに三角屋根の家々が並び、空には星や天体のモチーフが浮かぶ、橋の傍らの三軒の家の場景が見えてきます。色彩に注目すると、実は黄・青・オレンジ・黒という限られた色を用い、透明な水彩絵具を重ねたりずらしたりすることで、色の階層を生み出しています。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 202: 追加「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 203: 原稿「1年から造形学校バウハウスで教鞭をとったクレーは、講義のために形態や色彩の理論化に取り組みました。その成果は同時期の作品にもよく表れています。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-66">
+  <h2>#52 — JP-52.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、紫と黄色の運命の響きと二つの球。正体不明の、神とも悪魔ともつかぬ存在が、「紫と黄色」の「二つの球」を操っています。色彩理論では対比的な色である紫と黄色が、互いに交じり合うことなく、中央で大きく入り乱れています。運命の響きが創造されているようです。この絵が描かれた1</span>9<span class="diff-replace">16年は、第一次世界大戦のさなかでした。自ら志願して従軍した友人のフランツマルクの戦死の知らせを受け、一方でクレー自身にも召集令状が届きますが前線へは送られませんでした。友人と自分、そして様々な人々の運命を分けたこの年を、クレーは日記の中で運命の年と記しました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、紫と黄色の運命の響きと二つの球。正体不明の、神とも悪魔ともつかぬ存在が、「紫と黄色」の「二つの球」を操っています。色彩理論では対比的な色である紫と黄色が、互いに交じり合うことなく、中央で大きく入り乱れています。運命の響きが創造されているようです。この絵が描かれた1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 142: 原稿「16年は、第一次世界大戦のさなかでした。自ら志願して従軍した友人のフランツマルクの戦死の知らせを受け、一方でクレー自身にも召集令状が届きますが前線へは送られませんでした。友人と自分、そして様々な人々の運命を分けたこの年を、クレーは日記の中で運命の年と記しました。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-67">
+  <h2>#53 — JP-53.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">パウル・クレー作、金色の縁のあるミニアチュール。タイトルのミニアチュールとは、ヨーロッパの中世写本の冒頭に置かれる小さな挿絵のこと。小さな規格、装飾的な画面に金色の縁取りがされた本作は、確かにミニアチュールを思わせます。画面には、魚、動物、人物らしきモチーフが描き込まれています。一見ユーモラスなのですが、多くの生物の形は判然とせず、目が線で塗りつぶされており不気味さを感じさせます。左上に両腕を差し出している男性らしき人物、中央に狼のような頭、そして右手には縦に伸びた女性のような人物。物語を読み解きたくなる作品です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「パウル・クレー作、金色の縁のあるミニアチュール。タイトルのミニアチュールとは、ヨーロッパの中世写本の冒頭に置かれる小さな挿絵のこと。小さな規格、装飾的な画面に金色の縁取りがされた本作は、確かにミニアチュールを思わせます。画面には、魚、動物、人物らしきモチーフが描き込まれています。一見ユーモラスなのですが、多くの生物の形は判然とせず、目が線で塗りつぶされており不気味さを感じさせます。左上に両腕を差し出している男性らしき人物、中央に狼のような頭、そして右手には縦に伸びた女性のような人物。物語を読み解きたくなる作品です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-68">
+  <h2>#54 — JP-54.mp3 （一致率: 2.8%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERR</span>OR<span class="diff-replace">:</span> <span class="diff-replace">42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">田中敦子作、W</span>OR<span class="diff-replace">K</span> <span class="diff-replace">1</span>9<span class="diff-replace">64。田中敦子は1956年、色とりどりに塗り分けた約</span>2<span class="diff-replace">00個の電球を電気コードで繋いだ電気服という作品を発表します。光の明滅や時間といった非物質的な素材を作品に取り込んだ点で前衛的な作品でした。さらに田中は、電気服の電球とコードを円と線に置き換え、発展させた絵画作品を生み出し、以後50年にわたって多彩なバリエーションを制作しました。本作もそのうちの1点。赤や黒、青、緑、黄の円が、無数の線によって繋がり、エネルギーが伝播、増殖を繰り返しています。合成樹脂エナメル塗料の光沢や艶のある質感からも、田中の光への関心がうかがえます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (5件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「田中敦子作、W」→ 文字起こし「[ERR」</div>
+      
+      <div class="diff-item">位置 9: 原稿「K」→ 文字起こし「:」</div>
+      
+      <div class="diff-item">位置 11: 原稿「1」→ 文字起こし「42」</div>
+      
+      <div class="diff-item">位置 13: 原稿「64。田中敦子は1956年、色とりどりに塗り分けた約」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 40: 原稿「00個の電球を電気コードで繋いだ電気服という作品を発表します。光の明滅や時間といった非物質的な素材を作品に取り込んだ点で前衛的な作品でした。さらに田中は、電気服の電球とコードを円と線に置き換え、発展させた絵画作品を生み出し、以後50年にわたって多彩なバリエーションを制作しました。本作もそのうちの1点。赤や黒、青、緑、黄の円が、無数の線によって繋がり、エネルギーが伝播、増殖を繰り返しています。合成樹脂エナメル塗料の光沢や艶のある質感からも、田中の光への関心がうかがえます。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-69">
+  <h2>#55 — JP-55.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">白髪一雄作、天損星浪裏白跳張順。1</span>9<span class="diff-replace">50年代、戦後日本が復興を目指していた時代、美術界でも新しい芸術を作ろうという機運が高まっていました。白髪一雄がたどり着いたのが、「足で描く」という手法です。床に広げた大きなキャンバスの上に絵の具の塊を置き、身体をロープで支えながら、素足で押し広げるという描き方でした。勢いのまま画面外に滑り出しそうになる身体を画家としてコントロールする、無意識と意識の格闘の跡が、見る者を圧倒する絵画に結実しています。タイトルは、白髪が愛読していた中国の長編小説『水滸伝』に登場する豪傑の名前に由来します。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「白髪一雄作、天損星浪裏白跳張順。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 18: 原稿「50年代、戦後日本が復興を目指していた時代、美術界でも新しい芸術を作ろうという機運が高まっていました。白髪一雄がたどり着いたのが、「足で描く」という手法です。床に広げた大きなキャンバスの上に絵の具の塊を置き、身体をロープで支えながら、素足で押し広げるという描き方でした。勢いのまま画面外に滑り出しそうになる身体を画家としてコントロールする、無意識と意識の格闘の跡が、見る者を圧倒する絵画に結実しています。タイトルは、白髪が愛読していた中国の長編小説『水滸伝』に登場する豪傑の名前に由来します。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-70">
+  <h2>#56 — JP-56.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">アリスの庭。1</span>9<span class="diff-replace">90年、佐藤忠良記念館の増設にともない、美術館正面から北庭へ続く遊歩道ができました。巨大なミラーガラスに、ウサギや猫の彫刻が映り込む光景から、ルイスキャロルの『鏡の国のアリス』が連想され、「アリスの庭」と名付けられました。アリスの庭には、子どもや動物、ファンタジーといった親しみやすいテーマによる彫刻13点が設置されています。佐藤忠良を中心に、佐藤とゆかりの深い柳原義達や舟越保武、海外からはボリューム感たっぷりのフォルムで知られるフェルナンドボテロや、ユーモラスなウサギの作品が印象的なバリーフラナガンなどの彫刻が選定されています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「アリスの庭。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 8: 原稿「90年、佐藤忠良記念館の増設にともない、美術館正面から北庭へ続く遊歩道ができました。巨大なミラーガラスに、ウサギや猫の彫刻が映り込む光景から、ルイスキャロルの『鏡の国のアリス』が連想され、「アリスの庭」と名付けられました。アリスの庭には、子どもや動物、ファンタジーといった親しみやすいテーマによる彫刻13点が設置されています。佐藤忠良を中心に、佐藤とゆかりの深い柳原義達や舟越保武、海外からはボリューム感たっぷりのフォルムで知られるフェルナンドボテロや、ユーモラスなウサギの作品が印象的なバリーフラナガンなどの彫刻が選定されています。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-71">
+  <h2>#57 — JP-57.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 4</span>2<span class="diff-replace">9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良記念館。宮城県出身の彫刻家・佐藤忠良は、内面性を感じさせる頭像や、現代的な衣服を身にまとった女性像を生み出し、戦後の日本彫刻史に大きな足跡を残しました。出版挿絵の分野では、絵本や教科書で知られる『おおきなかぶ』の絵を描きました。佐藤忠良記念館の展示室では、本館の展示室とは違って外光が差し込んでいます。第</span>2<span class="diff-replace">展示室の窓からは野外設置の佐藤忠良作品を臨むなど、開放的な空間のなかで各時代の代表作をご覧いただけます。彫刻の展示に加え、制作の基礎とも言える貴重なデッサンや、佐藤忠良の制作や生涯についても随時ご紹介しています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良記念館。宮城県出身の彫刻家・佐藤忠良は、内面性を感じさせる頭像や、現代的な衣服を身にまとった女性像を生み出し、戦後の日本彫刻史に大きな足跡を残しました。出版挿絵の分野では、絵本や教科書で知られる『おおきなかぶ』の絵を描きました。佐藤忠良記念館の展示室では、本館の展示室とは違って外光が差し込んでいます。第」→ 文字起こし「[ERROR: 4」</div>
+      
+      <div class="diff-item">位置 157: 原稿「展示室の窓からは野外設置の佐藤忠良作品を臨むなど、開放的な空間のなかで各時代の代表作をご覧いただけます。彫刻の展示に加え、制作の基礎とも言える貴重なデッサンや、佐藤忠良の制作や生涯についても随時ご紹介しています。」→ 文字起こし「9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-72">
+  <h2>#58 — JP-58.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">芹沢銈介作、木綿地型絵染文字のれん「風」。大筆のたっぷりとした運筆が、はらいへ向け細く流れるように窄んでいく。「風」の字形と流動する空気のイメージがよく一体化し、意匠化されています。文字紋様は、型絵染作家・芹沢銈介のデザインを特徴づけるものの一つです。芹沢は民芸収集家でもあり、本作の着想源として、朝鮮民画の文字絵や、白地の円に一文字を置く密教の「阿字観」が指摘されています。「風」の字を染めているのが、風に揺らめく「のれん」であることも、機知に富んでいます。この作品は、パリ開催の個展ポスターにも採用されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「芹沢銈介作、木綿地型絵染文字のれん「風」。大筆のたっぷりとした運筆が、はらいへ向け細く流れるように窄んでいく。「風」の字形と流動する空気のイメージがよく一体化し、意匠化されています。文字紋様は、型絵染作家・芹沢銈介のデザインを特徴づけるものの一つです。芹沢は民芸収集家でもあり、本作の着想源として、朝鮮民画の文字絵や、白地の円に一文字を置く密教の「阿字観」が指摘されています。「風」の字を染めているのが、風に揺らめく「のれん」であることも、機知に富んでいます。この作品は、パリ開催の個展ポスターにも採用されました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-73">
+  <h2>#59 — JP-59.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">安田靫彦作、花の酔。満開の桜が描かれた屏風を背に、上畳に座る女性。絞り模様の着物へはらはらと花びらが落ちかかり、どうやら頭上にも、差し掛かる桜の枝があるようです。上方には、赤い紐につるされた、鳥よけのための鈴(護花鈴)も見えます。この趣向は『太閤記』に記述があり、この絵が慶長315</span>9<span class="diff-replace">8年、豊臣秀吉が催した「醍醐の花見」の一角を描いたものであることが示されます。本作は、安田靫彦の若き日の制作を伝える一点です。</span>2<span class="diff-replace">0代で奈良留学の機会を得るも、健康を害して思うように制作できなかったこの時期、靫彦は古美術や歴史の教養を深め、表現を簡潔の方向へと変化させて行きました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「安田靫彦作、花の酔。満開の桜が描かれた屏風を背に、上畳に座る女性。絞り模様の着物へはらはらと花びらが落ちかかり、どうやら頭上にも、差し掛かる桜の枝があるようです。上方には、赤い紐につるされた、鳥よけのための鈴(護花鈴)も見えます。この趣向は『太閤記』に記述があり、この絵が慶長315」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 142: 原稿「8年、豊臣秀吉が催した「醍醐の花見」の一角を描いたものであることが示されます。本作は、安田靫彦の若き日の制作を伝える一点です。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 206: 原稿「0代で奈良留学の機会を得るも、健康を害して思うように制作できなかったこの時期、靫彦は古美術や歴史の教養を深め、表現を簡潔の方向へと変化させて行きました。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-74">
+  <h2>#6 — JP-6.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">神原泰作、あるペシミストの手記第1番。何かの風景のようにも見えながら、特定の像を結ぶことはない、不定形の色彩の塊がうごめいています。神原泰は、画面を切子状に分割する未来派の絵画に通じていたほか、カンディンスキーの抽象画の理論も知っていました。そして、芸術の目的は「生命の流動」の表現であると宣言して、創作活動を行っていました。画題の「ペシミスト(悲観主義者)」は、神原の詩の世界を連想させ、不安で複雑な画家自身の精神状態の表現とも読み取れます。一方で、当時の神原はグループ「アクション」を立ち上げ、前衛芸術の理想を掲げて精力的に活動していました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「神原泰作、あるペシミストの手記第1番。何かの風景のようにも見えながら、特定の像を結ぶことはない、不定形の色彩の塊がうごめいています。神原泰は、画面を切子状に分割する未来派の絵画に通じていたほか、カンディンスキーの抽象画の理論も知っていました。そして、芸術の目的は「生命の流動」の表現であると宣言して、創作活動を行っていました。画題の「ペシミスト(悲観主義者)」は、神原の詩の世界を連想させ、不安で複雑な画家自身の精神状態の表現とも読み取れます。一方で、当時の神原はグループ「アクション」を立ち上げ、前衛芸術の理想を掲げて精力的に活動していました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-75">
+  <h2>#60 — JP-60.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">尾竹竹坡作、月の潤い・太陽の熱・星の冷え。好成績を収めていた文部省美術展覧会、通称文展に突如落選となり、画壇での不遇にもがいた尾竹竹坡は、門人たちと合同して八火社展を開催し、その技術力を以て多様な作風を示しました。三幅からなる本作には、交錯する線と色彩の幾何学的形態によって天体の光や温度が描き表され、大正時代に西洋から流れ込んだ未来派の様式が引用されています。当時の取材記事に、本作は、大地に潤いを与える月の光、草木や人間を育む太陽の熱、人間を滅入らせる暗黒の中の星の光を描き、人生観を表したものと、伝えられています。大正時代に漂う生命観をも吸収する、竹坡の旺盛な創作欲が表れた大作です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「尾竹竹坡作、月の潤い・太陽の熱・星の冷え。好成績を収めていた文部省美術展覧会、通称文展に突如落選となり、画壇での不遇にもがいた尾竹竹坡は、門人たちと合同して八火社展を開催し、その技術力を以て多様な作風を示しました。三幅からなる本作には、交錯する線と色彩の幾何学的形態によって天体の光や温度が描き表され、大正時代に西洋から流れ込んだ未来派の様式が引用されています。当時の取材記事に、本作は、大地に潤いを与える月の光、草木や人間を育む太陽の熱、人間を滅入らせる暗黒の中の星の光を描き、人生観を表したものと、伝えられています。大正時代に漂う生命観をも吸収する、竹坡の旺盛な創作欲が表れた大作です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-76">
+  <h2>#61 — JP-61.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">荘司福作、人形使い。本作制作のきっかけは、荘司福が美術講師をしていた三島学園女子大学現在の東北生活文化大学に公演に来た人形劇団です。劇団員の無心に役になり切る様や、休憩の合間の、ふと我に返りそれぞれの想いに沈む姿が、福の心に印象強く刻まれたといいます。戦後間もない、画壇で日本画の在り方が厳しく問われたこの頃、福はピカソ、マティス、メキシコのディエゴ・リベラなど海外美術に表現上の示唆を求めました。劇団の取材とスケッチを重ね、幾何学的な形象と重く鮮烈な色づかいで構成された本作からは、群像表現への理知的な取り組みも見て取れます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「荘司福作、人形使い。本作制作のきっかけは、荘司福が美術講師をしていた三島学園女子大学現在の東北生活文化大学に公演に来た人形劇団です。劇団員の無心に役になり切る様や、休憩の合間の、ふと我に返りそれぞれの想いに沈む姿が、福の心に印象強く刻まれたといいます。戦後間もない、画壇で日本画の在り方が厳しく問われたこの頃、福はピカソ、マティス、メキシコのディエゴ・リベラなど海外美術に表現上の示唆を求めました。劇団の取材とスケッチを重ね、幾何学的な形象と重く鮮烈な色づかいで構成された本作からは、群像表現への理知的な取り組みも見て取れます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-77">
+  <h2>#62 — JP-62.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">荘司福作、風化の柵。黒い空間に白く、腕を失った仏像の胴体や仁王の顔が浮かび上がります。東北の風習の中に人々の純粋な祈りの心を見た荘司福は、このテーマを追って国内外を取材し、再び東北の地で古寺に残る破損した木彫仏と出会いました。長い年月、風雨にさらされ摩耗した仏像の身に、福は「刻」の蓄積や古の人々の生きたいという切実な祈りを読み取りました。背景の黒には悠久の時間への想いが託されています。また、黒の下には朱色が塗り込められています。この「塗り込める」という工程は、福にとって気持ちを畳み込む意味で必要な行為だったと言います。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「荘司福作、風化の柵。黒い空間に白く、腕を失った仏像の胴体や仁王の顔が浮かび上がります。東北の風習の中に人々の純粋な祈りの心を見た荘司福は、このテーマを追って国内外を取材し、再び東北の地で古寺に残る破損した木彫仏と出会いました。長い年月、風雨にさらされ摩耗した仏像の身に、福は「刻」の蓄積や古の人々の生きたいという切実な祈りを読み取りました。背景の黒には悠久の時間への想いが託されています。また、黒の下には朱色が塗り込められています。この「塗り込める」という工程は、福にとって気持ちを畳み込む意味で必要な行為だったと言います。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-78">
+  <h2>#63 — JP-63.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">平福百穂作、青山白雲。描かれるのは、川が二股に分かれる地点。牛を連れた農夫が対岸へと渡ろうとしています。岸辺の岩や遠景の山は水墨淡彩の筆を重ねて造形され、岸辺に生い茂る柳の大木の枝葉を描き出すのは、スケッチに用いるような素早く流れる線です。東西の写生画法を学んだ平福百穂は、その場の空気感をも写し取るスケッチ力で、挿絵画家としても活躍しました。また、大正時代に日本画家5人で金鈴社を結成し、そこでは自身の自然観察の経験と重ねて古画への理解を深め、表現の幅を広げました。本作のような筆勢を生かした風景描写は金鈴社時代に生まれた作風の一つで、近代における新しい南画とも評されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「平福百穂作、青山白雲。描かれるのは、川が二股に分かれる地点。牛を連れた農夫が対岸へと渡ろうとしています。岸辺の岩や遠景の山は水墨淡彩の筆を重ねて造形され、岸辺に生い茂る柳の大木の枝葉を描き出すのは、スケッチに用いるような素早く流れる線です。東西の写生画法を学んだ平福百穂は、その場の空気感をも写し取るスケッチ力で、挿絵画家としても活躍しました。また、大正時代に日本画家5人で金鈴社を結成し、そこでは自身の自然観察の経験と重ねて古画への理解を深め、表現の幅を広げました。本作のような筆勢を生かした風景描写は金鈴社時代に生まれた作風の一つで、近代における新しい南画とも評されました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-79">
+  <h2>#64 — JP-64.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">平福百穂作、猟。本作は、「万葉集」の中の猟に関する歌に着想を得て制作されました。古の貴人の猟は、正倉院宝物銀壺に刻まれた騎馬人物に取材。その姿は、矢を構える先の獲物へと想像を誘います。青々と広がる草原には無数の白露が降り、空にはうっすらとした月。暁頃の情景を、金箔の輝きが透ける金潜紙を用いて、詩情豊かに表しています。珊瑚会や金鈴社で活躍した大正期の平福百穂は、古事記・日本書紀や古典物語を題材とした作品を複数発表しました。「万葉集」を短歌の本源とするアララギ歌人たちとも親交を深めました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「平福百穂作、猟。本作は、「万葉集」の中の猟に関する歌に着想を得て制作されました。古の貴人の猟は、正倉院宝物銀壺に刻まれた騎馬人物に取材。その姿は、矢を構える先の獲物へと想像を誘います。青々と広がる草原には無数の白露が降り、空にはうっすらとした月。暁頃の情景を、金箔の輝きが透ける金潜紙を用いて、詩情豊かに表しています。珊瑚会や金鈴社で活躍した大正期の平福百穂は、古事記・日本書紀や古典物語を題材とした作品を複数発表しました。「万葉集」を短歌の本源とするアララギ歌人たちとも親交を深めました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-80">
+  <h2>#65 — JP-65.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">太田聴雨作、お産。1</span>9<span class="diff-replace">3</span>2<span class="diff-replace">年の3月、画家に三女が誕生したことが契機となって、本作は制作されました。屏風と、レンギョウの入った花瓶、そして母子が横たわる大小の布団のみが描かれる、簡潔な構成です。この、静謐な画面の中で、唯一の動きである母親の嬰児へ向ける目線は、没骨描の寝具に対し、黒々とした線でそのまぶたや面貌が表され、強調されています。幼い頃から読書好きだった太田聴雨は、人物を描くとき、その内なる感情をも描出することを目指しました。画家としての再出発を決意して日本美術院展に挑んだ聴雨は、当時の日本美術院で流行していた線描表現を、一部ながら効果的に取り入れています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「太田聴雨作、お産。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 11: 原稿「3」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 13: 原稿「年の3月、画家に三女が誕生したことが契機となって、本作は制作されました。屏風と、レンギョウの入った花瓶、そして母子が横たわる大小の布団のみが描かれる、簡潔な構成です。この、静謐な画面の中で、唯一の動きである母親の嬰児へ向ける目線は、没骨描の寝具に対し、黒々とした線でそのまぶたや面貌が表され、強調されています。幼い頃から読書好きだった太田聴雨は、人物を描くとき、その内なる感情をも描出することを目指しました。画家としての再出発を決意して日本美術院展に挑んだ聴雨は、当時の日本美術院で流行していた線描表現を、一部ながら効果的に取り入れています。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-81">
+  <h2>#66 — JP-66.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">山脇百合子作、ぐりとぐら。『ぐりとぐら』は、姉の中川李枝子が作った物語に、当時大学生だった山脇百合子、旧姓、大村百合子が絵を描き、福音館書店の「こどものとも」から出版された絵本です。動物や植物が素直な線と色づかいで描かれ、余白がたっぷりと残されています。その絵は、大きなカステラを作って食べる夢のある物語と相まって、物語絵本の創作が始まったばかりの児童文学界に、子どもたちにとって親しみやすいという新たな価値を提示しました。原画である本作には、絵本では編集によってカットされた絵が見付けられたり、下描きの線が見られたりします。興に乗って絵筆を運ぶ、描き手の心が伝わってくるようです。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「山脇百合子作、ぐりとぐら。『ぐりとぐら』は、姉の中川李枝子が作った物語に、当時大学生だった山脇百合子、旧姓、大村百合子が絵を描き、福音館書店の「こどものとも」から出版された絵本です。動物や植物が素直な線と色づかいで描かれ、余白がたっぷりと残されています。その絵は、大きなカステラを作って食べる夢のある物語と相まって、物語絵本の創作が始まったばかりの児童文学界に、子どもたちにとって親しみやすいという新たな価値を提示しました。原画である本作には、絵本では編集によってカットされた絵が見付けられたり、下描きの線が見られたりします。興に乗って絵筆を運ぶ、描き手の心が伝わってくるようです。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-82">
+  <h2>#67 — JP-67.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">斎藤義重作、作品(白)。平面にイリュージョンを作り上げる絵画に疑念を抱いた斎藤義重は、形態として自立する作品制作に取り組み、革新的な創作を示し続けました。絵筆を電動ドリルに持ち替え、それを合板の表面に走らせて線条を刻むという手法の連作は、1</span>9<span class="diff-replace">60年から始まりました。作者の意志と、ドリルと木目の間の制御し難い抵抗が相まって、強弱様々な線や点が穿たれ、それらがなす特有のリズムは、見る者を、制作の過程や時間の追想へと導きます。線や点は描画的な要素でもありますが、刻む行為に、白を塗り込める行為を重ねることによって、この作品は物質としての側面もまた、引き立てられています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「斎藤義重作、作品(白)。平面にイリュージョンを作り上げる絵画に疑念を抱いた斎藤義重は、形態として自立する作品制作に取り組み、革新的な創作を示し続けました。絵筆を電動ドリルに持ち替え、それを合板の表面に走らせて線条を刻むという手法の連作は、1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 121: 原稿「60年から始まりました。作者の意志と、ドリルと木目の間の制御し難い抵抗が相まって、強弱様々な線や点が穿たれ、それらがなす特有のリズムは、見る者を、制作の過程や時間の追想へと導きます。線や点は描画的な要素でもありますが、刻む行為に、白を塗り込める行為を重ねることによって、この作品は物質としての側面もまた、引き立てられています。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-83">
+  <h2>#68 — JP-68.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">昆野恆作、生長の形態。昆野は1</span>9<span class="diff-replace">51年頃から写実を離れ、だんだんと抽象表現へと向かいました。本作は再制作であり、東京国立近代美術館が所蔵する原作は1954年に、石膏の表面をカシューという合成樹脂でコーティングした独自のスタイルで制作されました。昆野は、「生長の形態」と題した作品を複数制作しており、それらを「一連の発展する生命の具体化」と位置付けています。つややかな、枝分かれした植物のような形態は、昆野自身が美術雑誌などで関心を示していたアルプやブランクーシからの影響を思わせます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「昆野恆作、生長の形態。昆野は1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 16: 原稿「51年頃から写実を離れ、だんだんと抽象表現へと向かいました。本作は再制作であり、東京国立近代美術館が所蔵する原作は1954年に、石膏の表面をカシューという合成樹脂でコーティングした独自のスタイルで制作されました。昆野は、「生長の形態」と題した作品を複数制作しており、それらを「一連の発展する生命の具体化」と位置付けています。つややかな、枝分かれした植物のような形態は、昆野自身が美術雑誌などで関心を示していたアルプやブランクーシからの影響を思わせます。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-84">
+  <h2>#69 — JP-69.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、母の顔。本作は、佐藤忠良が美術学校を卒業して彫刻家としての道を歩みはじめた頃に、母の幸をモデルに制作されたものでした。母を軒先に座らせて、佐藤は炎天下で麦わら帽子をかぶり、汗をかきながら作ったと語っています。こうした情景を想像すると、戦時下の厳しい時代に、彫刻家としての道を歩みはじめた我が子をじっとみつめる母親の像であるとも言えるでしょう。発表された当時、本作は石膏の像でしたが、1</span>9<span class="diff-replace">81年のロダン美術館での個展を機にブロンズに鋳造されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、母の顔。本作は、佐藤忠良が美術学校を卒業して彫刻家としての道を歩みはじめた頃に、母の幸をモデルに制作されたものでした。母を軒先に座らせて、佐藤は炎天下で麦わら帽子をかぶり、汗をかきながら作ったと語っています。こうした情景を想像すると、戦時下の厳しい時代に、彫刻家としての道を歩みはじめた我が子をじっとみつめる母親の像であるとも言えるでしょう。発表された当時、本作は石膏の像でしたが、1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 199: 原稿「81年のロダン美術館での個展を機にブロンズに鋳造されました。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-85">
+  <h2>#7 — JP-7.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">鳥海青児作、うずら鳥。ほの暗い空間に仰向けに横たわる鳥の死骸。のど元や足先の微妙なしなりは、死と重力に屈した生命の説得力ある表現です。構図のやや右寄りに描くことで、鳥の重心が画面の中心に重ねられています。うずら一羽分の重さが、目を通じて掌に伝わってくるようです。無常観や死の厳格さが、もちろん主題の一部でしょう。さらにまた、一個の静物となった鳥は、生や死を超えて、ひとつの存在がそこにあることについての深い思索に誘うような、忘れがたい存在感をもっています。洲之内徹は、「盗んでも自分のものにしたい」と感じた絵の一つに、本作品を挙げています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「鳥海青児作、うずら鳥。ほの暗い空間に仰向けに横たわる鳥の死骸。のど元や足先の微妙なしなりは、死と重力に屈した生命の説得力ある表現です。構図のやや右寄りに描くことで、鳥の重心が画面の中心に重ねられています。うずら一羽分の重さが、目を通じて掌に伝わってくるようです。無常観や死の厳格さが、もちろん主題の一部でしょう。さらにまた、一個の静物となった鳥は、生や死を超えて、ひとつの存在がそこにあることについての深い思索に誘うような、忘れがたい存在感をもっています。洲之内徹は、「盗んでも自分のものにしたい」と感じた絵の一つに、本作品を挙げています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-86">
+  <h2>#70 — JP-70.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、群馬の人。本作のモデルは、群馬県出身の友人であり詩人の岡本喬でした。しかしながら、本作には、さまざまな人々への思いが重層的に込められています。中学時代、一緒に自炊生活をしてくれた知人や、戦時中に従軍していた軍隊の人が群馬県出身だったため、群馬とは何となく縁があり、こだわりになっていたのだといいます。この頭像を通して表現しようとした、佐藤自身が今まで出会った人々の優しさや力強さ、忍耐強さが、戦後の人々の共感を得て、後に「日本近代彫刻史の上の一つの里程標を打ちこんだ」とも評され、佐藤の代表作となります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、群馬の人。本作のモデルは、群馬県出身の友人であり詩人の岡本喬でした。しかしながら、本作には、さまざまな人々への思いが重層的に込められています。中学時代、一緒に自炊生活をしてくれた知人や、戦時中に従軍していた軍隊の人が群馬県出身だったため、群馬とは何となく縁があり、こだわりになっていたのだといいます。この頭像を通して表現しようとした、佐藤自身が今まで出会った人々の優しさや力強さ、忍耐強さが、戦後の人々の共感を得て、後に「日本近代彫刻史の上の一つの里程標を打ちこんだ」とも評され、佐藤の代表作となります。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-87">
+  <h2>#71 — JP-71.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、常磐の大工。1</span>9<span class="diff-replace">50年代、佐藤は頭像を数多く制作したことで佐藤の首狩りと評され、労働者など、身の回りの人々をモデルにしたことで穢づくりとも評されました。この頃、佐藤は作家仲間とともに地方の農村や漁村へスケッチ旅行に向かいました。中でも常磐炭鉱は足しげく通った取材地の一つで、本作は、常磐炭鉱関係の仕事に従事していた大工をモデルにした作品です。一連の頭像について、佐藤は別に好んで不細工な彫刻を作ったわけではなく、本当にいい男、女、言いかえれば生き生きした人間の顔を作りたかっただけなのだと語っています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、常磐の大工。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 14: 原稿「50年代、佐藤は頭像を数多く制作したことで佐藤の首狩りと評され、労働者など、身の回りの人々をモデルにしたことで穢づくりとも評されました。この頃、佐藤は作家仲間とともに地方の農村や漁村へスケッチ旅行に向かいました。中でも常磐炭鉱は足しげく通った取材地の一つで、本作は、常磐炭鉱関係の仕事に従事していた大工をモデルにした作品です。一連の頭像について、佐藤は別に好んで不細工な彫刻を作ったわけではなく、本当にいい男、女、言いかえれば生き生きした人間の顔を作りたかっただけなのだと語っています。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-88">
+  <h2>#72 — JP-72.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、ふざけっこ。佐藤は、「小児科の忠さん」と呼ばれるほど多くの子どもの像を残しました。本作のモデルは、友人で画家、舞台装飾家の朝倉摂の娘、亜古です。恩師である彫刻家、朝倉文夫の孫でもありました。佐藤は、よく摂から亜古を預けられ、子守をしました。お風呂に入った後に服を着せようとすると、大人をからかって逃げ回るので、「預り賃に彫刻にしてやろう」と思い立ったのが、制作のきっかけであったといいます。バスタオルに身をくるみ、左足をあげて、今にも動き出しそうな愛らしい姿が印象的な作品です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、ふざけっこ。佐藤は、「小児科の忠さん」と呼ばれるほど多くの子どもの像を残しました。本作のモデルは、友人で画家、舞台装飾家の朝倉摂の娘、亜古です。恩師である彫刻家、朝倉文夫の孫でもありました。佐藤は、よく摂から亜古を預けられ、子守をしました。お風呂に入った後に服を着せようとすると、大人をからかって逃げ回るので、「預り賃に彫刻にしてやろう」と思い立ったのが、制作のきっかけであったといいます。バスタオルに身をくるみ、左足をあげて、今にも動き出しそうな愛らしい姿が印象的な作品です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-89">
+  <h2>#73 — JP-73.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、ボタン大。本作は、娘であり俳優の佐藤オリエをモデルにしています。マントを着用したオリエの姿をみて、北海道で幼少期にマントで冬を過ごした懐かしい記憶を思い出したこと、また、そのフォルムに魅かれたことが制作のきっかけであったと語っています。また、同時代のイタリアの彫刻家ジャコモ・マンズーによる、枢機卿をモチーフにしたブロンズ作品からも着想を得ていると語っています。左右対称に広がったマントのシルエットと手の位置などに配慮が必要だったため、時間をかけて制作されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、ボタン大。本作は、娘であり俳優の佐藤オリエをモデルにしています。マントを着用したオリエの姿をみて、北海道で幼少期にマントで冬を過ごした懐かしい記憶を思い出したこと、また、そのフォルムに魅かれたことが制作のきっかけであったと語っています。また、同時代のイタリアの彫刻家ジャコモ・マンズーによる、枢機卿をモチーフにしたブロンズ作品からも着想を得ていると語っています。左右対称に広がったマントのシルエットと手の位置などに配慮が必要だったため、時間をかけて制作されました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-90">
+  <h2>#74 — JP-74.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 4</span>2<span class="diff-replace">9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、若い女。当時の若者たちがジーンズ姿で歩いているの見て、佐藤は「硬い木綿と肉体とが織りなす皺の起伏が呼吸しているように」見えたといいます。ジーパンという作品にはじまり、ジーンズ姿の女性像は</span>2<span class="diff-replace">0体ほど制作されました。本作もそうした意識で作られたもので、右脚に重心を置き、首を右に傾け、腰を右方向に張り出し、上半身が緩やかな曲線を描いています。腰に添えられた右手もまた右方向に孤を描き、写実的な表現というよりは大胆な身体の操作が行われています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、若い女。当時の若者たちがジーンズ姿で歩いているの見て、佐藤は「硬い木綿と肉体とが織りなす皺の起伏が呼吸しているように」見えたといいます。ジーパンという作品にはじまり、ジーンズ姿の女性像は」→ 文字起こし「[ERROR: 4」</div>
+      
+      <div class="diff-item">位置 100: 原稿「0体ほど制作されました。本作もそうした意識で作られたもので、右脚に重心を置き、首を右に傾け、腰を右方向に張り出し、上半身が緩やかな曲線を描いています。腰に添えられた右手もまた右方向に孤を描き、写実的な表現というよりは大胆な身体の操作が行われています。」→ 文字起こし「9, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-91">
+  <h2>#75 — JP-75.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、帽子・夏。佐藤は東京造形大学の教授となり、彫刻専攻の第1期生となった笹戸千津子をモデルに、イタリアの具象彫刻に共鳴するような作品を模索し始めます。本作は、当時の若者のファッションを取り入れ、身体や衣服を大胆に操作した作品でした。「具象でモビールをやってみているような気持ち」と語っているように、形態の均衡や空間の広がりをどう生み出すかが、佐藤の関心事となっていきました。この作品を作った時、佐藤は還暦の年を迎えていました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、帽子・夏。佐藤は東京造形大学の教授となり、彫刻専攻の第1期生となった笹戸千津子をモデルに、イタリアの具象彫刻に共鳴するような作品を模索し始めます。本作は、当時の若者のファッションを取り入れ、身体や衣服を大胆に操作した作品でした。「具象でモビールをやってみているような気持ち」と語っているように、形態の均衡や空間の広がりをどう生み出すかが、佐藤の関心事となっていきました。この作品を作った時、佐藤は還暦の年を迎えていました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-92">
+  <h2>#76 — JP-76.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、おおきなかぶ。佐藤は彫刻制作の傍らで、多くの絵本を生み出しました。絵本「おおきなかぶ」は、トルストイによって再話されたロシア民話であり、内田莉莎子が翻訳、佐藤忠良が作画した絵本です。シベリア抑留に際して現地の暮らしを目に焼き付けた佐藤にとって、本作は渾身の一作となりました。リズミカルな文章にあわせるように、佐藤は、かぶを引き抜こうとする動作と休息する様子を交互に描くことによって、場面展開に緩急を生み出しました。人体の動きが表現の要であるこの絵本のために、佐藤は三度もデッサンしたといいます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、おおきなかぶ。佐藤は彫刻制作の傍らで、多くの絵本を生み出しました。絵本「おおきなかぶ」は、トルストイによって再話されたロシア民話であり、内田莉莎子が翻訳、佐藤忠良が作画した絵本です。シベリア抑留に際して現地の暮らしを目に焼き付けた佐藤にとって、本作は渾身の一作となりました。リズミカルな文章にあわせるように、佐藤は、かぶを引き抜こうとする動作と休息する様子を交互に描くことによって、場面展開に緩急を生み出しました。人体の動きが表現の要であるこの絵本のために、佐藤は三度もデッサンしたといいます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-93">
+  <h2>#77 — JP-77.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">アンリ・ド・トゥールーズ・ロートレック作、ディヴァン・ジャポネ。ディヴァン・ジャポネは日本の長椅子という意味の飲食店で、日本風の内装で、歌や踊りを楽しむことができました。本作は、このお店のために制作されたポスターであり、中央には、観客席に座るジャヌ・アヴリルが描かれています。ジャヌは、モンマルトルにあるムーラン・ルージュというダンスホールで人気を博した踊り子で、ロートレックの親友でもありました。ステージ上には黒い手袋がトレードマークだった歌手、イヴェット・ギルベールが描かれています。首から上が大胆にトリミングされており、こうした鑑賞者の想像をかきたてる臨場感のある描写は、ロートレックの得意技でした。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「アンリ・ド・トゥールーズ・ロートレック作、ディヴァン・ジャポネ。ディヴァン・ジャポネは日本の長椅子という意味の飲食店で、日本風の内装で、歌や踊りを楽しむことができました。本作は、このお店のために制作されたポスターであり、中央には、観客席に座るジャヌ・アヴリルが描かれています。ジャヌは、モンマルトルにあるムーラン・ルージュというダンスホールで人気を博した踊り子で、ロートレックの親友でもありました。ステージ上には黒い手袋がトレードマークだった歌手、イヴェット・ギルベールが描かれています。首から上が大胆にトリミングされており、こうした鑑賞者の想像をかきたてる臨場感のある描写は、ロートレックの得意技でした。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-94">
+  <h2>#78 — JP-78.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: </span>4<span class="diff-replace">2</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヘンリー・ムーア作、スピンドル・ピース。スピンドル・ピースは糸つむぎの形という意味で、</span>4<span class="diff-replace">種類の大きさで制作されました。そのイメージは1</span>9<span class="diff-replace">38年からのドローイングに遡ると言われており、1939年から40年にかけて制作された3つの突起という作品との関連性が指摘されています。作品を構成する突起や穴は見る角度によって変形し、まるで内に生命を宿しているかのようです。ムーアは、原始美術や民族美術、自然から見出した骨や石器、流木がもつ生命力に共感していました。本作の当館への設置を推薦したのは、ムーアを敬愛しアトリエに訪問した佐藤忠良でした。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヘンリー・ムーア作、スピンドル・ピース。スピンドル・ピースは糸つむぎの形という意味で、」→ 文字起こし「[ERROR: 」</div>
+      
+      <div class="diff-item">位置 44: 原稿「種類の大きさで制作されました。そのイメージは1」→ 文字起こし「2」</div>
+      
+      <div class="diff-item">位置 68: 原稿「38年からのドローイングに遡ると言われており、1939年から40年にかけて制作された3つの突起という作品との関連性が指摘されています。作品を構成する突起や穴は見る角度によって変形し、まるで内に生命を宿しているかのようです。ムーアは、原始美術や民族美術、自然から見出した骨や石器、流木がもつ生命力に共感していました。本作の当館への設置を推薦したのは、ムーアを敬愛しアトリエに訪問した佐藤忠良でした。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-95">
+  <h2>#79 — JP-79.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">フェルナンド・ボテロ作、猫。大きな尻尾で目を見開き、鈴を首につけたこの猫は、誰かの飼い猫なのでしょうか。作者のボテロは、ふくよかな人物や動物の像を数多く生み出しました。それらは何らかのモデルを基にしているのではなく、豊かなイマジネーションによって創作したものだといいます。スペインのバルセロナにも、本作よりひとまわり大きなヴァリエーションが設置されています。当館では、来館者の安全に配慮して、髭を外して展示しているため、「ひげのない猫」としても親しまれています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「フェルナンド・ボテロ作、猫。大きな尻尾で目を見開き、鈴を首につけたこの猫は、誰かの飼い猫なのでしょうか。作者のボテロは、ふくよかな人物や動物の像を数多く生み出しました。それらは何らかのモデルを基にしているのではなく、豊かなイマジネーションによって創作したものだといいます。スペインのバルセロナにも、本作よりひとまわり大きなヴァリエーションが設置されています。当館では、来館者の安全に配慮して、髭を外して展示しているため、「ひげのない猫」としても親しまれています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-96">
+  <h2>#8 — JP-8.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">菅野聖子作、アルファからオメガまでII。赤い地と水平・垂直の格子をベースに、無数の直線が、ある法則に従って配置されています。太さや長さの均質なこれらの線は、製図用具の烏口を用いて引かれており、制作する身体や感情の痕跡を残さずに、純度の高い構成的画面を作り出そうとする意図がうかがえます。しかしよく観察すれば、わずかに濃さや角度のむらが認められ、一見工業製品のような無機質な線が、やはり人の手の所産であることが実感されます。見る者は、作者の驚異的な丹念さと集中力に圧倒されながら、システムの生み出すリズミカルな造形に、さまざまな思索の世界へと誘われます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「菅野聖子作、アルファからオメガまでII。赤い地と水平・垂直の格子をベースに、無数の直線が、ある法則に従って配置されています。太さや長さの均質なこれらの線は、製図用具の烏口を用いて引かれており、制作する身体や感情の痕跡を残さずに、純度の高い構成的画面を作り出そうとする意図がうかがえます。しかしよく観察すれば、わずかに濃さや角度のむらが認められ、一見工業製品のような無機質な線が、やはり人の手の所産であることが実感されます。見る者は、作者の驚異的な丹念さと集中力に圧倒されながら、システムの生み出すリズミカルな造形に、さまざまな思索の世界へと誘われます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-97">
+  <h2>#80 — JP-80.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">バリー・フラナガン作、野兎と鉄兜。フラナガンは、大雪の中で、ゆったりと飛び跳ねる野兎を目にしてから、野兎を作品に取り入れるようになりました。フラナガンにとって、野兎は古今東西の信仰や神話に登場する特別なモチーフであり、風刺漫画や鳥獣戯画のように、その挙動によって人間以上に多くのことを物語ってくれる存在でした。耳を立てて、二本足で伸びあがるようにして立つ野兎は、フラナガンが別に手がけたボクシングをする野兎と似たポーズをしています。足元にある鉄兜は死んだ兵士を示唆するとも考えられており、今にも跳躍しそうな生き生きとした野兎とは対照的であるといえるでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「バリー・フラナガン作、野兎と鉄兜。フラナガンは、大雪の中で、ゆったりと飛び跳ねる野兎を目にしてから、野兎を作品に取り入れるようになりました。フラナガンにとって、野兎は古今東西の信仰や神話に登場する特別なモチーフであり、風刺漫画や鳥獣戯画のように、その挙動によって人間以上に多くのことを物語ってくれる存在でした。耳を立てて、二本足で伸びあがるようにして立つ野兎は、フラナガンが別に手がけたボクシングをする野兎と似たポーズをしています。足元にある鉄兜は死んだ兵士を示唆するとも考えられており、今にも跳躍しそうな生き生きとした野兎とは対照的であるといえるでしょう。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-98">
+  <h2>#81 — JP-81.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">トム・オタネス作、蛙とロボット。ゼンマイの鍵が背中にある、帽子をかぶった円筒形の顔と手足のロボットが、靴を履いた、ふくよかなカエルの上に乗って、こちらをみています。あおむけに転がり、口を開けたカエルのお腹の中には、球体が入っています。よく見ると、ロボットは男性、カエルは女性であることがわかります。ケンカをしているのでしょうか。それとも愛をはぐくもうとしているのでしょうか。本作は、本体がゆりかごのように揺れ、カエルのお腹の中の球体が転がって、音がなるものですが、当館では、来館者の安全に配慮して、本体が動かないように固定して展示しています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「トム・オタネス作、蛙とロボット。ゼンマイの鍵が背中にある、帽子をかぶった円筒形の顔と手足のロボットが、靴を履いた、ふくよかなカエルの上に乗って、こちらをみています。あおむけに転がり、口を開けたカエルのお腹の中には、球体が入っています。よく見ると、ロボットは男性、カエルは女性であることがわかります。ケンカをしているのでしょうか。それとも愛をはぐくもうとしているのでしょうか。本作は、本体がゆりかごのように揺れ、カエルのお腹の中の球体が転がって、音がなるものですが、当館では、来館者の安全に配慮して、本体が動かないように固定して展示しています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-99">
+  <h2>#82 — JP-82.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">吉野辰海作、水犬。吉野にとって犬というイメージは戦時下にまで遡ります。食糧不足のため犬が食用に供出されるという状況で、愛犬のぺスが行方不明になってしまったのです。細長い腕が、痩せた胴体から流れ落ちるように伸びています。舌を出した頭部は、身体から逃れるように、ねじれて上空へと向かっていきます。吉野にとって、螺旋、ねじれ、水という要素は生命力の象徴でした。また、男性的な犬の姿は、同時に、生命を生み出す女性性を内包していると作家は語ります。その姿は、生命や社会という、繰り返し永久的に起こる運動の表象でもありました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「吉野辰海作、水犬。吉野にとって犬というイメージは戦時下にまで遡ります。食糧不足のため犬が食用に供出されるという状況で、愛犬のぺスが行方不明になってしまったのです。細長い腕が、痩せた胴体から流れ落ちるように伸びています。舌を出した頭部は、身体から逃れるように、ねじれて上空へと向かっていきます。吉野にとって、螺旋、ねじれ、水という要素は生命力の象徴でした。また、男性的な犬の姿は、同時に、生命を生み出す女性性を内包していると作家は語ります。その姿は、生命や社会という、繰り返し永久的に起こる運動の表象でもありました。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-100">
+  <h2>#83 — JP-83.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too </span>M<span class="diff-replace">any Requests', url='https://api.gladia.io/v2/pre</span>-<span class="diff-replace">recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">吾妻兼治郎作、</span>M<span class="diff-replace">U</span>-<span class="diff-replace">765。吾妻は、恩師の彫刻家、マリーニの影響下にあった自身の作品をすべて物置きにしまいました。何もなくなったアトリエで目に入った、木片の美しさに魅かれて作ったレリーフを「MU」と名付けたことが、このシリーズの始まりでした。本作は、滴の形の立体作品です。吾妻は、この世のすべての現象には生や死といった両極があると考えました。ブロンズの磨かれた部分と、穴のように暗い部分の対比は、そうした両極の意味合いを含んでいます。やがて、無は有であり、有は無であるという気づきから、吾妻は「YU」のシリーズに移行していきました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「吾妻兼治郎作、」→ 文字起こし「[ERROR: 429, message='Too 」</div>
+      
+      <div class="diff-item">位置 8: 原稿「U」→ 文字起こし「any Requests', url='https://api.gladia.io/v2/pre」</div>
+      
+      <div class="diff-item">位置 10: 原稿「765。吾妻は、恩師の彫刻家、マリーニの影響下にあった自身の作品をすべて物置きにしまいました。何もなくなったアトリエで目に入った、木片の美しさに魅かれて作ったレリーフを「MU」と名付けたことが、このシリーズの始まりでした。本作は、滴の形の立体作品です。吾妻は、この世のすべての現象には生や死といった両極があると考えました。ブロンズの磨かれた部分と、穴のように暗い部分の対比は、そうした両極の意味合いを含んでいます。やがて、無は有であり、有は無であるという気づきから、吾妻は「YU」のシリーズに移行していきました。」→ 文字起こし「recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-101">
+  <h2>#84 — JP-84.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">前田寛治作、風景。前田寛治は大正から昭和の初めにかけて活躍した洋画家です。病により若くして亡くなったため、画家としての活動は長いものではありませんでしたが、彼の質感や実在感に基づいた独自の写実表現は、同時代の画家たちに大きな影響を与えました。木々の間から眺めた郊外の景色が表された本作は、フランス滞在中に描かれた可能性が高い作品です。留学中の前田は、フォーヴィスムやキュビスムといった新たな潮流も含め様々な研究に努めました。最終的にクールベのレアリスムから強い影響を受けた写実理論へと向かった前田ですが、本作にはその過渡期ともいえる表現が見て取れ、彼の留学成果の一端を示す貴重な作品のひとつといえるでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「前田寛治作、風景。前田寛治は大正から昭和の初めにかけて活躍した洋画家です。病により若くして亡くなったため、画家としての活動は長いものではありませんでしたが、彼の質感や実在感に基づいた独自の写実表現は、同時代の画家たちに大きな影響を与えました。木々の間から眺めた郊外の景色が表された本作は、フランス滞在中に描かれた可能性が高い作品です。留学中の前田は、フォーヴィスムやキュビスムといった新たな潮流も含め様々な研究に努めました。最終的にクールベのレアリスムから強い影響を受けた写実理論へと向かった前田ですが、本作にはその過渡期ともいえる表現が見て取れ、彼の留学成果の一端を示す貴重な作品のひとつといえるでしょう。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-102">
+  <h2>#85 — JP-85.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">高橋英吉作、少女像。左手にサボテンの鉢植えを抱え、遠くに視線を向ける少女の姿を表した本作は、高橋が美術学校の研究科在学中に官展で初入選した作品です。表面的な写実を超えようとする意識が現れているとして、当時美術雑誌等でも評価されました。正面を向く体に横向きの顔、大きな目とその表情などからは、エジプト彫刻からの影響が指摘されています。はじめはヌード像として制作を進めていたようですが、最終的に薄物をまとう姿へ変更されました。本作で新進の彫刻家として注目を集めた高橋ですが、思うところがあったのか彫刻家としての活動を中断し、捕鯨船に乗り込むことになります。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「高橋英吉作、少女像。左手にサボテンの鉢植えを抱え、遠くに視線を向ける少女の姿を表した本作は、高橋が美術学校の研究科在学中に官展で初入選した作品です。表面的な写実を超えようとする意識が現れているとして、当時美術雑誌等でも評価されました。正面を向く体に横向きの顔、大きな目とその表情などからは、エジプト彫刻からの影響が指摘されています。はじめはヌード像として制作を進めていたようですが、最終的に薄物をまとう姿へ変更されました。本作で新進の彫刻家として注目を集めた高橋ですが、思うところがあったのか彫刻家としての活動を中断し、捕鯨船に乗り込むことになります。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-103">
+  <h2>#86 — JP-86.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, messa</span>g<span class="diff-replace">e='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">新宮晋作、時の旅人。開館以来北庭に設置されている新宮晋の時の旅人は、当館の屋外彫刻の中で最も背が高い作品です。黄色と白に塗られた特徴的な羽が自然の風を受けてクルクルと回る「動く彫刻」としてもおなじみですが、その素材は金属であり、羽は1枚当たり500k</span>g<span class="diff-replace">近い重さがあります。けれども軽快に回る姿からその重さは感じられず、むしろ軽々とした印象を受けるのではないでしょうか。新宮は、自らの彫刻について「目に見えない自然のエネルギーを見せる装置」であると述べていますが、本作もその自在な動きによって北庭を渡る風の姿を見せてくれます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「新宮晋作、時の旅人。開館以来北庭に設置されている新宮晋の時の旅人は、当館の屋外彫刻の中で最も背が高い作品です。黄色と白に塗られた特徴的な羽が自然の風を受けてクルクルと回る「動く彫刻」としてもおなじみですが、その素材は金属であり、羽は1枚当たり500k」→ 文字起こし「[ERROR: 429, messa」</div>
+      
+      <div class="diff-item">位置 126: 原稿「近い重さがあります。けれども軽快に回る姿からその重さは感じられず、むしろ軽々とした印象を受けるのではないでしょうか。新宮は、自らの彫刻について「目に見えない自然のエネルギーを見せる装置」であると述べていますが、本作もその自在な動きによって北庭を渡る風の姿を見せてくれます。」→ 文字起こし「e='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-104">
+  <h2>#87 — JP-87.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">小室達作、構想。ボリューム感のある肉体と、両手を胸の前に出す特徴あるポーズが印象的な本作は、小室が第6回帝国美術展覧会、通称・帝展で特選を受賞した作品です。「構想」というタイトルと女性のポーズとの関係は不明ですが、この頃、具象的な作品に観念的なタイトルを付ける風潮があり、本作もそのような流れの中に位置づけることができます。なお、当館の像は、故郷の小学校に保存されている当時の石膏像をもとに、宮城県美術館の開館にあわせてブロンズ像へと鋳造されたものです。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「小室達作、構想。ボリューム感のある肉体と、両手を胸の前に出す特徴あるポーズが印象的な本作は、小室が第6回帝国美術展覧会、通称・帝展で特選を受賞した作品です。「構想」というタイトルと女性のポーズとの関係は不明ですが、この頃、具象的な作品に観念的なタイトルを付ける風潮があり、本作もそのような流れの中に位置づけることができます。なお、当館の像は、故郷の小学校に保存されている当時の石膏像をもとに、宮城県美術館の開館にあわせてブロンズ像へと鋳造されたものです。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-105">
+  <h2>#88 — JP-88.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">満谷国四郎作、裸婦。満谷は画業の前半と後半で大きく画風を変えた画家として知られています。そのきっかけとなったのは、1</span>9<span class="diff-replace">11年からの二度目のヨーロッパ遊学でした。この時に学んだセザンヌやルノワールの影響は大きく、それまでの徹底した写実表現から、装飾的で詩情豊かな作風へと転じます。文部省美術展覧会、通称・文展の審査員を務めるなど既に画家としての評価を得ていた満谷の作風の変化は、当時の画壇にも驚きを与えました。渓流の岩場に立つ裸婦を後ろから描いた本作は画風を変えた後の作品で、輪郭線の片側をぼかした量感の表現などにこの時期の特徴がよく表れています。裸婦の健康的な肉体からはルノワールの影響も感じられます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「満谷国四郎作、裸婦。満谷は画業の前半と後半で大きく画風を変えた画家として知られています。そのきっかけとなったのは、1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 59: 原稿「11年からの二度目のヨーロッパ遊学でした。この時に学んだセザンヌやルノワールの影響は大きく、それまでの徹底した写実表現から、装飾的で詩情豊かな作風へと転じます。文部省美術展覧会、通称・文展の審査員を務めるなど既に画家としての評価を得ていた満谷の作風の変化は、当時の画壇にも驚きを与えました。渓流の岩場に立つ裸婦を後ろから描いた本作は画風を変えた後の作品で、輪郭線の片側をぼかした量感の表現などにこの時期の特徴がよく表れています。裸婦の健康的な肉体からはルノワールの影響も感じられます。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-106">
+  <h2>#89 — JP-89.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">高橋勝蔵作、静物。高橋は、画家の留学先がヨーロッパ中心であった当時において、アメリカで絵画を学んだ最初期の日本人のひとりでした。カリフォルニア・スクール・オブ・デザインに通った高橋の成績は優秀で、卒業時には油彩画で金賞を受賞しています。スイカとブドウを描いた本作は帰国後の作品ですが、みずみずしい果物や敷かれた布の質感、光と影によって表された立体感からは、アメリカでも評価された技量の高さがうかがえます。同時期にヨーロッパから帰国した黒田清輝が画壇の中心となっていったのとは対照的に、高橋は知る人ぞ知る存在となっていますが、アメリカから最先端の絵画情報をもたらした重要な画家のひとりと言えます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「高橋勝蔵作、静物。高橋は、画家の留学先がヨーロッパ中心であった当時において、アメリカで絵画を学んだ最初期の日本人のひとりでした。カリフォルニア・スクール・オブ・デザインに通った高橋の成績は優秀で、卒業時には油彩画で金賞を受賞しています。スイカとブドウを描いた本作は帰国後の作品ですが、みずみずしい果物や敷かれた布の質感、光と影によって表された立体感からは、アメリカでも評価された技量の高さがうかがえます。同時期にヨーロッパから帰国した黒田清輝が画壇の中心となっていったのとは対照的に、高橋は知る人ぞ知る存在となっていますが、アメリカから最先端の絵画情報をもたらした重要な画家のひとりと言えます。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-107">
+  <h2>#9 — JP-9.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">ヴァシリー・カンディンスキー作、イーアールキャンベルのための壁画ナンバーフォーの習作カーニバル・冬。ほとばしる色たちがそれぞれに響きあい、音楽となって精神を揺さぶるかのようです。1</span>9<span class="diff-replace">11年頃、カンディンスキーは特定の対象を示さない、色と形そのものを表現内容とする絵画を創始しました。本作品はニューヨークの実業家のために制作した4点組のうち1点の、完成に近い習作であり、初期抽象絵画の到達点を示す貴重な作例です。「カーニバル・冬」の通称は、過去に四季連作の一部だという説があったことに由来しています。カンディンスキーは、風景やキリスト教のモチーフを着想源に抽象形態を生み出しました。ここでも、黙示録に関連する虹や舟、ラッパのような形にその名残が見られます。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「ヴァシリー・カンディンスキー作、イーアールキャンベルのための壁画ナンバーフォーの習作カーニバル・冬。ほとばしる色たちがそれぞれに響きあい、音楽となって精神を揺さぶるかのようです。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 91: 原稿「11年頃、カンディンスキーは特定の対象を示さない、色と形そのものを表現内容とする絵画を創始しました。本作品はニューヨークの実業家のために制作した4点組のうち1点の、完成に近い習作であり、初期抽象絵画の到達点を示す貴重な作例です。「カーニバル・冬」の通称は、過去に四季連作の一部だという説があったことに由来しています。カンディンスキーは、風景やキリスト教のモチーフを着想源に抽象形態を生み出しました。ここでも、黙示録に関連する虹や舟、ラッパのような形にその名残が見られます。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-108">
+  <h2>#90 — JP-90.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">真山孝治作、彼岸に近く。横長の画面に描かれた草むらで横になる女性。農作業の合間、休憩中の一コマなのでしょうか、手前には草を刈るための鎌が置かれています。タイトルからは春のお彼岸に近い穏やかな季節であることが示唆されます。真山が洋画を学んだ白馬会は、黒田清輝ら印象派の影響を受けた画家たちが中心となった団体でした。本作で、影になっている帯や前掛けに紫色を用いた表現は、紫派とも呼ばれた彼らの陰影表現の特徴であり、真山がその絵画表現を正しく学んでいたことが分かります。文部省美術展覧会通称・文展への出品を重ね、気鋭の洋画家として評価を高めていた頃の作品です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「真山孝治作、彼岸に近く。横長の画面に描かれた草むらで横になる女性。農作業の合間、休憩中の一コマなのでしょうか、手前には草を刈るための鎌が置かれています。タイトルからは春のお彼岸に近い穏やかな季節であることが示唆されます。真山が洋画を学んだ白馬会は、黒田清輝ら印象派の影響を受けた画家たちが中心となった団体でした。本作で、影になっている帯や前掛けに紫色を用いた表現は、紫派とも呼ばれた彼らの陰影表現の特徴であり、真山がその絵画表現を正しく学んでいたことが分かります。文部省美術展覧会通称・文展への出品を重ね、気鋭の洋画家として評価を高めていた頃の作品です。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-109">
+  <h2>#91 — JP-91.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: </span>4<span class="diff-replace">29, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">渡辺亮輔作、樹蔭。木にもたれてたたずむ着物姿の女性。薄暗い林を背景に明るい色彩で描かれた横顔からは、気品のあるさわやかな印象を受けます。文部省美術展覧会、通称・文展の第1回展に入選したこの作品は、もともとは等身大の大きさの全身像として構想されました。しかし画面の下方が思い通りに描けないうちに病気となった渡辺は、画面を切断して上半身を描いた作品として出品、入選を果たしたのでした。この病気療養のため帰省を余儀なくされたことから、渡辺自身はその展覧会を見ることができず、</span>4<span class="diff-replace">年間の闘病の末、31歳の若さで亡くなりました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「渡辺亮輔作、樹蔭。木にもたれてたたずむ着物姿の女性。薄暗い林を背景に明るい色彩で描かれた横顔からは、気品のあるさわやかな印象を受けます。文部省美術展覧会、通称・文展の第1回展に入選したこの作品は、もともとは等身大の大きさの全身像として構想されました。しかし画面の下方が思い通りに描けないうちに病気となった渡辺は、画面を切断して上半身を描いた作品として出品、入選を果たしたのでした。この病気療養のため帰省を余儀なくされたことから、渡辺自身はその展覧会を見ることができず、」→ 文字起こし「[ERROR: 」</div>
+      
+      <div class="diff-item">位置 235: 原稿「年間の闘病の末、31歳の若さで亡くなりました。」→ 文字起こし「29, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-110">
+  <h2>#92 — JP-92.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">チャールズ・ワーグマン作、江戸湾の朝。本作を描いたワーグマンは幕末に雑誌の特派員、報道画家として来日したイギリス人です。素描や風刺画を得意とし、油彩画も描きましたが、油彩画の腕前については不明な点が多く、本作も手堅く穏健な作品という評価に落ち着くでしょう。彼の作品には報道画家としての意識からか、日本の人々の姿が描かれることが多くありますが、本作は朝の清々しい景色のみで人物は登場しません。余計なことを意識せず、純粋に描きたい風景を描いた作品なのかもしれません。ワーグマンは、日本洋画の黎明期に、日本人に西洋絵画の技術を直接伝えた人物としてよく知られています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「チャールズ・ワーグマン作、江戸湾の朝。本作を描いたワーグマンは幕末に雑誌の特派員、報道画家として来日したイギリス人です。素描や風刺画を得意とし、油彩画も描きましたが、油彩画の腕前については不明な点が多く、本作も手堅く穏健な作品という評価に落ち着くでしょう。彼の作品には報道画家としての意識からか、日本の人々の姿が描かれることが多くありますが、本作は朝の清々しい景色のみで人物は登場しません。余計なことを意識せず、純粋に描きたい風景を描いた作品なのかもしれません。ワーグマンは、日本洋画の黎明期に、日本人に西洋絵画の技術を直接伝えた人物としてよく知られています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-111">
+  <h2>#93 — JP-93.mp3 （一致率: 0.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">五姓田義松作、少女。五姓田義松は、10歳の時イギリス人報道画家のチャールズ・ワーグマンに入門しました。これは、日本人が西洋人から直接洋画の技術を学んだ、最初期の事例とされています。もっとも師のワーグマンは油彩画が得意ではなかったと言われ、義松が受けた洋画技法の手ほどきは、必ずしも体系的なものではなかったとの指摘もあります。しかし絵画の才能に恵まれていた義松は、数年のうちに鉛筆画、水彩画から油彩画にいたるまで西洋絵画の技術を自らのものとしました。こちらを見つめる、ふっくらとした顔立ちの少女が描かれた本作からも誇張や不自然な描写は感じられず、彼が身に着けた油彩画技量の確かさを示しています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (1件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「五姓田義松作、少女。五姓田義松は、10歳の時イギリス人報道画家のチャールズ・ワーグマンに入門しました。これは、日本人が西洋人から直接洋画の技術を学んだ、最初期の事例とされています。もっとも師のワーグマンは油彩画が得意ではなかったと言われ、義松が受けた洋画技法の手ほどきは、必ずしも体系的なものではなかったとの指摘もあります。しかし絵画の才能に恵まれていた義松は、数年のうちに鉛筆画、水彩画から油彩画にいたるまで西洋絵画の技術を自らのものとしました。こちらを見つめる、ふっくらとした顔立ちの少女が描かれた本作からも誇張や不自然な描写は感じられず、彼が身に着けた油彩画技量の確かさを示しています。」→ 文字起こし「[ERROR: 429, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-112">
+  <h2>#94 — JP-94.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">猪熊弦一郎作、葉を持つ女。1</span>9<span class="diff-replace">38年にフランスへ渡った猪熊は、日本にいた頃から強く惹かれていたピカソやマティスの表現に影響を受けながら、街行く人々や風景を精力的に描きました。マティスには直接自作を見てもらう機会にも恵まれましたが、そこではまずピカソの影響を指摘されたといいます。体の前面を覆うマフラーや右手に持つ木の葉が特徴的な本作は滞仏中に描かれたものですが、女性の顔などにキュビスム風の表現が見て取れます。また、女性の肌の色やマフラーの鮮やかな色遣いなどからは、自由な色彩への興味が感じられるでしょう。本作は帰国後すぐの新制作派協会展に「縞の首巻」と題して出品されました。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「猪熊弦一郎作、葉を持つ女。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 15: 原稿「38年にフランスへ渡った猪熊は、日本にいた頃から強く惹かれていたピカソやマティスの表現に影響を受けながら、街行く人々や風景を精力的に描きました。マティスには直接自作を見てもらう機会にも恵まれましたが、そこではまずピカソの影響を指摘されたといいます。体の前面を覆うマフラーや右手に持つ木の葉が特徴的な本作は滞仏中に描かれたものですが、女性の顔などにキュビスム風の表現が見て取れます。また、女性の肌の色やマフラーの鮮やかな色遣いなどからは、自由な色彩への興味が感じられるでしょう。本作は帰国後すぐの新制作派協会展に「縞の首巻」と題して出品されました。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-113">
+  <h2>#95 — JP-95.mp3 （一致率: 0.6%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">広幡憲作、3</span>9<span class="diff-replace">×QE。青やピンク、グレーの色面とそれを分割する直線・曲線で構成された本作は、具体的なイメージを表したものではありません。39×QEというタイトルも、制作年である1939年とアルファベットを組み合わせたもので、特別な意味はないようです。この年広幡は、本作同様タイトルにキュウを付けた抽象絵画を精力的に発表し、抽象の画家として注目されることとなりました。これら「キュウ作品」の表現は幾何学的抽象と呼ばれ、一般的には冷たい印象を持たれるものですが、彼の作品からは暖かみや柔らかさも感じられ、独自の叙情性を持つものとなっています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「広幡憲作、3」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 7: 原稿「×QE。青やピンク、グレーの色面とそれを分割する直線・曲線で構成された本作は、具体的なイメージを表したものではありません。39×QEというタイトルも、制作年である1939年とアルファベットを組み合わせたもので、特別な意味はないようです。この年広幡は、本作同様タイトルにキュウを付けた抽象絵画を精力的に発表し、抽象の画家として注目されることとなりました。これら「キュウ作品」の表現は幾何学的抽象と呼ばれ、一般的には冷たい印象を持たれるものですが、彼の作品からは暖かみや柔らかさも感じられ、独自の叙情性を持つものとなっています。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-114">
+  <h2>#96 — JP-96.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">佐藤忠良作、夏。1</span>9<span class="diff-replace">76年、北海道釧路市を象徴する幣舞橋に、四季をテーマにした作品が設置されました。作者は舟越保武、柳原義達、本郷新そして佐藤忠良の四人の彫刻家です。誰がどの季節にするかはくじ引きで決め、佐藤には夏が当たりました。気心の知れあった四人は、たがいに相談しながら統一感のある四季の彫像をつくりました。女性は左手を天に向けて、降りそそぐ夏の光を受けています。手のひらには太陽の光が反射し、横を向いた眼差しはまぶしそうです。短いシャツは風になびき、からだ全体をさわやかな風が吹き抜けていきます。釧路の夏空や青い海を背景に、のびやかに立つ姿を想像してみませんか。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「佐藤忠良作、夏。1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 10: 原稿「76年、北海道釧路市を象徴する幣舞橋に、四季をテーマにした作品が設置されました。作者は舟越保武、柳原義達、本郷新そして佐藤忠良の四人の彫刻家です。誰がどの季節にするかはくじ引きで決め、佐藤には夏が当たりました。気心の知れあった四人は、たがいに相談しながら統一感のある四季の彫像をつくりました。女性は左手を天に向けて、降りそそぐ夏の光を受けています。手のひらには太陽の光が反射し、横を向いた眼差しはまぶしそうです。短いシャツは風になびき、からだ全体をさわやかな風が吹き抜けていきます。釧路の夏空や青い海を背景に、のびやかに立つ姿を想像してみませんか。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-115">
+  <h2>#97 — JP-97.mp3 （一致率: 1.0%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">北川民次作、メキシコ戦後の図。「メキシコ戦後」とは何のことでしょうか。これは1</span>9<span class="diff-replace">10年にメキシコでおきた革命戦争のことです。1917年ついに独裁政権は倒され、革命は成功しました。その直後にメキシコに渡った民次は、この革命で壁画や版画が市民を立ちあがらせたことと、革命戦争のため多くの犠牲が払われたことを知りました。それから約</span>2<span class="diff-replace">0年後、民次は日本に帰国してからこの絵を描きました。家は壊され、汽車は脱線し、倒れた人々を描くことで、民次は戦争の悲惨さを訴えました。その頃、日本では二・二六事件が起こり社会不安がうずまいていました。民次はこれから起こるべき戦争を予見し、絵画の力でとどめようとしたのでしょう。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「北川民次作、メキシコ戦後の図。「メキシコ戦後」とは何のことでしょうか。これは1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 40: 原稿「10年にメキシコでおきた革命戦争のことです。1917年ついに独裁政権は倒され、革命は成功しました。その直後にメキシコに渡った民次は、この革命で壁画や版画が市民を立ちあがらせたことと、革命戦争のため多くの犠牲が払われたことを知りました。それから約」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 163: 原稿「0年後、民次は日本に帰国してからこの絵を描きました。家は壊され、汽車は脱線し、倒れた人々を描くことで、民次は戦争の悲惨さを訴えました。その頃、日本では二・二六事件が起こり社会不安がうずまいていました。民次はこれから起こるべき戦争を予見し、絵画の力でとどめようとしたのでしょう。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-116">
+  <h2>#98 — JP-98.mp3 （一致率: 1.1%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v</span>2<span class="diff-replace">/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">鳥海青児作、狸穴。狸穴とは、ムジナの穴という意味の地名のことです。鳥海は1</span>9<span class="diff-replace">5</span>2<span class="diff-replace">年、東京の麻布の飯倉片町に引っ越しました。その隣町が麻布狸穴町でした。そこには今でも狸穴坂という急坂があります。縦に真っすぐに描かれた道は、その急坂なのかもしれません。長い坂道の上に、家が4軒ぽつんと建っているだけの単調な絵。でも、画面は絵の具がもり上がって、ごつごつしています。幾重にも塗られた絵の具が重なりあって、力強い存在感を主張しています。単調な構図とどっしりとした彫刻のような絵肌。それは目で見るより、手で触って鑑賞してみたくなるような絵です。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (3件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「鳥海青児作、狸穴。狸穴とは、ムジナの穴という意味の地名のことです。鳥海は1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 38: 原稿「5」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v」</div>
+      
+      <div class="diff-item">位置 40: 原稿「年、東京の麻布の飯倉片町に引っ越しました。その隣町が麻布狸穴町でした。そこには今でも狸穴坂という急坂があります。縦に真っすぐに描かれた道は、その急坂なのかもしれません。長い坂道の上に、家が4軒ぽつんと建っているだけの単調な絵。でも、画面は絵の具がもり上がって、ごつごつしています。幾重にも塗られた絵の具が重なりあって、力強い存在感を主張しています。単調な構図とどっしりとした彫刻のような絵肌。それは目で見るより、手で触って鑑賞してみたくなるような絵です。」→ 文字起こし「/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+<div class="detail" id="detail-117">
+  <h2>#99 — JP-99.mp3 （一致率: 0.5%）</h2>
+
+  <div class="detail-section">
+    <h3>[文字起こし]</h3>
+    <div class="text-display"><span class="diff-replace">[ERROR: 42</span>9<span class="diff-replace">, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']</span></div>
+  </div>
+
+  <div class="detail-section">
+    <h3>[原稿]</h3>
+    <div class="text-display"><span class="diff-replace">竹久夢二作、ギヤマン問屋の夏。「ギヤマン」とは、キリスト教の伝来とともにもたらされたガラス製品のことです。港に涼しげにすわる少女のまわりに描かれているのが、ギヤマンの皿や壺です。港には橋がかかり洋装の男性や日傘をさした女性が散歩し、そのかなたには教会のような建物も見えます。この絵を描いた1</span>9<span class="diff-replace">14年に、夢二は恋人の岸たまきと「港屋」という店を始めます。そこでは絵本や詩集、カードや千代紙や半襟など、夢二の製品を売り、若い女性に大評判となりました。でも、夢二の描く異国情緒は、どこか悲しげです。華やかな南蛮文化の影に泣く人々やキリシタンの悲劇を、当時の社会世相と重ねて描きだしています。</span></div>
+  </div>
+
+  
+  <div class="diff-list">
+    <details>
+      <summary>差分一覧 (2件)</summary>
+      
+      <div class="diff-item">位置 0: 原稿「竹久夢二作、ギヤマン問屋の夏。「ギヤマン」とは、キリスト教の伝来とともにもたらされたガラス製品のことです。港に涼しげにすわる少女のまわりに描かれているのが、ギヤマンの皿や壺です。港には橋がかかり洋装の男性や日傘をさした女性が散歩し、そのかなたには教会のような建物も見えます。この絵を描いた1」→ 文字起こし「[ERROR: 42」</div>
+      
+      <div class="diff-item">位置 146: 原稿「14年に、夢二は恋人の岸たまきと「港屋」という店を始めます。そこでは絵本や詩集、カードや千代紙や半襟など、夢二の製品を売り、若い女性に大評判となりました。でも、夢二の描く異国情緒は、どこか悲しげです。華やかな南蛮文化の影に泣く人々やキリシタンの悲劇を、当時の社会世相と重ねて描きだしています。」→ 文字起こし「, message='Too Many Requests', url='https://api.gladia.io/v2/pre-recorded']」</div>
+      
+    </details>
+  </div>
+  
+</div>
+
+
+</div>
+</body>
+</html>
