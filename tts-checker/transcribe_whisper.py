@@ -1,65 +1,48 @@
-"""OpenAI Whisper API 文字起こしモジュール。"""
+"""Faster Whisper ローカル文字起こしモジュール。"""
 
-import os
-import time
 from pathlib import Path
 
-from openai import OpenAI
+from faster_whisper import WhisperModel
 
-
-WHISPER_MAX_RETRIES = 3
-WHISPER_REQUEST_DELAY = 0.5  # リクエスト間の待ち時間（秒）
-
-
-def _transcribe_one(client: OpenAI, filepath: Path, lang: str) -> dict:
-    """1ファイルの文字起こしを実行する（リトライ付き）。"""
-    last_error = None
-    for attempt in range(WHISPER_MAX_RETRIES):
-        try:
-            with open(filepath, "rb") as audio_file:
-                response = client.audio.transcriptions.create(
-                    model="whisper-1",
-                    file=audio_file,
-                    language=lang,
-                )
-            time.sleep(WHISPER_REQUEST_DELAY)
-            return {"filename": filepath.name, "transcript": response.text}
-        except Exception as e:
-            last_error = e
-            if attempt < WHISPER_MAX_RETRIES - 1:
-                wait = (2 ** attempt) * 2
-                print(f"  {filepath.name}: エラー。{wait}秒待機中... (リトライ {attempt + 1}/{WHISPER_MAX_RETRIES})")
-                time.sleep(wait)
-
-    return {"filename": filepath.name, "transcript": f"[ERROR: {last_error}]"}
+# large-v3-turbo: large-v3と同等精度で高速
+WHISPER_MODEL = "large-v3-turbo"
 
 
 def transcribe_files(
     audio_files: list[Path], api_key: str, lang: str,
     progress_callback=None,
 ) -> list[dict]:
-    """OpenAI Whisper APIで複数の音声ファイルを文字起こしする。
+    """Faster Whisperで複数の音声ファイルをローカルで文字起こしする。
 
     Args:
         audio_files: 音声ファイルパスのリスト
-        api_key: OpenAI APIキー
+        api_key: 未使用（互換性のため残す）
         lang: 言語コード (ja, en, ko, etc.)
         progress_callback: 進捗コールバック callback(done, total, filename)
 
     Returns:
         [{"filename": "01.wav", "transcript": "..."}, ...]
     """
-    if not api_key:
-        api_key = os.environ.get("OPENAI_API_KEY", "")
-    if not api_key:
-        raise ValueError("OpenAI APIキーが指定されていません。")
+    print(f"Faster Whisper モデル読み込み中: {WHISPER_MODEL}")
+    model = WhisperModel(WHISPER_MODEL, device="auto", compute_type="auto")
 
-    client = OpenAI(api_key=api_key)
     total = len(audio_files)
     results = []
 
     for i, filepath in enumerate(audio_files):
-        result = _transcribe_one(client, filepath, lang)
+        try:
+            segments, _info = model.transcribe(
+                str(filepath),
+                language=lang,
+                beam_size=5,
+                vad_filter=True,
+            )
+            transcript = "".join(seg.text for seg in segments)
+            result = {"filename": filepath.name, "transcript": transcript}
+        except Exception as e:
+            print(f"  {filepath.name}: エラー — {e}")
+            result = {"filename": filepath.name, "transcript": f"[ERROR: {e}]"}
+
         results.append(result)
         if progress_callback:
             progress_callback(i + 1, total, result["filename"])

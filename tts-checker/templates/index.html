@@ -78,8 +78,8 @@ select { appearance: auto; }
         <label>文字起こしエンジン</label>
         <div class="hint">使用するAPIを選択</div>
         <select name="backend" id="backend-select">
-          <option value="whisper" selected>OpenAI Whisper（おすすめ）</option>
-          <option value="gladia">Gladia</option>
+          <option value="whisper" selected>Faster Whisper（ローカル・無料）</option>
+          <option value="gladia">Gladia（クラウドAPI）</option>
         </select>
       </div>
       <div class="form-group">
@@ -94,10 +94,10 @@ select { appearance: auto; }
       </div>
     </div>
 
-    <div class="form-group">
-      <label id="api-key-label">OpenAI APIキー</label>
+    <div class="form-group" id="api-key-group" style="display: none;">
+      <label id="api-key-label">Gladia APIキー</label>
       <div class="hint">サーバー側で設定済みなら空欄でOK</div>
-      <input type="password" name="api_key" id="api-key-input" placeholder="sk-...">
+      <input type="password" name="api_key" id="api-key-input" placeholder="gla_...">
     </div>
 
     <button type="submit" class="btn" id="submit-btn">チェック開始</button>
@@ -125,16 +125,9 @@ audioInput.addEventListener('change', () => {
 });
 
 const backendSelect = document.getElementById('backend-select');
-const apiKeyLabel = document.getElementById('api-key-label');
-const apiKeyInput = document.getElementById('api-key-input');
+const apiKeyGroup = document.getElementById('api-key-group');
 backendSelect.addEventListener('change', () => {
-  if (backendSelect.value === 'whisper') {
-    apiKeyLabel.textContent = 'OpenAI APIキー';
-    apiKeyInput.placeholder = 'sk-...';
-  } else {
-    apiKeyLabel.textContent = 'Gladia APIキー';
-    apiKeyInput.placeholder = 'gla_...';
-  }
+  apiKeyGroup.style.display = backendSelect.value === 'gladia' ? 'block' : 'none';
 });
 
 document.getElementById('upload-form').addEventListener('submit', async (e) => {
