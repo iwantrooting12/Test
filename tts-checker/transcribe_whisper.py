@@ -1,6 +1,19 @@
 """Faster Whisper ローカル文字起こしモジュール。"""
 
+import os
+import platform
+import site
 from pathlib import Path
+
+# Windows: CUDA DLLのパスを通す（site-packages内のnvidiaライブラリ）
+if platform.system() == "Windows":
+    for site_dir in site.getsitepackages():
+        nvidia_dir = os.path.join(site_dir, "nvidia")
+        if os.path.isdir(nvidia_dir):
+            for lib_name in os.listdir(nvidia_dir):
+                dll_dir = os.path.join(nvidia_dir, lib_name, "bin")
+                if os.path.isdir(dll_dir):
+                    os.add_dll_directory(dll_dir)
 
 from faster_whisper import WhisperModel
 
