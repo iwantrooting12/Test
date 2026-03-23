@@ -75,9 +75,12 @@ select { appearance: auto; }
 
     <div class="row">
       <div class="form-group">
-        <label>Gladia APIキー</label>
-        <div class="hint">サーバー側で設定済みなら空欄でOK</div>
-        <input type="password" name="api_key" placeholder="gla_...">
+        <label>文字起こしエンジン</label>
+        <div class="hint">使用するAPIを選択</div>
+        <select name="backend" id="backend-select">
+          <option value="whisper" selected>OpenAI Whisper（おすすめ）</option>
+          <option value="gladia">Gladia</option>
+        </select>
       </div>
       <div class="form-group">
         <label>言語</label>
@@ -89,6 +92,12 @@ select { appearance: auto; }
           <option value="zh">中文</option>
         </select>
       </div>
+    </div>
+
+    <div class="form-group">
+      <label id="api-key-label">OpenAI APIキー</label>
+      <div class="hint">サーバー側で設定済みなら空欄でOK</div>
+      <input type="password" name="api_key" id="api-key-input" placeholder="sk-...">
     </div>
 
     <button type="submit" class="btn" id="submit-btn">チェック開始</button>
@@ -113,6 +122,19 @@ const fileCount = document.getElementById('file-count');
 audioInput.addEventListener('change', () => {
   const n = audioInput.files.length;
   fileCount.textContent = n > 0 ? n + ' 件の音声ファイルが選択されました' : '';
+});
+
+const backendSelect = document.getElementById('backend-select');
+const apiKeyLabel = document.getElementById('api-key-label');
+const apiKeyInput = document.getElementById('api-key-input');
+backendSelect.addEventListener('change', () => {
+  if (backendSelect.value === 'whisper') {
+    apiKeyLabel.textContent = 'OpenAI APIキー';
+    apiKeyInput.placeholder = 'sk-...';
+  } else {
+    apiKeyLabel.textContent = 'Gladia APIキー';
+    apiKeyInput.placeholder = 'gla_...';
+  }
 });
 
 document.getElementById('upload-form').addEventListener('submit', async (e) => {

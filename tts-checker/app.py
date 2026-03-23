@@ -16,7 +16,8 @@ from diff_engine import compute_diff, match_ratio, normalize
 from main import collect_audio_files, match_audio_to_entries
 from manuscript_parser import parse_manuscript
 from report_generator import generate_report_html
-from transcribe import transcribe_files
+from transcribe import transcribe_files as transcribe_gladia
+from transcribe_whisper import transcribe_files as transcribe_whisper
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 500 * 1024 * 1024  # 500MB
@@ -54,13 +55,20 @@ def upload():
     for f in audio_files:
         f.save(audio_dir / f.filename)
 
-    api_key = request.form.get("api_key", "") or os.environ.get("GLADIA_API_KEY", "")
+    backend = request.form.get("backend", "whisper")
+    api_key = request.form.get("api_key", "")
+    if not api_key:
+        if backend == "whisper":
+            api_key = os.environ.get("OPENAI_API_KEY", "")
+        else:
+            api_key = os.environ.get("GLADIA_API_KEY", "")
     lang = request.form.get("lang", "ja")
 
     JOBS[job_id] = {
         "job_dir": job_dir,
         "ms_path": ms_path,
         "audio_dir": audio_dir,
+        "backend": backend,
         "api_key": api_key,
         "lang": lang,
     }
@@ -97,7 +105,8 @@ def stream(job_id):
 
             def run_transcription():
                 try:
-                    result_holder["transcripts"] = transcribe_files(
+                    transcribe_fn = transcribe_whisper if job["backend"] == "whisper" else transcribe_gladia
+                    result_holder["transcripts"] = transcribe_fn(
                         [p["audio"] for p in pairs],
                         api_key=job["api_key"],
                         lang=job["lang"],
