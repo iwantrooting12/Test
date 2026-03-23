@@ -24,10 +24,11 @@ if platform.system() == "Windows":
                 if os.path.isdir(dll_dir):
                     os.add_dll_directory(dll_dir)
 
-from faster_whisper import WhisperModel
+from faster_whisper import BatchedInferencePipeline, WhisperModel
 
 # large-v3-turbo: large-v3と同等精度で高速
 WHISPER_MODEL = "large-v3-turbo"
+BATCH_SIZE = 16
 
 
 def transcribe_files(
@@ -47,16 +48,17 @@ def transcribe_files(
     """
     print(f"Faster Whisper モデル読み込み中: {WHISPER_MODEL}")
     model = WhisperModel(WHISPER_MODEL, device="cuda", compute_type="float16")
+    batched_model = BatchedInferencePipeline(model=model)
 
     total = len(audio_files)
     results = []
 
     for i, filepath in enumerate(audio_files):
         try:
-            segments, _info = model.transcribe(
+            segments, _info = batched_model.transcribe(
                 str(filepath),
                 language=lang,
-                beam_size=5,
+                batch_size=BATCH_SIZE,
                 vad_filter=True,
             )
             transcript = "".join(seg.text for seg in segments)
